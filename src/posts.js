@@ -1,26 +1,13 @@
+const config = require("./config");
 const fs = require("fs");
+const path = require("path");
+const pug = require("pug");
 
-function generatePostHTML(postData) {
-  return `
-    <!doctype html>
-    <html lang="en">
-      <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="description" content="${postData.attributes.description}" />
-        <title>${postData.attributes.title}</title>
-      </head>
-      <body>
-        <div id="content">
-          <h1>${postData.attributes.title}</h1>
-          ${postData.body}
-        </div>
-      </body>
-    </html>
-  `;
-}
+const renderPost = pug.compileFile(
+  path.join(__dirname, "templates/post.pug")
+);
 
-const outdir = __dirname + "/../build";
+const { outdir } = config;
 
 function createPosts(posts) {
   posts.forEach((post) => {
@@ -38,7 +25,7 @@ function createPosts(posts) {
     
     fs.writeFile(
       `${outdir}/posts/${post.path}/index.html`,
-      generatePostHTML(post),
+      renderPost(post),
       (error) => {
         if (error) {
           throw error;

@@ -1,44 +1,37 @@
+const config = require("./config");
 const fs = require("fs");
+const path = require("path");
+const pug = require("pug");
 
-function generatePageHTML(pageData) {
-  return `
-    <!doctype html>
-    <html lang="en">
-      <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="description" content="${pageData.attributes.description}" />
-        <title>${pageData.attributes.title}</title>
-      </head>
-      <body>
-        <div id="content">
-          <h1>${pageData.attributes.title}</h1>
-          ${pageData.body}
-        </div>
-      </body>
-    </html>
-  `;
-}
+const renderPage = pug.compileFile(
+  path.join(__dirname, "templates/page.pug")
+);
 
-const outdir = __dirname + "/../build";
+const { outdir } = config;
 
 function createPages(pages) {
   pages.forEach((page) => {
+    // Check to see if the `build` directory exists.
     if (! fs.existsSync(outdir)) {
+      // If the directory does not exist, create it.
       fs.mkdirSync(outdir);
     }
 
+    // Check to see if the `pages` directory has been built previously.
     if (! fs.existsSync(`${outdir}/pages`)) {
+      // If the directory does not exist, create it.
       fs.mkdirSync(`${outdir}/pages`);
     }
 
+    // Check to see if the current post directory has been built previously.
     if (! fs.existsSync(`${outdir}/pages/${page.path}`)) {
+      // If the directory does not exist, create it.
       fs.mkdirSync(`${outdir}/pages/${page.path}`);
     }
     
     fs.writeFile(
       `${outdir}/pages/${page.path}/index.html`,
-      generatePageHTML(page),
+      renderPage(page),
       (error) => {
         if (error) {
           throw error;

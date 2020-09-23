@@ -25,21 +25,4 @@ const pages = fs
   .readdirSync(__dirname + "/../pages")
   .map((page) => formatMarkdown("pages", page.split('.')[0]));
 
-function generateHeaderHTML(pages) {
-  const links = pages.map((page) =>
-    '<a href="/' + page.path + '">' + page.attributes.title + '</a>'
-  );
-
-  return `
-    <header>
-      <a href="/">Home</a>
-      ${links}
-    </header>
-  `;
-}
-
-const header = generateHeaderHTML(pages);
-
-console.log(header);
-
 createPages(pages);
