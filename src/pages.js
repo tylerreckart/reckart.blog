@@ -11,12 +11,6 @@ const { outdir } = config;
 
 function createPages(pages) {
   pages.forEach((page) => {
-    // Check to see if the `build` directory exists.
-    if (! fs.existsSync(outdir)) {
-      // If the directory does not exist, create it.
-      fs.mkdirSync(outdir);
-    }
-
     // Check to see if the `pages` directory has been built previously.
     if (! fs.existsSync(`${outdir}/pages`)) {
       // If the directory does not exist, create it.
@@ -37,7 +31,7 @@ function createPages(pages) {
           throw error;
         }
   
-        console.log(`${page.path}/index.html created successfully`);
+        console.log(`${page.path}/index.html built`);
       }
     )
   })

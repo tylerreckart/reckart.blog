@@ -1,7 +1,9 @@
 html(lang="en")
 head
   title= attributes.title
-  meta(name='description', content=attributes.description)
+  meta(name="description", content=attributes.description)
+  script(src="/build/bundle.min.js")
 body
+  include includes/nav.pug
   h1= attributes.title
   | !{body}

@@ -1,3 +1,4 @@
+const config = require("./config");
 const fs = require("fs");
 const fm = require("front-matter");
 const marked = require("marked");
@@ -13,6 +14,30 @@ function formatMarkdown(dir, path) {
     body: marked(content.body),
     path,
   };
+}
+
+const { outdir } = config;
+
+// Check to see if the `build` directory exists.
+if (! fs.existsSync(outdir)) {
+  // If the directory does not exist, create it.
+  fs.mkdirSync(outdir);
+}
+
+const bundle = fs.readFileSync(__dirname + "/bundle.js", "utf8");
+
+if (bundle) {
+  fs.writeFile(
+    `${outdir}/bundle.min.js`,
+    bundle,
+    (error) => {
+      if (error) {
+        throw error;
+      }
+
+      console.log(`bundle.min.js built`);
+    }
+  );
 }
 
 const posts = fs

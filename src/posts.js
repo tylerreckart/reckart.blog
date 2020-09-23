@@ -11,10 +11,6 @@ const { outdir } = config;
 
 function createPosts(posts) {
   posts.forEach((post) => {
-    if (! fs.existsSync(outdir)) {
-      fs.mkdirSync(outdir);
-    }
-
     if (! fs.existsSync(`${outdir}/posts`)) {
       fs.mkdirSync(`${outdir}/posts`);
     }
@@ -31,7 +27,7 @@ function createPosts(posts) {
           throw error;
         }
   
-        console.log(`${post.path}/index.html created successfully`);
+        console.log(`${post.path}/index.html built`);
       }
     )
   })
