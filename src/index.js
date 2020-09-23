@@ -1,20 +1,9 @@
 const config = require("./config");
 const fs = require("fs");
-const fm = require("front-matter");
-const marked = require("marked");
+const convertMarkdownToHTML = require("./md");
+const { createHomepage } = require("./home");
 const { createPosts } = require("./posts");
 const { createPages } = require("./pages");
-
-function formatMarkdown(dir, path) {
-  const data = fs.readFileSync(__dirname + `/../${dir}/${path}.md`, "utf8");
-  const content = fm(data);
-
-  return {
-    ...content,
-    body: marked(content.body),
-    path,
-  };
-}
 
 const { outdir } = config;
 
@@ -24,7 +13,7 @@ if (! fs.existsSync(outdir)) {
   fs.mkdirSync(outdir);
 }
 
-const bundle = fs.readFileSync(__dirname + "/bundle.js", "utf8");
+const bundle = fs.readFileSync(__dirname + "/assets/js/index.js", "utf8");
 
 if (bundle) {
   fs.writeFile(
@@ -40,14 +29,17 @@ if (bundle) {
   );
 }
 
+createHomepage();
+
 const posts = fs
   .readdirSync(__dirname + "/../posts")
-  .map((post) => formatMarkdown("posts", post.split('.')[0]));
+  .filter((post) => post.includes('.md'))
+  .map((post) => convertMarkdownToHTML("posts", post.split('.')[0]));
 
 createPosts(posts);
 
 const pages = fs
   .readdirSync(__dirname + "/../pages")
-  .map((page) => formatMarkdown("pages", page.split('.')[0]));
+  .map((page) => convertMarkdownToHTML("pages", page.split('.')[0]))
 
 createPages(pages);
