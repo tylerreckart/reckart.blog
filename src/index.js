@@ -29,17 +29,17 @@ if (bundle) {
   );
 }
 
-createHomepage();
-
 const posts = fs
   .readdirSync(__dirname + "/../posts")
   .filter((post) => post.includes('.md'))
   .map((post) => convertMarkdownToHTML("posts", post.split('.')[0]));
 
-createPosts(posts);
-
 const pages = fs
   .readdirSync(__dirname + "/../pages")
-  .map((page) => convertMarkdownToHTML("pages", page.split('.')[0]))
+  .map((page) => convertMarkdownToHTML("pages", page.split('.')[0]));
 
+createHomepage({ posts });
+createPosts(posts);
 createPages(pages);
+  
+

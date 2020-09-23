@@ -9,10 +9,10 @@ const renderHomepage = pug.compileFile(
 
 const { outdir } = config;
 
-function createHomepage() {  
+function createHomepage(posts) {  
   fs.writeFile(
     `${outdir}/index.html`,
-    renderHomepage(),
+    renderHomepage(posts),
     (error) => {
       if (error) {
         throw error;

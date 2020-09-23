@@ -11,16 +11,12 @@ const { outdir } = config;
 
 function createPosts(posts) {
   posts.forEach((post) => {
-    if (! fs.existsSync(`${outdir}/posts`)) {
-      fs.mkdirSync(`${outdir}/posts`);
-    }
-
-    if (! fs.existsSync(`${outdir}/posts/${post.path}`)) {
-      fs.mkdirSync(`${outdir}/posts/${post.path}`);
+    if (! fs.existsSync(`${outdir}/${post.path}`)) {
+      fs.mkdirSync(`${outdir}/${post.path}`);
     }
     
     fs.writeFile(
-      `${outdir}/posts/${post.path}/index.html`,
+      `${outdir}/${post.path}/index.html`,
       renderPost(post),
       (error) => {
         if (error) {
