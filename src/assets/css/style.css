@@ -1,0 +1,47 @@
+html, body {
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Lucida Grande", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  line-height: 1.5em;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+}
+
+article {
+  display: flex;
+  flex-direction: column;
+  max-width: 1200px;
+}
+
+.article--content > p {
+  max-width: 620px;
+}
+
+.article--content > p > img {
+  left: 50%;
+  margin-left: -40vw;
+  margin-right: -40vw;
+  position: relative;
+  right: 50%;
+  width: 80vw;
+}
+
+header, footer {
+  max-width: 620px;
+}
+
+footer {
+  font-size: 16px;
+}

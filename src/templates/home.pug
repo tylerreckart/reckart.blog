@@ -1,12 +1,12 @@
 doctype html
 html(lang="en")
 head
+  meta(charset="UTF-8")
   title="Tyler Reckart"
   meta(name="description", content="")
+  link(rel="stylesheet", type="text/css", href="./css/styles.css")
 body
-  header
-    h1 Hi, I'm Tyler
-    p I'm a Senior Software Developer at #[a.alley(href="https://alley.co", target="_blank") Alley]. You can follow me on #[a.twitter(href="https://twitter.com/tylerreckart", target="_blank") Twitter], see my code on #[a.github(href="https://github.com/tylerreckart", target="_blank") Github], or view my photos on #[a.instagram(href="https://instagram.com/tylerreckart", target="_blank") Instagram].
+  include includes/intro.pug
   div.content
     each post in posts
       article
@@ -15,6 +15,6 @@ body
           span=post.attributes.date
         div.article--content
           | !{post.body}
-  
+  include includes/footer.pug
   
   

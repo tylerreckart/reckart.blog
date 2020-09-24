@@ -4,5 +4,10 @@ html(lang="en")
     title= attributes.title
     meta(name='description', content=attributes.description)
   body
-    h1= attributes.title
-    | !{body}
+    article
+      div.article--header
+        h1=attributes.title
+        span=attributes.date
+      div.article--content
+        | !{body}
+    include includes/footer.pug

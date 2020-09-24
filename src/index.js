@@ -13,18 +13,22 @@ if (! fs.existsSync(outdir)) {
   fs.mkdirSync(outdir);
 }
 
-const bundle = fs.readFileSync(__dirname + "/assets/js/index.js", "utf8");
+const stylesheet = fs.readFileSync(__dirname + "/assets/css/style.css", "utf8");
 
-if (bundle) {
+if (stylesheet) {
+  if (! fs.existsSync(`${outdir}/css`)) {
+    fs.mkdirSync(`${outdir}/css`);
+  }
+
   fs.writeFile(
-    `${outdir}/bundle.min.js`,
-    bundle,
+    `${outdir}/css/styles.css`,
+    stylesheet,
     (error) => {
       if (error) {
         throw error;
       }
 
-      console.log(`bundle.min.js built`);
+      console.log(`stylesheet built`);
     }
   );
 }

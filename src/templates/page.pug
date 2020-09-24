@@ -4,5 +4,8 @@ head
   title= attributes.title
   meta(name="description", content=attributes.description)
 body
-  h1= attributes.title
-  | !{body}
+  div.page--header
+    h1=attributes.title
+  div.page--content
+    | !{body}
+  include includes/footer.pug
