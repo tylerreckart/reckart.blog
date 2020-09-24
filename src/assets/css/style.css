@@ -6,12 +6,48 @@ html, body {
 }
 
 body {
+  color: #222;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   font-size: 18px;
-  line-height: 1.5em;
+  line-height: 1.7em;
+}
+
+a {
+  color: #0079fc;
+  text-decoration: none;
+}
+
+header {
+  margin: 40px 0;
+}
+
+header > p {
+  margin: 0;
+}
+
+header > p > a {
+  text-decoration: none;
+}
+
+.alley {
+  color: #da2b2e;
+}
+
+.twitter {
+  color: #0079fc;
+}
+
+.github {
+  color: #29973f;
+}
+
+.instagram {
+  background: -webkit-linear-gradient(-120deg, #532fba, #cf0a6e, #f8aa52);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .content {
@@ -23,6 +59,19 @@ article {
   display: flex;
   flex-direction: column;
   max-width: 1200px;
+}
+
+.article--header > a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.article--header > a > h2 {
+  margin: 0 0 10px 0;
+}
+
+.article--header > time {
+  color: #777;
 }
 
 .article--content > p {

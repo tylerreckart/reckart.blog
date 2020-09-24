@@ -1,20 +1,17 @@
 doctype html
 html(lang="en")
-head
-  meta(charset="UTF-8")
-  title="Tyler Reckart"
-  meta(name="description", content="")
-  link(rel="stylesheet", type="text/css", href="./css/styles.css")
-body
-  include includes/intro.pug
-  div.content
-    each post in posts
-      article
-        div.article--header
-          a(href= post.path) #[h2=post.attributes.title]
-          span=post.attributes.date
-        div.article--content
-          | !{post.body}
-  include includes/footer.pug
-  
-  
+  head
+    title="Tyler Reckart"
+    meta(name="description", content="")
+    include includes/head.pug
+  body
+    include includes/intro.pug
+    div.content
+      each post in posts
+        article
+          div.article--header
+            a(href= post.path) #[h2=post.attributes.title]
+            time(datetime=(new Date(Date.parse(post.attributes.date))).toISOString(), pubdate="pubdate")=post.attributes.date
+          div.article--content
+            | !{post.body}
+    include includes/footer.pug
