@@ -1,6 +1,8 @@
-html, body {
+html,
+body {
   box-sizing: border-box;
-  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Lucida Grande", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue",
+    "Lucida Grande", sans-serif;
   margin: 0;
   padding: 0;
 }
@@ -12,7 +14,26 @@ body {
   justify-content: center;
   align-items: center;
   font-size: 18px;
+  font-weight: normal;
   line-height: 1.7em;
+}
+
+body.dark {
+  background-color: #0f0f0f;
+  color: #eee;
+}
+
+@media screen and (max-width: 640px) {
+  body {
+    margin: 0 20px !important;
+  }
+}
+
+#color-mode--button {
+  cursor: pointer;
+  position: absolute;
+  right: 20px;
+  top: 20px;
 }
 
 a {
@@ -22,6 +43,7 @@ a {
 
 header {
   margin: 40px 0;
+  max-width: 620px;
 }
 
 header > p {
@@ -52,6 +74,7 @@ header > p > a {
 
 .content {
   display: flex;
+  flex-direction: column;
   justify-content: center;
 }
 
@@ -59,6 +82,11 @@ article {
   display: flex;
   flex-direction: column;
   max-width: 1200px;
+  margin-bottom: 40px;
+}
+
+article:last-of-type {
+  margin-bottom: 0;
 }
 
 .article--header > a {
@@ -87,8 +115,13 @@ article {
   width: 80vw;
 }
 
-header, footer {
-  max-width: 620px;
+@media screen and (max-width: 800px) {
+  .article--content > p > img {
+    left: auto;
+    right: auto;
+    margin: 0 auto;
+    width: 100%;
+  }
 }
 
 footer {
