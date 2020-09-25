@@ -1,4 +1,4 @@
-const config = require("./config");
+const config = require("../config");
 const fs = require("fs");
 const xml = require("xml");
 const colors = require("colors");

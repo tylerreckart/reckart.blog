@@ -1,4 +1,4 @@
-const config = require("./config");
+const config = require("../config");
 const fs = require("fs");
 const convertMarkdownToHTML = require("./convertMarkdown");
 const buildAssets = require("./buildAssets");
