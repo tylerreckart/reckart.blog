@@ -4,6 +4,7 @@ const config = {
   outdir: path.join(__dirname, "/build"),
   siteurl: "https://reckart.blog",
   sitename: "reckart.blog",
+  siteicon: "https://emojis.slackmojis.com/emojis/images/1549317933/5264/coding.gif?1549317933",
   title: "Tyler Reckart",
   author: "Tyler Reckart",
   twitterHandle: "@tylerreckart",

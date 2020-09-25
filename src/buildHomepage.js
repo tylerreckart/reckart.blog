@@ -8,17 +8,16 @@ const renderHomepage = pug.compileFile(
   path.join(__dirname, "templates/home.pug")
 );
 
-const { outdir, sitename, description, title } = config;
+const { outdir, sitename, siteicon, description, title } = config;
 
 function buildHomepage(posts) {
   const siteConfig = {
     title,
     sitename,
+    siteicon,
     description,
     ...posts,
   };
-
-  console.log(siteConfig);
 
   fs.writeFile(`${outdir}/index.html`, renderHomepage(siteConfig), (error) => {
     if (error) {

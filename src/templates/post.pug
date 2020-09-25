@@ -31,13 +31,4 @@ html(lang="en")
       if !nextPost
         include includes/footer.pug
     if nextPost
-      div.next-post--wrapper
-        article.next-post--content
-          div.next-post--header
-            a(href=nextPost.path)
-              h2=nextPost.attributes.title
-            time(datetime=(new Date(Date.parse(nextPost.attributes.date))).toISOString(), pubdate="pubdate")="Posted on " + nextPost.attributes.date
-          div.next-post--body
-            | !{nextPost.body}
-            a(href!="/" + nextPost.path) Continue Reading →
-          include includes/footer.pug
+      include includes/next-post.pug
