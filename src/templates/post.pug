@@ -3,30 +3,41 @@ html(lang="en")
   head
     title!=attributes.title
     meta(name="description", content=attributes.description)
-    meta(property="og:url", content!="https://tylerreckart.com/" + path)
+    meta(property="og:url", content!=siteurl + "/" + path)
     meta(property="og:type", content="article")
     meta(property="og:title", content=attributes.title)
     meta(property="og:description", content=attributes.description)
     if attributes.featuredImage
       meta(property="og:image", content=attributes.featuredImage)
     meta(property="article:published_time", content!=(new Date(Date.parse(attributes.date))).toISOString())
-    meta(property="article:author", content="Tyler Reckart")
-    meta(property="twitter:site", content="@tylerreckart")
+    meta(property="article:author", content=author)
+    meta(property="twitter:site", content=twitterHandle)
     meta(property="twitter:card", content="summary_large_image")
     if attributes.featuredImage
       meta(name="twitter:image", content=attributes.featuredImage)
-    meta(name="twitter:url", content="https://tylerreckart.com/" + path)
+    meta(name="twitter:url", content=siteurl + "/" + path)
     meta(name="twitter:description", content=attributes.description)
     meta(name="twitter:title", content=attributes.title)
     include includes/head.pug
   body
-    if attributes.featuredImage
-      div.featured-image--container(style!="background-image: url(" + attributes.featuredImage + ");")
-    div.content
+    main.content
+      include includes/nav.pug
       article.article-page--wrapper
         div.article--header
           h1=attributes.title
-          span=attributes.date
+          time(datetime=(new Date(Date.parse(attributes.date))).toISOString(), pubdate="pubdate")="Posted on " + attributes.date
         div.article--content
           | !{body}
-      include includes/footer.pug
+      if !nextPost
+        include includes/footer.pug
+    if nextPost
+      div.next-post--wrapper
+        article.next-post--content
+          div.next-post--header
+            a(href=nextPost.path)
+              h2=nextPost.attributes.title
+            time(datetime=(new Date(Date.parse(nextPost.attributes.date))).toISOString(), pubdate="pubdate")="Posted on " + nextPost.attributes.date
+          div.next-post--body
+            | !{nextPost.body}
+            a(href!="/" + nextPost.path) Continue Reading →
+          include includes/footer.pug

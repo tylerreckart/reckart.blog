@@ -6,7 +6,7 @@ const colors = require("colors");
 
 const renderPage = pug.compileFile(path.join(__dirname, "templates/page.pug"));
 
-const { outdir } = config;
+const { outdir, sitename } = config;
 
 function buildPages(pages) {
   pages.forEach((page) => {
@@ -18,7 +18,10 @@ function buildPages(pages) {
 
     fs.writeFile(
       `${outdir}/${page.path}/index.html`,
-      renderPage(page),
+      renderPage({
+        ...page,
+        sitename,
+      }),
       (error) => {
         if (error) {
           throw error;

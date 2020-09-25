@@ -5,7 +5,8 @@ html(lang="en")
     meta(name="description", content=attributes.description)
     include includes/head.pug
   body
-    div.content
+    main.content
+      include includes/nav.pug
       article.page--wrapper
         div.page--header
           h1=attributes.title

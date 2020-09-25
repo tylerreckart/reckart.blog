@@ -1,18 +1,18 @@
 doctype html
 html(lang="en")
   head
-    title="Tyler Reckart"
-    meta(name="description", content="Tyler Reckart is a software developer, watch geek, and cyclist. This is his blog.")
+    title=title
+    meta(name="description", content=description)
     include includes/head.pug
   body
-    include includes/dark-mode-btn.pug
-    include includes/intro.pug
-    div.content
+    main.content
+      include includes/nav.pug
+      include includes/intro.pug
       each post in posts
         article
           div.article--header
             a(href=post.path) #[h2=post.attributes.title]
-            time(datetime=(new Date(Date.parse(post.attributes.date))).toISOString(), pubdate="pubdate")=post.attributes.date
+            time(datetime=(new Date(Date.parse(post.attributes.date))).toISOString(), pubdate="pubdate")!="Posted on " + post.attributes.date
           div.article--content
             | !{post.body}
       include includes/footer.pug

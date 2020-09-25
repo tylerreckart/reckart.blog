@@ -2,7 +2,6 @@
 date: "September 25, 2020"
 title: "Is it Alphabetical?"
 description: "Example post description"
-featuredImage: "https://images.unsplash.com/photo-1596650956793-68f12df4e549?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2090&q=80"
 ---
 
 I'm baby deep v occupy chillwave letterpress. Shabby chic tbh health goth
