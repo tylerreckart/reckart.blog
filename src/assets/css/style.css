@@ -23,17 +23,62 @@ body.dark {
   color: #eee;
 }
 
+.dark-mode--btn--wrapper {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  align-items: center;
+}
+
+@media screen and (max-width: 940px) {
+  .dark-mode--btn--wrapper {
+    display: none;
+  }
+}
+
+.dark-mode--btn--wrapper > span {
+  font-size: 12px;
+  margin-right: 6px;
+  text-transform: uppercase;
+  font-weight: bold;
+  pointer-events: none;
+}
+
+.dark-mode--btn {
+  width: 42px;
+  height: 24px;
+  border-radius: 20px;
+  background-color: #a5abb0;
+  cursor: pointer;
+  position: relative;
+}
+
+.dark-mode--btn::before {
+  content: "";
+  width: 18px;
+  height: 18px;
+  background-color: #fff;
+  display: block;
+  position: absolute;
+  border-radius: 50%;
+  transform: translate3d(3px, 3px, 0);
+}
+
+body.dark .dark-mode--btn {
+  background-color: #fff;
+}
+
+body.dark .dark-mode--btn::before {
+  transform: translate3d(21px, 3px, 0);
+  background-color: #0f0f0f;
+}
+
 @media screen and (max-width: 640px) {
   body {
     margin: 0 20px !important;
   }
-}
-
-#color-mode--button {
-  cursor: pointer;
-  position: absolute;
-  right: 20px;
-  top: 20px;
 }
 
 a {
@@ -58,10 +103,6 @@ header > p > a {
   color: #da2b2e;
 }
 
-.twitter {
-  color: #0079fc;
-}
-
 .github {
   color: #29973f;
 }
@@ -76,6 +117,20 @@ header > p > a {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  max-width: 620px;
+}
+
+.featured-image--container {
+  height: 225px;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.article-page--wrapper,
+.page--wrapper {
+  margin-top: 40px;
 }
 
 article {
@@ -94,6 +149,12 @@ article:last-of-type {
   color: inherit;
 }
 
+.page--header > h1,
+.article--header > h1 {
+  font-size: 1.5em;
+  margin: 0 0 10px 0;
+}
+
 .article--header > a > h2 {
   margin: 0 0 10px 0;
 }
@@ -102,6 +163,7 @@ article:last-of-type {
   color: #777;
 }
 
+.page--content > p,
 .article--content > p {
   max-width: 620px;
 }
@@ -126,4 +188,11 @@ article:last-of-type {
 
 footer {
   font-size: 16px;
+  color: #777;
+  width: 100%;
+  margin-bottom: 24px;
+}
+
+footer > p {
+  margin: 0;
 }

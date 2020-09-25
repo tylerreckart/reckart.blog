@@ -2,6 +2,7 @@ const config = require("./config");
 const fs = require("fs");
 const path = require("path");
 const pug = require("pug");
+const colors = require("colors");
 
 const renderPost = pug.compileFile(path.join(__dirname, "templates/post.pug"));
 
@@ -21,12 +22,10 @@ function buildPosts(posts) {
           throw error;
         }
 
-        console.log(`${post.path}/index.html built`);
+        console.log(`${"post =>".cyan} ${post.path} built`);
       }
     );
   });
 }
 
-module.exports = {
-  buildPosts,
-};
+module.exports = buildPosts;

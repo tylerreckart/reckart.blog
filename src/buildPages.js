@@ -2,6 +2,7 @@ const config = require("./config");
 const fs = require("fs");
 const path = require("path");
 const pug = require("pug");
+const colors = require("colors");
 
 const renderPage = pug.compileFile(path.join(__dirname, "templates/page.pug"));
 
@@ -23,12 +24,10 @@ function buildPages(pages) {
           throw error;
         }
 
-        console.log(`${page.path}/index.html built`);
+        console.log(`${"page =>".yellow} ${page.path} built`);
       }
     );
   });
 }
 
-module.exports = {
-  buildPages,
-};
+module.exports = buildPages;

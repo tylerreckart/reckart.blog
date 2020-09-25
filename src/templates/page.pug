@@ -1,11 +1,14 @@
 doctype html
 html(lang="en")
-head
-  title= attributes.title
-  meta(name="description", content=attributes.description)
-body
-  div.page--header
-    h1=attributes.title
-  div.page--content
-    | !{body}
-  include includes/footer.pug
+  head
+    title=attributes.title
+    meta(name="description", content=attributes.description)
+    include includes/head.pug
+  body
+    div.content
+      article.page--wrapper
+        div.page--header
+          h1=attributes.title
+        div.page--content
+          | !{body}
+      include includes/footer.pug

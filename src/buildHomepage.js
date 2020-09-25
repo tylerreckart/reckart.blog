@@ -2,6 +2,7 @@ const config = require("./config");
 const fs = require("fs");
 const path = require("path");
 const pug = require("pug");
+const colors = require("colors");
 
 const renderHomepage = pug.compileFile(
   path.join(__dirname, "templates/home.pug")
@@ -15,10 +16,8 @@ function buildHomepage(posts) {
       throw error;
     }
 
-    console.log(`index.html built`);
+    console.log(`${"homepage =>".red} index.html built`);
   });
 }
 
-module.exports = {
-  buildHomepage,
-};
+module.exports = buildHomepage;

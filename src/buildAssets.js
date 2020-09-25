@@ -1,5 +1,6 @@
 const config = require("./config");
 const fs = require("fs");
+const colors = require("colors");
 
 const { outdir } = config;
 
@@ -19,7 +20,7 @@ function buildAssets() {
         throw error;
       }
 
-      console.log(`stylesheet built`);
+      console.log(`${"asset =>".magenta} styles.css built`);
     });
   }
 
@@ -35,11 +36,9 @@ function buildAssets() {
         throw error;
       }
 
-      console.log(`JS bundle built`);
+      console.log(`${"asset =>".magenta} bundle.js built`);
     });
   }
 }
 
-module.exports = {
-  buildAssets,
-};
+module.exports = buildAssets;
