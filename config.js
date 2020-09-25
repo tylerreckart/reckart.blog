@@ -1,7 +1,7 @@
 const path = require("path");
 
 const config = {
-  outdir: path.join(__dirname, "../build"),
+  outdir: path.join(__dirname, "/build"),
   siteurl: "https://tylerreckart.com",
   title: "Tyler Reckart",
   description:

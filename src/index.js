@@ -15,6 +15,8 @@ if (!fs.existsSync(outdir)) {
   fs.mkdirSync(outdir);
 }
 
+console.log(outdir);
+
 function convertPostContent(post) {
   return convertMarkdownToHTML("posts", post.split(".")[0]);
 }

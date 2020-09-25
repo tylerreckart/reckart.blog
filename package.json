@@ -11,6 +11,7 @@
   "dependencies": {
     "colors": "^1.4.0",
     "front-matter": "^4.0.2",
+    "highlight.js": "^10.2.0",
     "marked": "^1.1.1",
     "pug": "^3.0.0",
     "xml": "^1.0.1"
