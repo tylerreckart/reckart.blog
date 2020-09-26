@@ -67,8 +67,8 @@ body.dark .dark-mode--btn::before {
 }
 
 @media screen and (max-width: 640px) {
-  body {
-    margin: 0 20px !important;
+  main {
+    margin: 0 20px;
   }
 }
 
@@ -212,6 +212,12 @@ body.dark .next-post--wrapper {
 .next-post--content {
   margin-top: 24px;
   max-width: 620px;
+}
+
+@media screen and (max-width: 640px) {
+  .next-post--content {
+    margin: 24px 20px 0 20px;
+  }
 }
 
 .next-post--content footer {

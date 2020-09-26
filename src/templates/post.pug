@@ -3,7 +3,7 @@ html(lang="en")
   head
     title!=attributes.title
     meta(name="description", content=attributes.description)
-    meta(property="og:url", content!=siteurl + "/" + path)
+    meta(property="og:url", content!=siteUrl + "/" + path)
     meta(property="og:type", content="article")
     meta(property="og:title", content=attributes.title)
     meta(property="og:description", content=attributes.description)
@@ -15,7 +15,7 @@ html(lang="en")
     meta(property="twitter:card", content="summary_large_image")
     if attributes.featuredImage
       meta(name="twitter:image", content=attributes.featuredImage)
-    meta(name="twitter:url", content=siteurl + "/" + path)
+    meta(name="twitter:url", content=siteUrl + "/" + path)
     meta(name="twitter:description", content=attributes.description)
     meta(name="twitter:title", content=attributes.title)
     include includes/head.pug

@@ -8,14 +8,26 @@ const renderHomepage = pug.compileFile(
   path.join(__dirname, "templates/home.pug")
 );
 
-const { outdir, sitename, siteicon, description, title } = config;
+const {
+  outdir,
+  siteName,
+  siteIcon,
+  siteIntro,
+  author,
+  description,
+  title,
+  twitterHandle,
+} = config;
 
 function buildHomepage(posts) {
   const siteConfig = {
+    author,
     title,
-    sitename,
-    siteicon,
+    siteName,
+    siteIcon,
     description,
+    siteIntro,
+    twitterHandle,
     ...posts,
   };
 

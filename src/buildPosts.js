@@ -6,7 +6,7 @@ const colors = require("colors");
 
 const renderPost = pug.compileFile(path.join(__dirname, "templates/post.pug"));
 
-const { outdir, author, sitename, siteicon, siteurl, twitterHandle } = config;
+const { outdir, author, siteName, siteIcon, siteUrl, twitterHandle } = config;
 
 function generateNextPost(post) {
   if (!post) {
@@ -29,9 +29,9 @@ function generateNextPost(post) {
 function buildPosts(posts) {
   const remappedPosts = posts.map((post, index) => {
     return {
-      sitename,
-      siteicon,
-      siteurl,
+      siteName,
+      siteIcon,
+      siteUrl,
       twitterHandle,
       author,
       ...post,

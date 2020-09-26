@@ -3,7 +3,7 @@ const fs = require("fs");
 const xml = require("xml");
 const colors = require("colors");
 
-const { outdir, siteurl, title, description } = config;
+const { outdir, siteUrl, title, description } = config;
 
 function buildFeed(posts) {
   const feedJSON = {
@@ -26,11 +26,11 @@ function buildFeed(posts) {
             },
           },
           { title },
-          { link: siteurl },
+          { link: siteUrl },
           { description },
           { language: "en-us" },
           ...posts.map((post) => {
-            const absoluteUrl = `${siteurl}/${post.path}`;
+            const absoluteUrl = `${siteUrl}/${post.path}`;
 
             return {
               item: [
