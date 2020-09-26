@@ -3,7 +3,9 @@ const fs = require("fs");
 const xml = require("xml");
 const colors = require("colors");
 
-const { outdir, siteUrl, title, description } = config;
+const { outdir, siteConfig, seoConfig } = config;
+const { url } = siteConfig;
+const { title, description } = seoConfig;
 
 function buildFeed(posts) {
   const feedJSON = {
@@ -19,18 +21,18 @@ function buildFeed(posts) {
           {
             "atom:link": {
               _attr: {
-                href: "https://reckart.blog/feed.rss",
+                href: `${url}/feed.rss`,
                 rel: "self",
                 type: "application/rss+xml",
               },
             },
           },
           { title },
-          { link: siteUrl },
+          { link: url },
           { description },
           { language: "en-us" },
           ...posts.map((post) => {
-            const absoluteUrl = `${siteUrl}/${post.path}`;
+            const absoluteUrl = `${url}/${post.path}`;
 
             return {
               item: [

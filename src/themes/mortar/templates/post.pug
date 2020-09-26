@@ -3,32 +3,33 @@ html(lang="en")
   head
     title!=attributes.title
     meta(name="description", content=attributes.description)
-    meta(property="og:url", content!=siteUrl + "/" + path)
+    meta(property="og:url", content!=siteConfig.url + "/" + path)
     meta(property="og:type", content="article")
     meta(property="og:title", content=attributes.title)
     meta(property="og:description", content=attributes.description)
     if attributes.featuredImage
       meta(property="og:image", content=attributes.featuredImage)
     meta(property="article:published_time", content!=(new Date(Date.parse(attributes.date))).toISOString())
-    meta(property="article:author", content=author)
-    meta(property="twitter:site", content=twitterHandle)
+    meta(property="article:author", content=seoConfig.author)
+    meta(property="twitter:site", content=socialConfig.twitter)
     meta(property="twitter:card", content="summary_large_image")
     if attributes.featuredImage
       meta(name="twitter:image", content=attributes.featuredImage)
     meta(name="twitter:url", content=siteUrl + "/" + path)
     meta(name="twitter:description", content=attributes.description)
     meta(name="twitter:title", content=attributes.title)
-    include includes/head.pug
+    include template-parts/head.pug
   body
     main.content
-      include includes/nav.pug
+      include template-parts/nav.pug
       article.article-page--wrapper
         div.article--header
           h1=attributes.title
-          time(datetime=(new Date(Date.parse(attributes.date))).toISOString(), pubdate="pubdate")="Posted on " + attributes.date
+          include mixins/time.pug
+            +time(attributes.date)
         div.article--content
           | !{body}
       if !nextPost
-        include includes/footer.pug
+        include template-parts/footer.pug
     if nextPost
-      include includes/next-post.pug
+      include template-parts/next-post.pug

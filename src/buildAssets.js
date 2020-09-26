@@ -2,11 +2,11 @@ const config = require("../config");
 const fs = require("fs");
 const colors = require("colors");
 
-const { outdir } = config;
+const { outdir, theme } = config;
 
 function buildAssets() {
   const stylesheet = fs.readFileSync(
-    __dirname + "/assets/css/style.css",
+    __dirname + `/themes/${theme}/assets/css/style.css`,
     "utf8"
   );
 
@@ -24,7 +24,10 @@ function buildAssets() {
     });
   }
 
-  const jsBundle = fs.readFileSync(__dirname + "/assets/js/index.js", "utf8");
+  const jsBundle = fs.readFileSync(
+    __dirname + `/themes/${theme}/assets/js/index.js`,
+    "utf8"
+  );
 
   if (jsBundle) {
     if (!fs.existsSync(`${outdir}/js`)) {

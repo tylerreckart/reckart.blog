@@ -4,34 +4,27 @@ const path = require("path");
 const pug = require("pug");
 const colors = require("colors");
 
-const renderHomepage = pug.compileFile(
-  path.join(__dirname, "templates/home.pug")
-);
-
 const {
   outdir,
-  siteName,
-  siteIcon,
-  siteIntro,
-  author,
-  description,
-  title,
-  twitterHandle,
+  theme,
+  siteConfig,
+  seoConfig,
+  socialConfig,
 } = config;
 
-function buildHomepage(posts) {
-  const siteConfig = {
-    author,
-    title,
-    siteName,
-    siteIcon,
-    description,
-    siteIntro,
-    twitterHandle,
-    ...posts,
-  };
+const renderHomepage = pug.compileFile(
+  path.join(__dirname, `themes/${theme}/templates/home.pug`)
+);
 
-  fs.writeFile(`${outdir}/index.html`, renderHomepage(siteConfig), (error) => {
+function buildHomepage(posts) {
+  const homepage = renderHomepage({
+    ...posts,
+    siteConfig,
+    seoConfig,
+    socialConfig,
+  });
+
+  fs.writeFile(`${outdir}/index.html`, homepage, (error) => {
     if (error) {
       throw error;
     }

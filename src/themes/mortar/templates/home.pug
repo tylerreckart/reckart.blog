@@ -1,0 +1,19 @@
+doctype html
+html(lang="en")
+  head
+    title=seoConfig.title
+    meta(name="description", content=seoConfig.description)
+    include template-parts/head.pug
+  body
+    main.content
+      include template-parts/nav.pug
+      include template-parts/intro.pug
+      each post in posts
+        article
+          div.article--header
+            a(href=post.path) #[h2=post.attributes.title]
+            include mixins/time.pug
+              +time(post.attributes.date)
+          div.article--content
+            | !{post.body}
+      include template-parts/footer.pug

@@ -4,9 +4,15 @@ const path = require("path");
 const pug = require("pug");
 const colors = require("colors");
 
-const renderPage = pug.compileFile(path.join(__dirname, "templates/page.pug"));
+const {
+  outdir,
+  theme,
+  siteConfig,
+  seoConfig,
+  socialConfig,
+} = config;
 
-const { outdir, siteName, author, twitterHandle, siteIcon } = config;
+const renderPage = pug.compileFile(path.join(__dirname, `themes/${theme}/templates/page.pug`));
 
 function buildPages(pages) {
   pages.forEach((page) => {
@@ -20,10 +26,9 @@ function buildPages(pages) {
       `${outdir}/${page.path}/index.html`,
       renderPage({
         ...page,
-        siteName,
-        author,
-        siteIcon,
-        twitterHandle,
+        siteConfig,
+        seoConfig,
+        socialConfig,
       }),
       (error) => {
         if (error) {

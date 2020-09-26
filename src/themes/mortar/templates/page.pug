@@ -3,13 +3,13 @@ html(lang="en")
   head
     title=attributes.title
     meta(name="description", content=attributes.description)
-    include includes/head.pug
+    include template-parts/head.pug
   body
     main.content
-      include includes/nav.pug
+      include template-parts/nav.pug
       article.page--wrapper
         div.page--header
           h1=attributes.title
         div.page--content
           | !{body}
-      include includes/footer.pug
+      include template-parts/footer.pug

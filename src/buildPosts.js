@@ -4,9 +4,15 @@ const path = require("path");
 const pug = require("pug");
 const colors = require("colors");
 
-const renderPost = pug.compileFile(path.join(__dirname, "templates/post.pug"));
+const {
+  outdir,
+  theme,
+  siteConfig,
+  seoConfig,
+  socialConfig
+} = config;
 
-const { outdir, author, siteName, siteIcon, siteUrl, twitterHandle } = config;
+const renderPost = pug.compileFile(path.join(__dirname, `themes/${theme}/templates/post.pug`));
 
 function generateNextPost(post) {
   if (!post) {
@@ -29,13 +35,11 @@ function generateNextPost(post) {
 function buildPosts(posts) {
   const remappedPosts = posts.map((post, index) => {
     return {
-      siteName,
-      siteIcon,
-      siteUrl,
-      twitterHandle,
-      author,
       ...post,
       nextPost: generateNextPost(posts[index + 1]),
+      siteConfig,
+      seoConfig,
+      socialConfig,
     };
   });
 
