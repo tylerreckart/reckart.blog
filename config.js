@@ -20,6 +20,9 @@ const config = {
   socialConfig: {
     twitter: "@tylerreckart",
   },
+  integrations: {
+    gaTrackingId: "UA-70418516-1",
+  }
 };
 
 module.exports = config;

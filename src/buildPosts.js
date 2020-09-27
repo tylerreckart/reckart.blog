@@ -7,9 +7,6 @@ const colors = require("colors");
 const {
   outdir,
   theme,
-  siteConfig,
-  seoConfig,
-  socialConfig
 } = config;
 
 const renderPost = pug.compileFile(path.join(__dirname, `themes/${theme}/templates/post.pug`));
@@ -36,10 +33,8 @@ function buildPosts(posts) {
   const remappedPosts = posts.map((post, index) => {
     return {
       ...post,
+      ...config,
       nextPost: generateNextPost(posts[index + 1]),
-      siteConfig,
-      seoConfig,
-      socialConfig,
     };
   });
 

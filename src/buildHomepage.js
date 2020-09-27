@@ -6,10 +6,7 @@ const colors = require("colors");
 
 const {
   outdir,
-  theme,
-  siteConfig,
-  seoConfig,
-  socialConfig,
+  theme
 } = config;
 
 const renderHomepage = pug.compileFile(
@@ -19,9 +16,7 @@ const renderHomepage = pug.compileFile(
 function buildHomepage(posts) {
   const homepage = renderHomepage({
     ...posts,
-    siteConfig,
-    seoConfig,
-    socialConfig,
+    ...config,
   });
 
   fs.writeFile(`${outdir}/index.html`, homepage, (error) => {

@@ -7,9 +7,6 @@ const colors = require("colors");
 const {
   outdir,
   theme,
-  siteConfig,
-  seoConfig,
-  socialConfig,
 } = config;
 
 const renderPage = pug.compileFile(path.join(__dirname, `themes/${theme}/templates/page.pug`));
@@ -26,9 +23,7 @@ function buildPages(pages) {
       `${outdir}/${page.path}/index.html`,
       renderPage({
         ...page,
-        siteConfig,
-        seoConfig,
-        socialConfig,
+        ...config,
       }),
       (error) => {
         if (error) {

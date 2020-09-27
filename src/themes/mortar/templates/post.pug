@@ -1,3 +1,4 @@
+include mixins/time.pug
 doctype html
 html(lang="en")
   head
@@ -25,8 +26,7 @@ html(lang="en")
       article.article-page--wrapper
         div.article--header
           h1=attributes.title
-          include mixins/time.pug
-            +time(attributes.date)
+          +time(attributes.date)
         div.article--content
           | !{body}
       if !nextPost
