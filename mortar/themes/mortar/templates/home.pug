@@ -2,8 +2,14 @@ include mixins/time.pug
 doctype html
 html(lang="en")
   head
-    title=seoConfig.title
-    meta(name="description", content=seoConfig.description)
+    if seoConfig.title
+      title=seoConfig.title
+    else
+      title=""
+    if seoConfig.description
+      meta(name="description", content=seoConfig.description)
+    else
+      meta(name="description", content="")
     include template-parts/head.pug
   body
     main.content

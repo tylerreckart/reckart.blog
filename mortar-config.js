@@ -22,7 +22,7 @@ const config = {
   },
   integrations: {
     gaTrackingId: "UA-70418516-2",
-  }
+  },
 };
 
 module.exports = config;

@@ -2,21 +2,27 @@ include mixins/time.pug
 doctype html
 html(lang="en")
   head
-    title!=attributes.title
+    if seoConfig.author
+      title!=attributes.title + " | " + seoConfig.author
+    else
+      title=attributes.title
     meta(name="description", content=attributes.description)
-    meta(property="og:url", content!=siteConfig.url + "/" + path)
+    if siteConfig.url
+      meta(property="og:url", content!=siteConfig.url + "/" + path)
     meta(property="og:type", content="article")
     meta(property="og:title", content=attributes.title)
     meta(property="og:description", content=attributes.description)
+    meta(property="article:published_time", content!=toISODate(attributes.date))
+    if seoConfig.author
+      meta(property="article:author", content=seoConfig.author)
+    meta(property="twitter:card", content="summary_large_image")
+    if socialConfig.twitter
+      meta(property="twitter:site", content=socialConfig.twitter)
     if attributes.featuredImage
       meta(property="og:image", content=attributes.featuredImage)
-    meta(property="article:published_time", content!=(new Date(Date.parse(attributes.date))).toISOString())
-    meta(property="article:author", content=seoConfig.author)
-    meta(property="twitter:site", content=socialConfig.twitter)
-    meta(property="twitter:card", content="summary_large_image")
-    if attributes.featuredImage
       meta(name="twitter:image", content=attributes.featuredImage)
-    meta(name="twitter:url", content=siteUrl + "/" + path)
+    if siteConfig.url
+      meta(name="twitter:url", content=siteUrl + "/" + path)
     meta(name="twitter:description", content=attributes.description)
     meta(name="twitter:title", content=attributes.title)
     include template-parts/head.pug

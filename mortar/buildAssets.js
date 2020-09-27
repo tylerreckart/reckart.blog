@@ -1,4 +1,4 @@
-const config = require("../config");
+const config = require("../mortar-config");
 const fs = require("fs");
 const colors = require("colors");
 const minify = require('@node-minify/core');

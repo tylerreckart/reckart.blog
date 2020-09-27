@@ -1,0 +1,7 @@
+-
+  function toISODate(date) {
+    return (new Date(Date.parse(date))).toISOString();
+  }
+
+mixin time(date)
+  time(datetime!=toISODate(date), pubdate="pubdate")="Posted on " + date

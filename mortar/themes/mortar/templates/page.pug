@@ -1,7 +1,10 @@
 doctype html
 html(lang="en")
   head
-    title=attributes.title
+    if seoConfig.author
+      title!=attributes.title + " | " + seoConfig.author
+    else
+      title=attributes.title
     meta(name="description", content=attributes.description)
     include template-parts/head.pug
   body
