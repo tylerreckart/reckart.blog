@@ -11,6 +11,14 @@ const {
 
 const renderPost = pug.compileFile(path.join(__dirname, `themes/${theme}/templates/post.pug`));
 
+/**
+ * Build the content for the `nextPost` property that allows previous posts
+ * to be directly linked to on post pages.
+ *
+ * @param {object} post - The post to be parsed.
+ *
+ * @returns {object} The formatted post.
+ */
 function generateNextPost(post) {
   if (!post) {
     return null;
@@ -29,6 +37,12 @@ function generateNextPost(post) {
   };
 }
 
+/**
+ * Take the post content, render the HTML markup and write the file to the
+ * target directory.
+ *
+ * @param {array} posts - The posts to be rendered.
+ */
 function buildPosts(posts) {
   const remappedPosts = posts.map((post, index) => {
     return {

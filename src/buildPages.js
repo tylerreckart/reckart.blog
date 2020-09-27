@@ -11,6 +11,12 @@ const {
 
 const renderPage = pug.compileFile(path.join(__dirname, `themes/${theme}/templates/page.pug`));
 
+/**
+ * Take the page content, render the HTML markup and write the file to the
+ * target directory.
+ *
+ * @param {array} pages - The pages to be rendered.
+ */
 function buildPages(pages) {
   pages.forEach((page) => {
     // Check to see if the current post directory has been built previously.

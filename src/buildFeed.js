@@ -7,6 +7,11 @@ const { outdir, siteConfig, seoConfig } = config;
 const { url } = siteConfig;
 const { title, description } = seoConfig;
 
+/**
+ * Build the RSS and JSON feeds and write the files to the target directory.
+ *
+ * @param {array} posts - The posts to be formatted.
+ */
 function buildFeed(posts) {
   const feedJSON = {
     rss: [

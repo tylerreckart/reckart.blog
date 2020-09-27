@@ -1,6 +1,9 @@
 const config = require("../config");
 const fs = require("fs");
-const convertMarkdownToHTML = require("./convertMarkdown");
+const {
+  convertPostContent,
+  convertPageContent,
+} = require("./convertMarkdown");
 const buildAssets = require("./buildAssets");
 const buildPages = require("./buildPages");
 const buildPosts = require("./buildPosts");
@@ -15,30 +18,23 @@ if (!fs.existsSync(outdir)) {
   fs.mkdirSync(outdir);
 }
 
-function convertPostContent(post) {
-  return convertMarkdownToHTML("posts", post.split(".")[0]);
-}
-
-function convertPageContent(page) {
-  return convertMarkdownToHTML("pages", page.split(".")[0]);
-}
-
-function sortPostsByDate(a, b) {
-  return Date.parse(a.attributes.date) < Date.parse(b.attributes.date) ? 1 : -1;
-}
-
-buildAssets();
-
+// Retrieve markdown or text files in the `posts` directory and convert the
+// content to a JSON blob sorted by the date of publication and rendered by the
+// templating system.
 const posts = fs
   .readdirSync(__dirname + "/../posts")
-  .filter((post) => post.includes(".md"))
+  .filter((post) => post.includes(".md") || post.includes(".txt"))
   .map(convertPostContent)
-  .sort(sortPostsByDate);
+  .sort((a, b) =>
+    Date.parse(a.attributes.date) < Date.parse(b.attributes.date) ? 1 : -1
+  );
 
+// Retrieve files in the `pages` directory and convert the content to a JSON
+// that can be rendered by the templating system.
+const pages = fs.readdirSync(__dirname + "/../pages").map(convertPageContent);
+
+buildAssets();
 buildHomepage({ posts });
 buildPosts(posts);
 buildFeed(posts);
-
-const pages = fs.readdirSync(__dirname + "/../pages").map(convertPageContent);
-
 buildPages(pages);

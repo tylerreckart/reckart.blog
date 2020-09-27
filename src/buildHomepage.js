@@ -13,6 +13,11 @@ const renderHomepage = pug.compileFile(
   path.join(__dirname, `themes/${theme}/templates/home.pug`)
 );
 
+/**
+ * Render the homepage.
+ *
+ * @param {array} posts - The posts to be rendered.
+ */
 function buildHomepage(posts) {
   const homepage = renderHomepage({
     ...posts,

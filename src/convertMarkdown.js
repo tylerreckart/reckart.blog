@@ -18,6 +18,15 @@ marked.setOptions({
   xhtml: false,
 });
 
+/**
+ * Retrieve the content of a markdown file in a specified directory and convert
+ * the content into a JSON blob that can be rendered by the templating system.
+ *
+ * @param {string} dir - The target directory.
+ * @param {string} path - The target file name.
+ *
+ * @returns {object} The converted content.
+ */
 function convertMarkdownToHTML(dir, path) {
   const data = fs.readFileSync(__dirname + `/../${dir}/${path}.md`, "utf8");
   const content = fm(data);
@@ -29,4 +38,29 @@ function convertMarkdownToHTML(dir, path) {
   };
 }
 
-module.exports = convertMarkdownToHTML;
+/**
+ * Convert markdown files in the `posts` directory to HTML templates.
+ *
+ * @param {string} post - The post to be converted.
+ *
+ * @returns {object} The converted post content.
+ */
+function convertPostContent(post) {
+  return convertMarkdownToHTML("posts", post.split(".")[0]);
+}
+
+/**
+ * Convert markdown files in the `pages` directory to HTML templates.
+ *
+ * @param {string} page - The page to be converted.
+ *
+ * @returns {object} The converted page content.
+ */
+function convertPageContent(page) {
+  return convertMarkdownToHTML("pages", page.split(".")[0]);
+}
+
+module.exports = {
+  convertPostContent,
+  convertPageContent,
+};
