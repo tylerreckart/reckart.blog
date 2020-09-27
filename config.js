@@ -21,7 +21,7 @@ const config = {
     twitter: "@tylerreckart",
   },
   integrations: {
-    gaTrackingId: "UA-70418516-1",
+    gaTrackingId: "UA-70418516-2",
   }
 };
 
