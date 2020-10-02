@@ -5,7 +5,7 @@ const colors = require("colors");
 
 const { outdir, siteConfig, seoConfig } = config;
 const { url } = siteConfig;
-const { title, description } = seoConfig;
+const { title, author, description } = seoConfig;
 
 /**
  * Build the RSS and JSON feeds and write the files to the target directory.
@@ -13,6 +13,41 @@ const { title, description } = seoConfig;
  * @param {array} posts - The posts to be formatted.
  */
 function buildFeed(posts) {
+  buildJSON(posts);
+  buildRSS(posts);
+}
+
+function buildJSON(posts) {
+  const feedJSON = {
+    version: "https://jsonfeed.org/version/1",
+    title,
+    description,
+    "home_page_url": url,
+    "feed_url": `${url}/feed.json`,
+    author: {
+      name: author,
+      url: url,
+    },
+    items: [
+      ...posts.map((post) => ({
+        id: `${url}/${post.path}`,
+        url: `${url}/${post.path}`,
+        title: post.attributes.title,
+        content_html: post.body,
+      }))
+    ],
+  };
+  
+  fs.writeFile(`${outdir}/feed.json`, JSON.stringify(feedJSON), (error) => {
+    if (error) {
+      throw error;
+    }
+
+    console.log(`${"json feed =>".green} feed.json built`);
+  });
+}
+
+function buildRSS(posts) {
   const feedJSON = {
     rss: [
       {
@@ -57,14 +92,6 @@ function buildFeed(posts) {
       },
     ],
   };
-
-  fs.writeFile(`${outdir}/feed.json`, JSON.stringify(feedJSON), (error) => {
-    if (error) {
-      throw error;
-    }
-
-    console.log(`${"json feed =>".green} feed.json built`);
-  });
 
   fs.writeFile(`${outdir}/rss.xml`, xml(feedJSON), (error) => {
     if (error) {
