@@ -1,13 +1,9 @@
-const config = require("../mortar-config");
+const config = require("../site-config");
 const fs = require("fs");
 const path = require("path");
 const pug = require("pug");
-const colors = require("colors");
 
-const {
-  outdir,
-  theme
-} = config;
+const { outdir, theme } = config;
 
 const renderHomepage = pug.compileFile(
   path.join(__dirname, `themes/${theme}/templates/home.pug`)

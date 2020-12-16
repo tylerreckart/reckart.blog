@@ -1,9 +1,6 @@
-const config = require("../mortar-config");
+const config = require("../site-config");
 const fs = require("fs");
-const {
-  convertPostContent,
-  convertPageContent,
-} = require("./convertMarkdown");
+const { convertPostContent, convertPageContent } = require("./convertMarkdown");
 const buildAssets = require("./buildAssets");
 const buildPages = require("./buildPages");
 const buildPosts = require("./buildPosts");

@@ -1,9 +1,9 @@
-const config = require("../mortar-config");
+const config = require("../site-config");
 const fs = require("fs");
 const colors = require("colors");
-const minify = require('@node-minify/core');
-const cleanCSS = require('@node-minify/clean-css');
-const uglifyES = require('@node-minify/uglify-es');
+const minify = require("@node-minify/core");
+const cleanCSS = require("@node-minify/clean-css");
+const uglifyES = require("@node-minify/uglify-es");
 
 const { outdir, theme } = config;
 
@@ -20,9 +20,9 @@ function buildAssets() {
       if (err) {
         throw err;
       }
-  
+
       console.log(`${"asset =>".magenta} styles.css built`);
-    }
+    },
   });
 
   if (!fs.existsSync(`${outdir}/js`)) {
@@ -37,9 +37,9 @@ function buildAssets() {
       if (err) {
         throw err;
       }
-  
+
       console.log(`${"asset =>".magenta} bundle.js built`);
-    }
+    },
   });
 }
 

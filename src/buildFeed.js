@@ -1,4 +1,4 @@
-const config = require("../mortar-config");
+const config = require("../site-config");
 const fs = require("fs");
 const xml = require("xml");
 const colors = require("colors");
@@ -22,8 +22,8 @@ function buildJSON(posts) {
     version: "https://jsonfeed.org/version/1",
     title,
     description,
-    "home_page_url": url,
-    "feed_url": `${url}/feed.json`,
+    home_page_url: url,
+    feed_url: `${url}/feed.json`,
     author: {
       name: author,
       url: url,
@@ -34,10 +34,10 @@ function buildJSON(posts) {
         url: `${url}/${post.path}`,
         title: post.attributes.title,
         content_html: post.body,
-      }))
+      })),
     ],
   };
-  
+
   fs.writeFile(`${outdir}/feed.json`, JSON.stringify(feedJSON), (error) => {
     if (error) {
       throw error;

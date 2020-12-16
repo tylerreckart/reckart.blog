@@ -1,15 +1,14 @@
-const config = require("../mortar-config");
+const config = require("../site-config");
 const fs = require("fs");
 const path = require("path");
 const pug = require("pug");
 const colors = require("colors");
 
-const {
-  outdir,
-  theme,
-} = config;
+const { outdir, theme } = config;
 
-const renderPage = pug.compileFile(path.join(__dirname, `themes/${theme}/templates/page.pug`));
+const renderPage = pug.compileFile(
+  path.join(__dirname, `themes/${theme}/templates/page.pug`)
+);
 
 /**
  * Take the page content, render the HTML markup and write the file to the
