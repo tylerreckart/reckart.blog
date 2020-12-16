@@ -1,6 +1,6 @@
 ---
 date: "Decenber 16, 2020"
-title: "Perpetual Motion: The Jaeger-LeCoultre Atmos Clock"
+title: "Perpetual Motion: The Atmos Clock"
 description: "The Jaeger-LeCoultre (or LeCoultre & Cie as it was marketed in North America in the mid twentieth century) Atmos is a unique member of the horological pantheon. The Atmos in my personal collection and is an excellent example of how the design of the clock contributes to its longevity; having left the factory in the mid 60s."
 ---
 
