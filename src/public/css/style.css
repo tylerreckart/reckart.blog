@@ -24,7 +24,7 @@ body.dark {
 }
 
 .gallery--grid {
-  width: 940px;
+  max-width: 900px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -33,22 +33,22 @@ body.dark {
 
 .grid--item {
   border-radius: 8px;
-  margin-bottom: 20px;
+  margin: 10px;
 }
 
 .threeup {
-  width: 300px;
-  height: 200px;
+  flex-grow: 1;
+  max-height: 186.666666px;
 }
 
 .twoup {
-  width: 460px;
-  height: 306.666666px;
+  flex: 1;
+  max-height: 286.666666px;
 }
 
 .oneup {
-  width: 940px;
-  height: 626.666666px;
+  flex: 1;
+  width: 100%;
 }
 
 .dark-mode--btn--wrapper {

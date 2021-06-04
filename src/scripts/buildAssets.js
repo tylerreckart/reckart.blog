@@ -21,7 +21,7 @@ function buildAssets() {
         throw err;
       }
 
-      console.log(`${"[asset:styles]".magenta} built`);
+      console.log(`${"[asset:styles.css]".magenta} built`);
     },
   });
 
@@ -38,7 +38,20 @@ function buildAssets() {
         throw err;
       }
 
-      console.log(`${"[asset:bundle]".magenta} built`);
+      console.log(`${"[asset:bundle.js]".magenta} built`);
+    },
+  });
+
+  minify({
+    compressor: uglifyES,
+    input: __dirname + "/../public/js/gallery.js",
+    output: `${outdir}/js/gallery.js`,
+    callback: (err, min) => {
+      if (err) {
+        throw err;
+      }
+
+      console.log(`${"[asset:gallery.js]".magenta} built`);
     },
   });
 }
