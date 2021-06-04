@@ -1,11 +1,11 @@
-const config = require("../site-config");
+const path = require("path");
 const fs = require("fs");
 const colors = require("colors");
 const minify = require("@node-minify/core");
 const cleanCSS = require("@node-minify/clean-css");
 const uglifyES = require("@node-minify/uglify-es");
 
-const { outdir, theme } = config;
+const outdir = path.resolve(__dirname + "../../../build");
 
 function buildAssets() {
   if (!fs.existsSync(`${outdir}/css`)) {
@@ -14,14 +14,14 @@ function buildAssets() {
 
   minify({
     compressor: cleanCSS,
-    input: __dirname + `/themes/${theme}/assets/css/style.css`,
+    input: __dirname + "/../public/css/style.css",
     output: `${outdir}/css/styles.css`,
     callback: (err, min) => {
       if (err) {
         throw err;
       }
 
-      console.log(`${"asset =>".magenta} styles.css built`);
+      console.log(`${"[asset:styles]".magenta} built`);
     },
   });
 
@@ -31,14 +31,14 @@ function buildAssets() {
 
   minify({
     compressor: uglifyES,
-    input: __dirname + `/themes/${theme}/assets/js/index.js`,
+    input: __dirname + "/../public/js/index.js",
     output: `${outdir}/js/bundle.js`,
     callback: (err, min) => {
       if (err) {
         throw err;
       }
 
-      console.log(`${"asset =>".magenta} bundle.js built`);
+      console.log(`${"[asset:bundle]".magenta} built`);
     },
   });
 }

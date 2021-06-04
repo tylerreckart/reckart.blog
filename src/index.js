@@ -1,13 +1,17 @@
-const config = require("../site-config");
+const path = require("path");
 const fs = require("fs");
-const { convertPostContent, convertPageContent } = require("./convertMarkdown");
-const buildAssets = require("./buildAssets");
-const buildPages = require("./buildPages");
-const buildPosts = require("./buildPosts");
-const buildHomepage = require("./buildHomepage");
-const buildFeed = require("./buildFeed");
+const {
+  convertPostContent,
+  convertPageContent,
+} = require("./scripts/convertMarkdown");
+const buildAssets = require("./scripts/buildAssets");
+const buildPages = require("./scripts/buildPages");
+const buildPosts = require("./scripts/buildPosts");
+const buildHomepage = require("./scripts/buildHomepage");
+const buildGallery = require("./scripts/buildGallery");
+const buildFeed = require("./scripts/buildFeed");
 
-const { outdir } = config;
+const outdir = path.resolve(__dirname + "../../build");
 
 // Check to see if the `build` directory exists.
 if (!fs.existsSync(outdir)) {
@@ -30,8 +34,13 @@ const posts = fs
 // that can be rendered by the templating system.
 const pages = fs.readdirSync(__dirname + "/../pages").map(convertPageContent);
 
+// Retrieve files in the `photos` directory and convert the content to a JSON
+// blob that can be rendered by the templating system.
+const photos = JSON.parse(fs.readFileSync(__dirname + "/../photos/map.json"));
+
 buildAssets();
 buildHomepage({ posts });
+buildGallery(photos);
 buildPosts(posts);
 buildFeed(posts);
 buildPages(pages);

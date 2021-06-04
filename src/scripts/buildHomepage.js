@@ -1,12 +1,12 @@
-const config = require("../site-config");
+const config = require("../../site-config");
 const fs = require("fs");
 const path = require("path");
 const pug = require("pug");
 
-const { outdir, theme } = config;
+const outdir = path.resolve(__dirname + "../../../build");
 
 const renderHomepage = pug.compileFile(
-  path.join(__dirname, `themes/${theme}/templates/home.pug`)
+  path.join(__dirname, "../templates/home.pug")
 );
 
 /**
@@ -25,7 +25,7 @@ function buildHomepage(posts) {
       throw error;
     }
 
-    console.log(`${"homepage =>".red} index.html built`);
+    console.log(`${"[page:home]".red} built`);
   });
 }
 

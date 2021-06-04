@@ -1,13 +1,13 @@
-const config = require("../site-config");
+const config = require("../../site-config");
 const fs = require("fs");
 const path = require("path");
 const pug = require("pug");
 const colors = require("colors");
 
-const { outdir, theme } = config;
+const outdir = path.resolve(__dirname + "../../../build");
 
 const renderPage = pug.compileFile(
-  path.join(__dirname, `themes/${theme}/templates/page.pug`)
+  path.join(__dirname, "../templates/page.pug")
 );
 
 /**
@@ -35,7 +35,7 @@ function buildPages(pages) {
           throw error;
         }
 
-        console.log(`${"page =>".yellow} ${page.path} built`);
+        console.log(`${`[page:${page.path}]`.red} built`);
       }
     );
   });

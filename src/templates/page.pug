@@ -1,8 +1,8 @@
 doctype html
 html(lang="en")
   head
-    if seoConfig.author
-      title!=attributes.title + " | " + seoConfig.author
+    if seo.author
+      title!=attributes.title + " | " + seo.author
     else
       title=attributes.title
     meta(name="description", content=attributes.description)

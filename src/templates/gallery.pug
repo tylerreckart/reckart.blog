@@ -1,0 +1,17 @@
+doctype html
+html(lang="en")
+  head
+    if seo.author
+      title!="Gallery | " + seo.author
+    else
+      title=attributes.title
+  meta(name="description", content="")
+  include template-parts/head.pug
+  body
+  main.gallery--content
+    include template-parts/nav.pug
+    article.page--wrapper
+    div.gallery--grid
+      each photo in photos
+          img(class="grid--item " + photo.class, src=photo.src, alt=photo.alt)
+    include template-parts/footer.pug

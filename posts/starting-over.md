@@ -34,12 +34,12 @@ include mixins/time.pug
 doctype html
 html(lang="en")
   head
-    if seoConfig.title
-      title=seoConfig.title
+    if seo.title
+      title=seo.title
     else
       title=""
-    if seoConfig.description
-      meta(name="description", content=seoConfig.description)
+    if seo.description
+      meta(name="description", content=seo.description)
     else
       meta(name="description", content="")
     include template-parts/head.pug

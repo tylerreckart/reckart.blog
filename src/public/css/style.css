@@ -23,6 +23,34 @@ body.dark {
   color: #eee;
 }
 
+.gallery--grid {
+  width: 940px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.grid--item {
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.threeup {
+  width: 300px;
+  height: 200px;
+}
+
+.twoup {
+  width: 460px;
+  height: 306.666666px;
+}
+
+.oneup {
+  width: 940px;
+  height: 626.666666px;
+}
+
 .dark-mode--btn--wrapper {
   display: flex;
   flex-direction: row;
@@ -265,11 +293,17 @@ body.dark .next-post--body {
   color: #aaa;
 }
 
+header {
+  max-width: 620px;
+  margin: 0 auto;
+}
+
 footer {
   font-size: 16px;
   color: #777;
-  width: 100%;
   margin: 24px 0;
+  max-width: 620px;
+  margin: 0 auto;
 }
 
 footer > p {

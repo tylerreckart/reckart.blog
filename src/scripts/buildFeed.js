@@ -1,11 +1,14 @@
-const config = require("../site-config");
+const path = require("path");
+const config = require("../../site-config");
 const fs = require("fs");
 const xml = require("xml");
 const colors = require("colors");
 
-const { outdir, siteConfig, seoConfig } = config;
-const { url } = siteConfig;
-const { title, author, description } = seoConfig;
+const { site, seo } = config;
+const { url } = site;
+const { title, author, description } = seo;
+
+const outdir = path.resolve(__dirname + "../../../build");
 
 /**
  * Build the RSS and JSON feeds and write the files to the target directory.
@@ -43,7 +46,7 @@ function buildJSON(posts) {
       throw error;
     }
 
-    console.log(`${"json feed =>".green} feed.json built`);
+    console.log(`${"[feed:json]".green} built`);
   });
 }
 
@@ -98,7 +101,7 @@ function buildRSS(posts) {
       throw error;
     }
 
-    console.log(`${"rss feed =>".green} rss.xml built`);
+    console.log(`${"[feed.xml]".green} built`);
   });
 }
 

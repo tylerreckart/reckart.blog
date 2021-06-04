@@ -28,7 +28,7 @@ marked.setOptions({
  * @returns {object} The converted content.
  */
 function convertMarkdownToHTML(dir, path) {
-  const data = fs.readFileSync(__dirname + `/../${dir}/${path}.md`, "utf8");
+  const data = fs.readFileSync(__dirname + `/../../${dir}/${path}.md`, "utf8");
   const content = fm(data);
 
   return {

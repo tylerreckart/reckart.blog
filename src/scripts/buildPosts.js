@@ -1,12 +1,12 @@
-const config = require("../site-config");
+const config = require("../../site-config");
 const fs = require("fs");
 const path = require("path");
 const pug = require("pug");
 
-const { outdir, theme } = config;
+const outdir = path.resolve(__dirname + "../../../build");
 
 const renderPost = pug.compileFile(
-  path.join(__dirname, `themes/${theme}/templates/post.pug`)
+  path.join(__dirname, "../templates/post.pug")
 );
 
 /**
@@ -63,7 +63,7 @@ function buildPosts(posts) {
           throw error;
         }
 
-        console.log(`${"post =>".cyan} ${post.path} built`);
+        console.log(`${`[post:${post.path}]`.cyan} built`);
       }
     );
   });
