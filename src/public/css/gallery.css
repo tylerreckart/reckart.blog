@@ -1,0 +1,118 @@
+.gallery--grid {
+  max-width: 900px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.grid--item {
+  border-radius: 8px;
+  margin: 10px;
+}
+
+.oneup {
+  flex: 1;
+  width: 100%;
+}
+
+.twoup {
+  flex: 1;
+  max-height: 286.666666px;
+}
+
+.threeup {
+  flex-grow: 1;
+  max-height: 186.666666px;
+}
+
+.fadeIn {
+  animation: fadeIn 350ms linear;
+}
+
+@keyframes fadeIn {
+  0% {
+    background-color: rgba(0, 0, 0, 0);
+  }
+  100% {
+    background-color: rgba(0, 0, 0, 1);
+  }
+}
+
+.fadeOut {
+  animation: fadeOut 350ms linear;
+}
+
+@keyframes fadeOut {
+  0% {
+    background-color: rgba(0, 0, 0, 1);
+  }
+  100% {
+    background-color: rgba(0, 0, 0, 0);
+  }
+}
+
+.slideUp {
+  animation: slideUp 350ms linear;
+}
+
+@keyframes slideUp {
+  0% {
+    top: 200%;
+  }
+
+  100% {
+    top: 50%;
+  }
+}
+
+.slideDown {
+  animation: slideDown 350ms linear;
+}
+
+@keyframes slideDown {
+  0% {
+    top: 50%;
+  }
+
+  100% {
+    top: 200%;
+  }
+}
+
+.image--wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(100% - 100px);
+  width: fit-content;
+}
+
+.gallery--popup--image {
+  display: block;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 100%;
+}
+
+.close-btn--wrapper {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: red;
+  position: absolute;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  top: -20px;
+  right: -20px;
+}
+
+.close-btn--content {
+  display: block;
+  color: white;
+}
