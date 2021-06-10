@@ -6,7 +6,7 @@ description: "Among the many additions to TypeScript in its 4.3 release is the a
 
 Among the [many additions](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-4-3.html) to TypeScript in its 4.3 release is the ability to define which elements in a class can be given private property names, making them truly private at run-time. Properties, methods and accessors can all be given private names.
 
-```js
+```ts
 class Thing {
   #name = "";
 
@@ -40,7 +40,7 @@ const myThing = new Thing();
 myThing.name = "Ted Lasso";
 const jazzyName = myThing.publicMethod(); // "TED LASSO"
 myThing.#name;
-//          ~~~~~
+//      ~~~~~
 // error!
 // Property '#name' is not accessible
 // outside class 'Thing' because it has a private identifier.
