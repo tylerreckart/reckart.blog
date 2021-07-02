@@ -1,0 +1,24 @@
+include mixins/time.pug
+doctype html
+html(lang="en")
+  head
+    if seo.title
+      title=seo.title
+    else
+      title=""
+    if seo.description
+      meta(name="description", content=seo.description)
+    else
+      meta(name="description", content="")
+    include template-parts/head.pug
+  body
+    main.content
+      include template-parts/nav.pug
+      each post in posts
+        article
+          div.article--header
+            a(href="/blog/" + post.path) #[h2=post.attributes.title]
+            +time(post.attributes.date)
+          div.article--content
+            | !{post.body}
+      include template-parts/footer.pug

@@ -1,4 +1,3 @@
-include mixins/time.pug
 doctype html
 html(lang="en")
   head
@@ -11,15 +10,17 @@ html(lang="en")
     else
       meta(name="description", content="")
     include template-parts/head.pug
-  body
+  body.home
     main.content
       include template-parts/nav.pug
+      img.portrait(src="https://s3.amazonaws.com/reckart.blog-assets/6M6A7607-web.jpg", alt="A photo of Tyler with his son.", width="100%")
       include template-parts/intro.pug
+      p #[span(role='img' aria-label='memo') &#x1F4DD;] From the #[a(href='/blog') blog]
       each post in posts
-        article
-          div.article--header
-            a(href=post.path) #[h2=post.attributes.title]
-            +time(post.attributes.date)
-          div.article--content
-            | !{post.body}
-      include template-parts/footer.pug
+        a.article--preview-wrapper(href="/blog/" + post.path)
+          article.article--preview
+            div.article--preview-header
+              h3=post.attributes.title
+            div.article--preview-content
+              | !{post.body}
+    include template-parts/footer.pug

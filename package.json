@@ -1,10 +1,11 @@
 {
-  "name": "t-reck.art",
-  "version": "0.1.0",
+  "name": "reckart.blog",
+  "version": "1.2.0",
   "description": "",
   "main": "src/index.js",
   "scripts": {
-    "build": "node ./src/index.js"
+    "build": "node ./lib/index.js",
+    "dev:watch": "node ./lib/watch.js"
   },
   "author": "Tyler Reckart",
   "license": "ISC",
@@ -12,10 +13,15 @@
     "@node-minify/clean-css": "^6.1.0",
     "@node-minify/core": "^6.1.0",
     "@node-minify/uglify-es": "^6.1.0",
+    "chokidar": "^3.5.2",
     "colors": "^1.4.0",
+    "connect-livereload": "^0.6.1",
+    "express": "^4.17.1",
     "front-matter": "^4.0.2",
     "highlight.js": "^10.2.0",
+    "livereload": "^0.9.3",
     "marked": "^1.1.1",
+    "open": "^8.2.1",
     "pug": "^3.0.0",
     "xml": "^1.0.1"
   }

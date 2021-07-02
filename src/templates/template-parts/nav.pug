@@ -1,6 +1,9 @@
 header
   nav
-    a(href="/")
+    a.site--head(href="/")
       img(src=site.icon, width="32px", height="32px")
       h3=site.name
-    include dark-mode-btn.pug
+    div.nav--link-container(id="nav")
+      a(href="/", class="nav--link home") Home
+      a(href="/blog", class="nav--link blog") Blog
+      a(href="/about", class="nav--link about") About
