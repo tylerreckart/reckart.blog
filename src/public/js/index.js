@@ -13,7 +13,7 @@
     const currentPage = [].filter.call(nav.children, (el) =>
       [].includes.call(el.classList, path !== "/" ? path : "home")
     )[0];
-    console.log(currentPage);
+
     currentPage.classList.add("active");
   });
 })();
