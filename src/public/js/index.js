@@ -1,5 +1,5 @@
 (function () {
-  document.addEventListener("DOMContentLoaded", (event) => {
+  document.addEventListener("DOMContentLoaded", () => {
     const {
       location: { pathname },
     } = window;
