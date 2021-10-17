@@ -1,29 +1,16 @@
 .gallery--grid {
   max-width: 900px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
   justify-content: space-between;
+  max-height: 800px;
 }
 
-.grid--item {
+.gallery--item {
+  margin: 8px;
   border-radius: 8px;
-  margin: 10px;
-}
-
-.oneup {
-  flex: 1;
-  width: 100%;
-}
-
-.twoup {
-  flex: 1;
-  max-height: 286.666666px;
-}
-
-.threeup {
-  flex-grow: 1;
-  max-height: 186.666666px;
+  max-width: 33%;
 }
 
 .fadeIn {
