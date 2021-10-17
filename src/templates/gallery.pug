@@ -15,5 +15,5 @@ html(lang="en")
     article.page--wrapper
     div.gallery--grid
       each photo in photos
-          img(class="grid--item " + photo.class, src=photo.src, alt=photo.alt)
+          div!=photo
     include template-parts/footer.pug
