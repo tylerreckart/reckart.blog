@@ -12,7 +12,7 @@
     overlay.classList.add("fadeIn");
     setTimeout(() => {
       overlay.classList.remove("fadeIn");
-    }, 350);
+    }, 1000);
 
     return overlay;
   }
@@ -28,7 +28,7 @@
 
     setTimeout(() => {
       image.classList.remove("slideUp");
-    }, 350);
+    }, 1000);
 
     const imageStyleMap = {
       display: "block",
@@ -63,6 +63,12 @@
 
     if (value.includes("gallery--item")) {
       const { src } = target;
+
+      target.classList.add("dismissHoverState");
+      setTimeout(() => {
+        target.classList.remove("dismissHoverState");
+      }, 1000);
+
       const overlay = buildOverlay();
       buildImage(overlay, src);
       document.body.appendChild(overlay);

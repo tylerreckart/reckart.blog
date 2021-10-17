@@ -1,6 +1,7 @@
 #gallery--popup--overlay {
-  background-color: rgba(0, 0, o 0, 0.6);
-  backdrop-filter: blur(8px);
+  background-color: rgba(0, 0, 0, 0.4);
+  -webkit-backdrop-filter: blur(40px);
+  backdrop-filter: blur(40px);
   position: absolute;
   top: 0;
   left: 0;
@@ -9,6 +10,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 2000;
+  cursor: pointer;
 }
 
 .gallery--grid {
@@ -24,59 +27,77 @@
   margin: 8px;
   border-radius: 12px;
   max-width: 33%;
+  cursor: pointer;
+  transition: transform 300ms ease;
+}
+
+.gallery--item:hover {
+  transform: scale(1.25) rotate(-1deg);
+  z-index: 1000;
 }
 
 .fadeIn {
-  animation: fadeIn 350ms linear;
+  animation: fadeIn 500ms ease;
 }
 
 @keyframes fadeIn {
   0% {
     background-color: rgba(0, 0, 0, 0);
+    -webkit-backdrop-filter: blur(0px);
+    backdrop-filter: blur(0px);
+  }
+  50% {
+    -webkit-backdrop-filter: blur(40px);
+    backdrop-filter: blur(40px);
   }
   100% {
-    background-color: rgba(0, 0, 0, 1);
+    background-color: rgba(0, 0, 0, 0.4);
   }
 }
 
 .fadeOut {
-  animation: fadeOut 350ms linear;
+  animation: fadeOut 750ms ease;
 }
 
 @keyframes fadeOut {
   0% {
-    background-color: rgba(0, 0, 0, 1);
+    background-color: rgba(0, 0, 0, 0.4);
+    -webkit-backdrop-filter: blur(40px);
+    backdrop-filter: blur(40px);
   }
   100% {
     background-color: rgba(0, 0, 0, 0);
+    -webkit-backdrop-filter: blur(0px);
+    backdrop-filter: blur(0px);
   }
 }
 
 .slideUp {
-  animation: slideUp 350ms linear;
+  animation: slideUp 750ms ease;
 }
 
 @keyframes slideUp {
   0% {
-    top: 200%;
+    opacity: 0;
   }
-
   100% {
-    top: 50%;
+    opacity: 1;
   }
 }
 
 .slideDown {
-  animation: slideDown 350ms linear;
+  animation: slideDown 750ms ease;
 }
 
 @keyframes slideDown {
   0% {
+    opacity: 1;
     top: 50%;
   }
 
   100% {
-    top: 200%;
+    opacity: 0;
+    top: 60%;
   }
 }
 
@@ -87,6 +108,7 @@
   justify-content: center;
   height: calc(100% - 100px);
   width: fit-content;
+  cursor: default;
 }
 
 .gallery--popup--image {
@@ -95,6 +117,8 @@
   top: 50%;
   transform: translateY(-50%);
   height: 100%;
+  z-index: 2000;
+  opacity: 0;
 }
 
 .close-btn--wrapper {
