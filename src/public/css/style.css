@@ -52,6 +52,7 @@ a:hover {
 
 header {
   display: relative;
+  max-width: 620px;
 }
 
 .site--head {

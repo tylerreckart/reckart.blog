@@ -14,20 +14,6 @@
       overlay.classList.remove("fadeIn");
     }, 350);
 
-    const overlayStyleMap = {
-      "background-color": "rgba(0, 0, 0, 1)",
-      position: "absolute",
-      top: 0,
-      left: 0,
-      right: 0,
-      bottom: 0,
-      display: "flex",
-      "align-items": "center",
-      "justify-content": "center",
-    };
-
-    buildStyles(overlay, overlayStyleMap);
-
     return overlay;
   }
 
@@ -53,20 +39,7 @@
     };
 
     buildStyles(image, imageStyleMap);
-
     imageWrapper.appendChild(image);
-
-    const closeBtn = document.createElement("div");
-    closeBtn.classList.add("close-btn--wrapper");
-
-    const closeContent = document.createElement("span");
-    closeContent.innerHTML = "X";
-    closeContent.classList.add("close-btn--content");
-
-    closeBtn.appendChild(closeContent);
-
-    imageWrapper.appendChild(closeBtn);
-
     parent.appendChild(imageWrapper);
   }
 
@@ -88,7 +61,7 @@
       }, 350);
     }
 
-    if (value.includes("grid--item")) {
+    if (value.includes("gallery--item")) {
       const { src } = target;
       const overlay = buildOverlay();
       buildImage(overlay, src);
