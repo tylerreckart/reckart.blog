@@ -14,7 +14,7 @@ html(lang="en")
   main.gallery--content
     include components/nav.pug
     article.page--wrapper
-    div.gallery--grid
+    div(class="gallery--grid",id="gallery--image-wrapper")
       each photo in photos
         img.gallery--item(src=photo.src)
     include components/footer.pug
