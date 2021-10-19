@@ -1,5 +1,1 @@
-export type Post = {
-  attributes: any;
-  path: string;
-  body: string;
-};
+export type Post = any;

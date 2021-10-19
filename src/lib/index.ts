@@ -1,20 +1,18 @@
 import path from "path";
 import fs from "fs";
-import {
-  convertPostContent,
-  convertPageContent,
-} from "./build/utils/convert-markdown";
 import buildAssets from "./build/assets";
 import buildPages from "./build/page";
 import buildPosts from "./build/post";
-import buildHomepage from "./build/routes/home";
+import buildHome from "./build/routes/home";
 import buildBlog from "./build/routes/blog";
 import buildGallery from "./build/routes/gallery";
 import buildFeed from "./build/feed";
+import getPosts from "./build/utils/get-posts";
+import getPages from "./build/utils/get-pages";
 import { Post as PostType } from "./types/post.types";
+import { Page as PageType } from "./types/page.types";
 
-const base: string = __dirname;
-const outdir: string = path.resolve(`${base}../../build`);
+const outdir: string = path.resolve(`${__dirname}../../build`);
 
 // Check to see if the `build` directory exists.
 if (!fs.existsSync(outdir)) {
@@ -22,25 +20,20 @@ if (!fs.existsSync(outdir)) {
   fs.mkdirSync(outdir);
 }
 
-// Retrieve markdown or text files in the `posts` directory and convert the
-// content to a JSON blob sorted by the date of publication and rendered by the
-// templating system.
-const posts = fs
-  .readdirSync(`${base}/../../posts`)
-  .filter((post: string) => post.includes(".md") || post.includes(".txt"))
-  .map(convertPostContent)
-  .sort((a: PostType, b: PostType) =>
-    Date.parse(a.attributes.date) < Date.parse(b.attributes.date) ? 1 : -1
-  );
+const posts: Array<PostType> = getPosts();
+const pages: Array<PageType> = getPages();
 
-// Retrieve files in the `pages` directory and convert the content to a JSON
-// that can be rendered by the templating system.
-// const pages = fs.readdirSync(`${base}/../../pages`).map(convertPageContent);
-
-buildAssets();
-buildHomepage(posts);
-buildBlog(posts);
-buildPosts(posts);
-buildFeed(posts);
-buildPages();
-buildGallery();
+try {
+  // build static assets
+  buildAssets(outdir);
+  // build pages
+  buildHome(posts, outdir);
+  buildBlog(posts, outdir);
+  buildPosts(posts, outdir);
+  buildPages(pages, outdir);
+  buildGallery(outdir);
+  // rss/json feeds
+  buildFeed(posts, outdir);
+} catch (error) {
+  console.error(error);
+}
