@@ -42,11 +42,11 @@ html(lang="en")
       meta(name="description", content=seo.description)
     else
       meta(name="description", content="")
-    include template-parts/head.pug
+    include templates/head.pug
   body
     main.content
-      include template-parts/nav.pug
-      include template-parts/intro.pug
+      include templates/nav.pug
+      include templates/intro.pug
       each post in posts
         article
           div.article--header
@@ -54,7 +54,7 @@ html(lang="en")
             +time(post.attributes.date)
           div.article--content
             | !{post.body}
-      include template-parts/footer.pug
+      include templates/footer.pug
 ```
 
 That's the pug template that generates all of the markup for the homepage of this website. That's it. More complex pieces of functionality, such as generating the time tags underneath post titles is easily handled by Pug mixins that can be included in a number of templates.

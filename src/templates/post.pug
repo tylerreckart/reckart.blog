@@ -25,10 +25,10 @@ html(lang="en")
       meta(name="twitter:url", content=siteUrl + "/" + path)
     meta(name="twitter:description", content=attributes.description)
     meta(name="twitter:title", content=attributes.title)
-    include template-parts/head.pug
+    include components/head.pug
   body
     main.content
-      include template-parts/nav.pug
+      include components/nav.pug
       article.article-page--wrapper
         div.article--header
           h1=attributes.title
@@ -36,6 +36,6 @@ html(lang="en")
         div.article--content
           | !{body}
       if !nextPost
-        include template-parts/footer.pug
+        include components/footer.pug
     if nextPost
-      include template-parts/next-post.pug
+      include components/next-post.pug

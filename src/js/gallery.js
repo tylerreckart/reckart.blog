@@ -64,11 +64,6 @@
     if (value.includes("gallery--item")) {
       const { src } = target;
 
-      target.classList.add("dismissHoverState");
-      setTimeout(() => {
-        target.classList.remove("dismissHoverState");
-      }, 1000);
-
       const overlay = buildOverlay();
       buildImage(overlay, src);
       document.body.appendChild(overlay);
@@ -77,4 +72,26 @@
   }
 
   document.addEventListener("click", handlePopup);
+
+  function handleKeyDown(event) {
+    const { key } = event;
+
+    const overlay = document.getElementById("gallery--popup--overlay");
+
+    if (overlay) {
+      if (key === "Escape") {
+        overlay.classList.add("fadeOut");
+        const image = document.getElementById("gallery--popup--image");
+
+        image.classList.add("slideDown");
+
+        setTimeout(() => {
+          document.body.removeChild(overlay);
+          document.body.style.overflow = "auto";
+        }, 350);
+      }
+    }
+  }
+
+  document.addEventListener("keydown", handleKeyDown);
 })();

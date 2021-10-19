@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   site: {
     url: "https://reckart.blog",
     name: "reckart.blog",

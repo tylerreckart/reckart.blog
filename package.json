@@ -5,7 +5,8 @@
   "main": "src/index.js",
   "scripts": {
     "build": "node ./lib/index.js",
-    "dev:watch": "node ./lib/watch.js"
+    "build:tsc": "./node_modules/typescript/bin/tsc",
+    "develop": "node ./lib/watch.js"
   },
   "author": "Tyler Reckart",
   "license": "ISC",
@@ -23,6 +24,7 @@
     "marked": "^1.1.1",
     "open": "^8.2.1",
     "pug": "^3.0.0",
+    "typescript": "^4.4.4",
     "xml": "^1.0.1"
   }
 }
