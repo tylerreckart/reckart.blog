@@ -89,17 +89,17 @@ nav > a > h3 {
 
 .nav--link-container {
   display: flex;
-  width: 40%;
+  width: 280px;
   justify-content: space-between;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 420px) {
   nav > a > h3 {
     font-size: 18px;
   }
 
   .nav--link-container {
-    width: 50%;
+    width: 80%;
   }
 }
 

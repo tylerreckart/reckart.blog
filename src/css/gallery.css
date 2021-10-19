@@ -2,7 +2,7 @@
   background-color: rgba(0, 0, 0, 0.4);
   -webkit-backdrop-filter: blur(40px);
   backdrop-filter: blur(40px);
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
@@ -31,15 +31,36 @@
   transition: transform 300ms ease;
 }
 
-@media screen and (max-width: 400px) {
-  .gallery--item {
-    width: 100%;
-  }
-}
-
 .gallery--item:hover {
   transform: scale(1.25) rotate(-1deg);
   z-index: 1000;
+}
+
+@media screen and (max-width: 970px) {
+  .gallery--grid {
+    max-width: 620px;
+    flex-direction: row;
+    justify-content: center;
+    max-height: 100%;
+  }
+
+  .gallery--item {
+    cursor: default;
+    margin: 16px 0 16px 0;
+    max-width: 100%;
+  }
+
+  .gallery--item:first-of-type {
+    margin: 0 0 16px 0;
+  }
+
+  .gallery--item:last-of-type {
+    margin: 16px 0 0 0;
+  }
+
+  .gallery--item:hover {
+    transform: none;
+  }
 }
 
 .fadeIn {

@@ -94,4 +94,38 @@
   }
 
   document.addEventListener("keydown", handleKeyDown);
+
+  function handleViewportConstraints(event) {
+    const {
+      target: { body },
+    } = event;
+
+    if (body) {
+      const { offsetWidth } = body;
+
+      if (offsetWidth < 970) {
+        document.removeEventListener("click", handlePopup);
+      }
+    }
+  }
+
+  function handleResize(event) {
+    const {
+      target: {
+        document: { body },
+      },
+    } = event;
+
+    if (body) {
+      const { offsetWidth } = body;
+
+      if (offsetWidth < 970) {
+        document.removeEventListener("click", handlePopup);
+      } else {
+        document.addEventListener("click", handlePopup);
+      }
+    }
+  }
+  document.addEventListener("DOMContentLoaded", handleViewportConstraints);
+  window.addEventListener("resize", handleResize);
 })();
