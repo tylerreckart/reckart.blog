@@ -5,8 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "build": "npx ts-node ./src/lib/index.ts",
-    "build:tsc": "./node_modules/typescript/bin/tsc",
-    "develop": "node ./lib/watch.js"
+    "develop": "npx ts-node ./src/lib/serve.ts"
   },
   "author": "Tyler Reckart",
   "license": "ISC",
@@ -28,9 +27,11 @@
     "xml": "^1.0.1"
   },
   "devDependencies": {
+    "@types/express": "^4.17.13",
     "@types/marked": "^3.0.1",
     "@types/node": "^16.11.1",
     "@types/pug": "^2.0.5",
-    "@types/xml": "^1.0.6"
+    "@types/xml": "^1.0.6",
+    "ts-node": "^10.3.0"
   }
 }
