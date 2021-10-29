@@ -17,7 +17,7 @@
     return overlay;
   }
 
-  function buildImage(parent, src) {
+  function buildImage(parent, src, text) {
     const imageWrapper = document.createElement("div");
     imageWrapper.classList.add("image--wrapper");
 
@@ -25,6 +25,13 @@
     image.id = "gallery--popup--image";
     image.src = src;
     image.classList.add("slideUp");
+
+    const description = document.createElement("p");
+    description.setAttribute(
+      "style",
+      "font-size:14px;line-height:14px;margin-bottom:0;"
+    );
+    description.innerHTML = text;
 
     setTimeout(() => {
       image.classList.remove("slideUp");
@@ -41,44 +48,7 @@
     buildStyles(image, imageStyleMap);
     imageWrapper.appendChild(image);
     parent.appendChild(imageWrapper);
-  }
-
-  function buildControls(parent) {
-    const nextNode = document.createElement("svg");
-    nextNode.id = "next-photo--trigger";
-    nextNode.className = "caret--right";
-    nextNode.setAttribute("viewbox", "0 0 9 16");
-    nextNode.setAttribute(
-      "style",
-      "position: absolute;width: 13px;height: 24px;display: block;box-sizing: content-box;right: 24px;line-height: 2px;stroke: #ffffff;background-color: red;"
-    );
-
-    const nextLine = document.createElement("polyline");
-    nextLine.setAttribute("fill", "none");
-    nextLine.setAttribute("stroke", "#ffffff");
-    nextLine.setAttribute("stroke-miterlimit", 10);
-    nextLine.setAttribute("points", "1.6,1.2 6.5,7.9 1.6,14.7 ");
-
-    nextNode.appendChild(nextLine);
-    parent.appendChild(nextNode);
-
-    const prevNode = document.createElement("svg");
-    prevNode.id = "previous-photo--trigger";
-    prevNode.className = "caret--left";
-    prevNode.setAttribute("viewbox", "0 0 9 16");
-    prevNode.setAttribute(
-      "style",
-      "position: absolute;width: 13px;height: 24px;display: block;box-sizing: content-box;left: 24px;line-height: 2px;stroke: #ffffff;background-color: red;"
-    );
-
-    const prevLine = document.createElement("polyline");
-    prevLine.setAttribute("fill", "none");
-    prevLine.setAttribute("stroke", "#ffffff");
-    prevLine.setAttribute("stroke-miterlimit", 10);
-    prevLine.setAttribute("points", "7.3,14.7 2.5,8 7.3,1.2 ");
-
-    prevNode.appendChild(prevLine);
-    parent.appendChild(prevNode);
+    parent.appendChild(description);
   }
 
   function handlePopup(event) {
@@ -87,11 +57,10 @@
       classList: { value },
     } = target;
 
-    const image = document.getElementById("gallery--popup--image");
-
     if (event.target.id === "gallery--popup--overlay") {
       target.classList.add("fadeOut");
 
+      const image = document.getElementById("gallery--popup--image");
       image.classList.add("slideDown");
 
       setTimeout(() => {
@@ -101,44 +70,19 @@
     }
 
     if (value.includes("gallery--item")) {
-      const { src } = target;
+      const { src, dataset } = target;
 
       const overlay = buildOverlay();
-      buildImage(overlay, src);
-      buildControls(overlay);
+      buildImage(overlay, src, dataset.description);
       document.body.appendChild(overlay);
       document.body.style.overflow = "hidden";
-    }
-
-    const collection = getCollection();
-    const { src } = image;
-    const index = collection.indexOf(src);
-
-    if (event.target.id === "next-photo--trigger") {
-      nextPhoto(image, collection, index);
-    }
-
-    if (event.target.id === "previous-photo--trigger") {
-      previousPhoto(image, collection, index);
     }
   }
 
   document.addEventListener("click", handlePopup);
 
-  function getCollection() {
-    const collection = [];
-    const images = document
-      .getElementById("gallery--image-wrapper")
-      .getElementsByTagName("img");
-
-    for (let i = 0; i < images.length; i++) {
-      collection[i] = images[i].src;
-    }
-
-    return collection;
-  }
-
   function nextValidIndex(arr, nextIndex) {
+    console.log(arr, nextIndex);
     const length = arr.length;
 
     if (nextIndex >= length) {
@@ -152,44 +96,6 @@
     return nextIndex;
   }
 
-  function dismissPhoto(overlay, image) {
-    overlay.classList.add("fadeOut");
-    image.classList.add("slideDown");
-
-    setTimeout(() => {
-      document.body.removeChild(overlay);
-      document.body.style.overflow = "auto";
-    }, 500);
-  }
-
-  function previousPhoto(el, collection, index) {
-    el.classList.add("slideOutRight");
-
-    setTimeout(() => {
-      el.classList.remove("slideOutRight");
-      el.src = collection[nextValidIndex(collection, index + 1)];
-      el.classList.add("slideInLeft");
-    }, 500);
-
-    setTimeout(() => {
-      el.classList.remove("slideInLeft");
-    }, 1000);
-  }
-
-  function nextPhoto(el, collection, index) {
-    el.classList.add("slideOutLeft");
-
-    setTimeout(() => {
-      el.classList.remove("slideOutLeft");
-      el.src = collection[nextValidIndex(collection, index - 1)];
-      el.classList.add("slideInRight");
-    }, 500);
-
-    setTimeout(() => {
-      image.classList.remove("slideInRight");
-    }, 1000);
-  }
-
   function handleKeyDown(event) {
     const { key } = event;
 
@@ -199,19 +105,52 @@
       const image = document.getElementById("gallery--popup--image");
 
       if (key === "Escape") {
-        dismissPhoto(overlay, image);
+        overlay.classList.add("fadeOut");
+        image.classList.add("slideDown");
+        setTimeout(() => {
+          document.body.removeChild(overlay);
+          document.body.style.overflow = "auto";
+        }, 500);
       }
 
-      const collection = getCollection();
+      const collection = [];
+      const images = document
+        .getElementById("gallery--image-wrapper")
+        .getElementsByTagName("img");
+
+      for (let i = 0; i < images.length; i++) {
+        collection[i] = images[i].src;
+      }
+
       const { src } = image;
       const index = collection.indexOf(src);
 
       if (key === "ArrowRight") {
-        nextPhoto(image, collection, index);
+        image.classList.add("slideOutRight");
+
+        setTimeout(() => {
+          image.classList.remove("slideOutRight");
+          image.src = collection[nextValidIndex(collection, index + 1)];
+          image.classList.add("slideInLeft");
+        }, 500);
+
+        setTimeout(() => {
+          image.classList.remove("slideInLeft");
+        }, 1000);
       }
 
       if (key === "ArrowLeft") {
-        previousPhoto(image, collection, index);
+        image.classList.add("slideOutLeft");
+
+        setTimeout(() => {
+          image.classList.remove("slideOutLeft");
+          image.src = collection[nextValidIndex(collection, index - 1)];
+          image.classList.add("slideInRight");
+        }, 500);
+
+        setTimeout(() => {
+          image.classList.remove("slideInRight");
+        }, 1000);
       }
     }
   }

@@ -2,7 +2,6 @@ export default {
   site: {
     url: "https://reckart.blog",
     name: "reckart.blog",
-    icon: "https://emojis.slackmojis.com/emojis/images/1549317933/5264/coding.gif?1549317933",
   },
   seo: {
     title: "Tyler Reckart",

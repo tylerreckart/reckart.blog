@@ -1,0 +1,39 @@
+{
+  "photos": [
+    {
+      "name": "6M6A1113.jpg",
+      "alt": "A photo of the foot bridge in the Boston Public Garden with the city in the background",
+      "description": "Boston, MA - Shot on a Nikon 28Ti with Kodak Portra 400"
+    },
+    {
+      "name": "6M6A1192.jpg",
+      "alt": "A photo of the facade of a building in Cambridge, MA",
+      "description": "Cambridge, MA - Shot on a Nikon 28Ti with Kodak Portra 400"
+    },
+    {
+      "name": "6M6A2251.jpg",
+      "alt": "A black and white photo of a painted section of boardwalk that reads 'keep off dunes'",
+      "description": "Corolla, NC - Shot on a Canon EOS R"
+    },
+    {
+      "name": "6M6A4961.jpg",
+      "alt": "A black and white photo of graffiti on a train",
+      "description": "Greenville, SC - Shot on a Canon EOS R"
+    },
+    {
+      "name": "6M6A6322.jpg",
+      "alt": "A macro photo of a Waltham watch movement engraving",
+      "description": "Greenville, SC - Shot on a Canon EOS R"
+    },
+    {
+      "name": "6M6A7572.jpg",
+      "alt": "A photo of a road winding up a mountain on the Blue Ridge Parkway",
+      "description": "Asheville, NC - Shot on a Canon EOS R"
+    },
+    {
+      "name": "6M6A7829.jpg",
+      "alt": "A photo of boats on water with a bridge and the city of Boston, MA in the background",
+      "description": "Boston, MA - Shot on a iPhone 13 Pro"
+    }
+  ]
+}
