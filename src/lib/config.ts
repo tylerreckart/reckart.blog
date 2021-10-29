@@ -8,7 +8,7 @@ export default {
     title: "Tyler Reckart",
     author: "Tyler Reckart",
     description:
-      "Tyler Reckart is a software developer, watch geek, and cyclist. This is his blog.",
+      "Tyler Reckart is a software developer and photographer. This is his blog. There may be many like it, but this one is his.",
   },
   social: {
     twitter: "@tylerreckart",
