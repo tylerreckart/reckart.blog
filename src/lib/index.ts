@@ -7,6 +7,7 @@ import buildHome from "./compile/routes/home";
 import buildBlog from "./compile/routes/blog";
 import buildGallery from "./compile/routes/gallery";
 import buildFeed from "./compile/feed";
+import build404 from "./compile/routes/404";
 import getPosts from "./compile/utils/get-posts";
 import getPages from "./compile/utils/get-pages";
 import { Post as PostType } from "./types/post.types";
@@ -34,6 +35,8 @@ try {
   buildGallery(outdir);
   // rss/json feeds
   buildFeed(posts, outdir);
+  // 404 page
+  build404(outdir);
 } catch (error) {
   console.error(error);
 }

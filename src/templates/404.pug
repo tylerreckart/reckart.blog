@@ -1,0 +1,18 @@
+doctype html
+html(lang="en")
+  head
+    if seo.title
+      title=seo.title
+    else
+      title=""
+    if seo.description
+      meta(name="description", content=seo.description)
+    else
+      meta(name="description", content="")
+    include components/head.pug
+  body
+    main.content
+    include components/nav.pug
+    iframe(src="https://www.youtube.com/embed/jRxSRyrTANY?autoplay=1&controls=0&fs=0&modestbranding=1", allow="autoplay" frameborder="0", width="620", height="400")
+    p="The page you're looking for doesn't exist."
+    include components/footer.pug
