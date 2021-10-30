@@ -7,7 +7,6 @@
       "https://emojis.slackmojis.com/emojis/images/1549317933/5264/coding.gif?1549317933",
     ];
     const siteIcon = document.getElementById("site--icon");
-    console.log(siteIcon);
     siteIcon.setAttribute(
       "src",
       iconMap[Math.floor(Math.random() * iconMap.length)]
