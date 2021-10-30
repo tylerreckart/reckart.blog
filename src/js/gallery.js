@@ -19,7 +19,7 @@
     wrapper.id = "lightbox--image-wrapper";
     wrapper.setAttribute(
       "style",
-      "display:flex; flex-direction:column; align-items:flex-start; position:absolute; top:50%; transform:translateY(-50%) ;max-width:900px;"
+      "display:flex; flex-direction:column; align-items:center; position:absolute; top:50%; transform:translateY(-50%) ;max-width:900px;"
     );
 
     // Format the image.
@@ -33,7 +33,7 @@
     const description = document.createElement("p");
     description.setAttribute(
       "style",
-      "font-size:14px; line-height:14px; margin-top:24px; margin-bottom:0;"
+      "font-size:14px; line-height:14px; margin-top:16px; margin-bottom:0;"
     );
     description.innerHTML = data.description;
 
@@ -70,6 +70,7 @@
     description,
     nextSrc,
     nextDescription,
+    nextAlt,
     direction
   ) {
     const inClass = `slideIn${direction === "left" ? "Right" : "Left"}`;
@@ -80,6 +81,7 @@
     setTimeout(() => {
       wrapper.classList.remove(outClass);
       image.src = nextSrc;
+      image.alt = nextAlt;
       description.innerHTML = nextDescription;
       wrapper.classList.add(inClass);
     }, 500);
@@ -148,6 +150,7 @@
 
       const collection = Array.from(images).map((i) => ({
         src: i.src,
+        alt: i.alt,
         description: i.dataset.description,
       }));
 
@@ -165,6 +168,7 @@
           description,
           collection[nextValidIndex(collection, index + 1)].src,
           collection[nextValidIndex(collection, index + 1)].description,
+          collection[nextValidIndex(collection, index + 1)].alt,
           "right"
         );
       }
@@ -176,6 +180,7 @@
           description,
           collection[nextValidIndex(collection, index - 1)].src,
           collection[nextValidIndex(collection, index - 1)].description,
+          collection[nextValidIndex(collection, index + 1)].alt,
           "left"
         );
       }
