@@ -482,3 +482,8 @@ pre .hljs-javascript .hljs-function {
   display: block;
   color: white;
 }
+
+.page-404 {
+  width: 100%;
+  height: 400px;
+}

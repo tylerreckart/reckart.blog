@@ -11,8 +11,8 @@ html(lang="en")
       meta(name="description", content="")
     include components/head.pug
   body
-    main.content
     include components/nav.pug
-    iframe(src="https://www.youtube.com/embed/jRxSRyrTANY?autoplay=1&controls=0&fs=0&modestbranding=1", allow="autoplay" frameborder="0", width="620", height="400")
-    p="The page you're looking for doesn't exist."
+    main.content
+      iframe(class="page-404", src="https://www.youtube.com/embed/jRxSRyrTANY?controls=0&fs=0&modestbranding=1", frameborder="0")
+      p The page you're looking for doesn't exist. You can #[a(href="/") go back] to safety, or deeper into #[a(href="https://hamster.dance/hamsterdance/") the void]. It's your decision.
     include components/footer.pug
