@@ -8,6 +8,7 @@ type ImageData = {
 
 export default function getPhotos(dir: string) {
   const path = `${__dirname}/../../../../photos/${dir}`;
+
   const { photos: map } = JSON.parse(
     fs.readFileSync(`${path}/map.json`).toString()
   );
@@ -18,7 +19,8 @@ export default function getPhotos(dir: string) {
       if (img.charAt(0) !== "." && !img.includes(".json")) {
         const file = fs.readFileSync(`${path}/${img}`);
         const buffer = Buffer.from(file).toString("base64");
-        const { alt, description } = map.find((i: ImageData) =>
+
+        const { alt, description, width } = map.find((i: ImageData) =>
           i.name.includes(img.toString())
         );
 
@@ -26,6 +28,7 @@ export default function getPhotos(dir: string) {
           src: `data:image/jpeg;base64,${buffer}`,
           alt,
           description,
+          class: `fill-${width}`,
         };
       }
     })

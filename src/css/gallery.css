@@ -18,23 +18,28 @@
 .gallery--grid {
   max-width: 900px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
-  max-height: 1000px;
 }
 
 .gallery--item {
   margin: 8px;
   border-radius: 12px;
-  max-width: 33%;
   cursor: pointer;
   transition: all 300ms ease;
 }
 
-.gallery--item:hover {
-  transform: scale(1.25) rotate(-1deg);
-  z-index: 1000;
+.gallery--item.fill-third {
+  max-width: calc(33% - 16px);
+}
+
+.gallery--item.fill-half {
+  max-width: calc(50% - 16px);
+}
+
+.gallery--item.fill-full {
+  max-width: 100%;
 }
 
 @media screen and (max-width: 970px) {
@@ -48,7 +53,12 @@
   .gallery--item {
     cursor: default;
     margin: 16px 0 16px 0;
-    max-width: 100%;
+  }
+
+  .gallery--item.fill-third,
+  .gallery--item.fill-half,
+  .gallery--item.fill-full {
+    max-width: 100% !important;
   }
 
   .gallery--item:first-of-type {
