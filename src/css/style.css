@@ -105,6 +105,8 @@ nav > a > h3 {
 
 .nav--link.active {
   text-decoration: underline;
+  text-decoration-color: #6b1eb3;
+  text-decoration-thickness: 2px;
 }
 
 .nav--link {
