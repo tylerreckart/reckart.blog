@@ -103,7 +103,8 @@ nav > a > h3 {
   }
 }
 
-.nav--link.active {
+.nav--link.active,
+.nav--link:hover {
   text-decoration: underline;
   text-decoration-color: #6b1eb3;
   text-decoration-thickness: 2px;
