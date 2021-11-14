@@ -39,7 +39,7 @@
 }
 
 .gallery--item.fill-full {
-  max-width: 100%;
+  max-width: calc(100% - 16px);
 }
 
 @media screen and (max-width: 970px) {
