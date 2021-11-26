@@ -4,8 +4,8 @@
   "description": "",
   "main": "src/index.js",
   "scripts": {
-    "build": "npx ts-node ./src/lib/index.ts",
-    "develop": "npx ts-node ./src/lib/serve.ts"
+    "build": "npx ts-node ./src",
+    "develop": "npx ts-node ./cli"
   },
   "author": "Tyler Reckart",
   "license": "ISC",
@@ -21,6 +21,7 @@
     "highlight.js": "^10.2.0",
     "livereload": "^0.9.3",
     "marked": "^1.1.1",
+    "module-alias": "^2.2.2",
     "open": "^8.2.1",
     "pug": "^3.0.0",
     "typescript": "^4.4.4",
@@ -32,6 +33,12 @@
     "@types/node": "^16.11.1",
     "@types/pug": "^2.0.5",
     "@types/xml": "^1.0.6",
+    "nodemon": "^2.0.15",
     "ts-node": "^10.3.0"
+  },
+  "_moduleAliases": {
+    "@config": "src/config.ts",
+    "@app": "src/app",
+    "@templates": "src/templates"
   }
 }

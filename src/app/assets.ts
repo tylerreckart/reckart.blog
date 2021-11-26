@@ -14,7 +14,7 @@ export default function buildAssets(outdir: string): void {
   /* Site CSS */
   minify({
     compressor: cleanCSS,
-    input: `${__dirname}/../../css/style.css`,
+    input: `${__dirname}/public/css/style.css`,
     output: `${outdir}/css/styles.css`,
     callback: (err: string) => {
       if (err) {
@@ -28,7 +28,7 @@ export default function buildAssets(outdir: string): void {
   /* Gallery CSS */
   minify({
     compressor: cleanCSS,
-    input: `${__dirname}/../../css/gallery.css`,
+    input: `${__dirname}/public/css/gallery.css`,
     output: `${outdir}/css/gallery.css`,
     callback: (err: string) => {
       if (err) {
@@ -46,7 +46,7 @@ export default function buildAssets(outdir: string): void {
   /* Site JS bundle */
   minify({
     compressor: uglifyES,
-    input: `${__dirname}/../../js/index.js`,
+    input: `${__dirname}/public/js/index.js`,
     output: `${outdir}/js/bundle.js`,
     callback: (err: string) => {
       if (err) {
@@ -60,7 +60,7 @@ export default function buildAssets(outdir: string): void {
   /* Gallery JS bundle */
   minify({
     compressor: uglifyES,
-    input: `${__dirname}/../../js/gallery.js`,
+    input: `${__dirname}/public/js/gallery.js`,
     output: `${outdir}/js/gallery.js`,
     callback: (err: string) => {
       if (err) {

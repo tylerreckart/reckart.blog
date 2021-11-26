@@ -1,11 +1,11 @@
-import config from "../config";
+import config from "@config";
 import fs from "fs";
 import path from "path";
 import pug from "pug";
-import { Post as PostType } from "../types/post.types";
+import { Post as PostType } from "@src/types/post.types";
 
 const renderPost = pug.compileFile(
-  path.join(`${__dirname}/../../templates/post.pug`)
+  path.join(`${__dirname}/../templates/post.pug`)
 );
 
 type Markdown = {

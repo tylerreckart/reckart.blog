@@ -1,11 +1,11 @@
-import config from "../../config";
+import config from "@config";
 import fs from "fs";
 import path from "path";
 import pug from "pug";
-import getPhotos from "../utils/get-photos";
+import getPhotos from "@app/utils/get-photos";
 
 const renderGallery = pug.compileFile(
-  path.join(`${__dirname}/../../../templates/gallery.pug`)
+  path.join(`${__dirname}/../../templates/gallery.pug`)
 );
 
 /**

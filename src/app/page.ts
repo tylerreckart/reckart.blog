@@ -1,11 +1,11 @@
-import config from "../config";
+import config from "@config";
 import fs from "fs";
 import path from "path";
 import pug from "pug";
-import { Page as PageType } from "../types/page.types";
+import { Page as PageType } from "@src/types/page.types";
 
 const renderPages = pug.compileFile(
-  path.join(`${__dirname}/../../templates/page.pug`)
+  path.join(`${__dirname}/../templates/page.pug`)
 );
 
 /**

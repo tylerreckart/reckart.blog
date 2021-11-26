@@ -1,10 +1,10 @@
-import config from "../../config";
+import config from "@config";
 import fs from "fs";
 import path from "path";
 import pug from "pug";
 
 const render404page = pug.compileFile(
-  path.join(`${__dirname}/../../../templates/404.pug`)
+  path.join(`${__dirname}/../../templates/404.pug`)
 );
 
 /**

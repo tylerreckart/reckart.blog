@@ -7,7 +7,7 @@ type ImageData = {
 };
 
 export default function getPhotos(dir: string) {
-  const path = `${__dirname}/../../../../photos/${dir}`;
+  const path = `${__dirname}/../../../photos/${dir}`;
 
   const { photos: map } = JSON.parse(
     fs.readFileSync(`${path}/map.json`).toString()

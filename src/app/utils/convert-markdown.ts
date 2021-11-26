@@ -2,8 +2,8 @@ import fs from "fs";
 import fm from "front-matter";
 import marked from "marked";
 import hljs from "highlight.js";
-import { Post as PostType } from "../../types/post.types";
-import { Page as PageType } from "../../types/page.types";
+import { Post as PostType } from "@src/types/post.types";
+import { Page as PageType } from "@src/types/page.types";
 
 marked.setOptions({
   renderer: new marked.Renderer(),
@@ -26,7 +26,7 @@ marked.setOptions({
  */
 function convertMarkdownToHTML(dir: string, path: string): any {
   const data = fs.readFileSync(
-    __dirname + `/../../../../${dir}/${path}.md`,
+    __dirname + `/../../../${dir}/${path}.md`,
     "utf8"
   );
   const content = fm(data);
