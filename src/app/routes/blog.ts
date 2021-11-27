@@ -2,6 +2,7 @@ import config from "@config";
 import fs from "fs";
 import path from "path";
 import pug from "pug";
+import colors from "colors";
 import { Post as PostType } from "@src/types/post.types";
 
 const renderBlog = pug.compileFile(
@@ -33,6 +34,6 @@ export default function buildBlog(
       throw error;
     }
 
-    console.log(`${"[page:blog]"} built`);
+    console.log(colors.cyan("[page] blog built"));
   });
 }

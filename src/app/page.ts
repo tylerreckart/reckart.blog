@@ -1,4 +1,5 @@
 import config from "@config";
+import colors from "colors";
 import fs from "fs";
 import path from "path";
 import pug from "pug";
@@ -33,7 +34,7 @@ export default function buildPages(pages: Array<PageType>, dest: string): void {
           throw error;
         }
 
-        console.log(`${`[page:${page.path}]`} built`);
+        console.log(colors.cyan(`[page] ${page.path} built`));
       }
     );
   });

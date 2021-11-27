@@ -1,6 +1,7 @@
 import config from "@config";
 import fs from "fs";
 import xml from "xml";
+import colors from "colors";
 import { Post as PostType } from "@src/types/post.types";
 
 const { site, seo } = config;
@@ -36,7 +37,7 @@ function buildJSON(posts: Array<PostType>, outdir: string): void {
         throw error;
       }
 
-      console.log(`${"[feed:json]"} built`);
+      console.log(colors.cyan("[feed] feed.json built"));
     }
   );
 }
@@ -92,7 +93,7 @@ function buildRSS(posts: Array<PostType>, outdir: string): void {
       throw error;
     }
 
-    console.log(`${"[feed.xml]"} built`);
+    console.log(colors.cyan("[feed] rss.xml built"));
   });
 }
 

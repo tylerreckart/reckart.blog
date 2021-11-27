@@ -1,4 +1,5 @@
 import config from "@config";
+import colors from "colors";
 import fs from "fs";
 import path from "path";
 import pug from "pug";
@@ -77,7 +78,7 @@ export default function buildPosts(
           throw error;
         }
 
-        console.log(`${`[post:${post.path}]`} built`);
+        console.log(colors.cyan(`[post] ${post.path} built`));
       }
     );
   });

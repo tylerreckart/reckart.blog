@@ -2,6 +2,7 @@ import config from "@config";
 import fs from "fs";
 import path from "path";
 import pug from "pug";
+import colors from "colors";
 import getPhotos from "@app/utils/get-photos";
 
 const renderGallery = pug.compileFile(
@@ -30,6 +31,6 @@ export default function buildGallery(outdir: string): void {
       throw error;
     }
 
-    console.log(`${"[page:gallery]"} built`);
+    console.log(colors.cyan("[page] gallery built"));
   });
 }

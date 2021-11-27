@@ -1,6 +1,7 @@
 import "module-alias/register";
 import path from "path";
 import fs from "fs";
+import colors from "colors";
 import buildAssets from "@app/assets";
 import buildPages from "@app/page";
 import buildPosts from "@app/post";
@@ -25,19 +26,30 @@ if (!fs.existsSync(outdir)) {
 const posts: Array<PostType> = getPosts();
 const pages: Array<PageType> = getPages();
 
-try {
-  // build static assets
-  buildAssets(outdir);
-  // build pages
-  buildHome(posts, outdir);
-  buildBlog(posts, outdir);
-  buildPosts(posts, outdir);
-  buildPages(pages, outdir);
-  buildGallery(outdir);
-  // rss/json feeds
-  buildFeed(posts, outdir);
-  // 404 page
-  build404(outdir);
-} catch (error) {
-  console.error(error);
+export function bundleAssets(): void {
+  try {
+    console.log(colors.yellow("[bundle] building..."));
+
+    // build static assets
+    buildAssets(outdir);
+    // build pages
+    buildHome(posts, outdir);
+    buildBlog(posts, outdir);
+    buildPosts(posts, outdir);
+    buildPages(pages, outdir);
+    buildGallery(outdir);
+    // rss/json feeds
+    buildFeed(posts, outdir);
+    // 404 page
+    build404(outdir);
+
+    setTimeout(() => {
+      console.log(colors.yellow("[bundle] finished"));
+    }, 50);
+  } catch (error) {
+    console.log(colors.red("[bundle] build failed"));
+    console.error(error);
+
+    return;
+  }
 }

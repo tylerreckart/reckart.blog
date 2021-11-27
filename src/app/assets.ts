@@ -1,4 +1,5 @@
 import fs from "fs";
+import colors from "colors";
 /* @ts-ignore */
 import minify from "@node-minify/core";
 /* @ts-ignore */
@@ -21,7 +22,7 @@ export default function buildAssets(outdir: string): void {
         throw err;
       }
 
-      console.log(`${"[asset:styles.css]"} built`);
+      console.log(colors.cyan("[asset] style.css built"));
     },
   });
 
@@ -35,7 +36,7 @@ export default function buildAssets(outdir: string): void {
         throw err;
       }
 
-      console.log(`${"[asset:styles.css]"} built`);
+      console.log(colors.cyan("[asset] gallery.css built"));
     },
   });
 
@@ -53,7 +54,7 @@ export default function buildAssets(outdir: string): void {
         throw err;
       }
 
-      console.log(`${"[asset:bundle.js]"} built`);
+      console.log(colors.cyan("[asset] bundle.js built"));
     },
   });
 
@@ -67,7 +68,7 @@ export default function buildAssets(outdir: string): void {
         throw err;
       }
 
-      console.log(`${"[asset:gallery.js]"} built`);
+      console.log(colors.cyan("[asset] gallery.js built"));
     },
   });
 }
