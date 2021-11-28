@@ -5,9 +5,23 @@ import minify from "@node-minify/core";
 /* @ts-ignore */
 import cleanCSS from "@node-minify/clean-css";
 /* @ts-ignore */
-import uglifyES from "@node-minify/uglify-es";
+import browserify from "browserify";
+import uglify from "uglify-js";
 
-export default function buildAssets(outdir: string): void {
+async function bundleJS() {
+  browserify()
+    .add(`${__dirname}/public/js/index.ts`)
+    .plugin("tsify", { noImplicitAny: true })
+    .bundle((err): void => {
+      if (err) {
+        throw err;
+      }
+
+      console.log(colors.cyan("[asset] bundle.js built"));
+    });
+}
+
+export default async function buildAssets(outdir: string): Promise<void> {
   if (!fs.existsSync(`${outdir}/css`)) {
     fs.mkdirSync(`${outdir}/css`);
   }
@@ -44,31 +58,19 @@ export default function buildAssets(outdir: string): void {
     fs.mkdirSync(`${outdir}/js`);
   }
 
-  /* Site JS bundle */
-  minify({
-    compressor: uglifyES,
-    input: `${__dirname}/public/js/index.js`,
-    output: `${outdir}/js/bundle.js`,
-    callback: (err: string) => {
+  // Build JavaScript bundle.
+  browserify()
+    .add(`${__dirname}/public/js/index.ts`)
+    .plugin("tsify", { noImplicitAny: true })
+    .bundle((err, buf): void => {
       if (err) {
         throw err;
       }
+      var code = uglify.minify(buf.toString()).code;
+      fs.writeFileSync(`${outdir}/js/bundle.js`, code, {
+        encoding: "utf8",
+      });
 
       console.log(colors.cyan("[asset] bundle.js built"));
-    },
-  });
-
-  /* Gallery JS bundle */
-  minify({
-    compressor: uglifyES,
-    input: `${__dirname}/public/js/gallery.js`,
-    output: `${outdir}/js/gallery.js`,
-    callback: (err: string) => {
-      if (err) {
-        throw err;
-      }
-
-      console.log(colors.cyan("[asset] gallery.js built"));
-    },
-  });
+    });
 }
