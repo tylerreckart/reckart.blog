@@ -7,18 +7,10 @@ Output the static HTML, JavaScript, and CSS bundles into the `build` directory:
 ```sh
 npm run build
 ```
-_or_
-```sh
-yarn build
-```
 
 Run an express hot-reload development server that watches for changes and recompiles the bundle:
 ```sh
 npm run develop
-```
-_or_
-```sh
-yarn develop
 ```
 
 ### License
