@@ -1,20 +1,9 @@
-import handleGalleryEvents from "./gallery";
-
-const iconMap = [
-  "https://emojis.slackmojis.com/emojis/images/1450475643/211/homer-disappear.gif?1450475643",
-  "https://emojis.slackmojis.com/emojis/images/1589877402/9116/excuseme.gif?1589877402",
-  "https://emojis.slackmojis.com/emojis/images/1539890226/4845/rickroll.gif?1539890226",
-  "https://emojis.slackmojis.com/emojis/images/1549317933/5264/coding.gif?1549317933",
-];
+import randomizeSiteIcon from "./utils/icons";
+import handleGalleryEvents from "./routes/gallery";
 
 function main(): void {
-  // Populate site icon.
-  const siteIcon = document.getElementById("site--icon");
-  siteIcon!.setAttribute(
-    "src",
-    iconMap[Math.floor(Math.random() * iconMap.length)]
-  );
-
+  // Populate the site icon
+  randomizeSiteIcon();
   // Set the active state on the nav element for the current page.
   const {
     location: { pathname },

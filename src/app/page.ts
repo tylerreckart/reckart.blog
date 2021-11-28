@@ -3,7 +3,7 @@ import colors from "colors";
 import fs from "fs";
 import path from "path";
 import pug from "pug";
-import { Page as PageType } from "@src/types/page.types";
+import { Page as PageType } from "@src/types/page";
 
 const renderPages = pug.compileFile(
   path.join(`${__dirname}/../templates/page.pug`)

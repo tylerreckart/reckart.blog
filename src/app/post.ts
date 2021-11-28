@@ -3,7 +3,7 @@ import colors from "colors";
 import fs from "fs";
 import path from "path";
 import pug from "pug";
-import { Post as PostType } from "@src/types/post.types";
+import { Post as PostType } from "@src/types/post";
 
 const renderPost = pug.compileFile(
   path.join(`${__dirname}/../templates/post.pug`)

@@ -1,3 +1,5 @@
+import { GalleryImage } from "@src/types/gallery";
+
 function buildLightbox(): HTMLElement {
   // Create the element.
   const overlay = document.createElement("div");
@@ -12,10 +14,7 @@ function buildLightbox(): HTMLElement {
   return overlay;
 }
 
-function buildImage(
-  parent: HTMLElement,
-  data: { src: string; alt: string; description: string }
-): void {
+function buildImage(parent: HTMLElement, data: GalleryImage): void {
   // Format the image wrapper.
   const wrapper = document.createElement("div");
   wrapper.id = "lightbox--image-wrapper";
@@ -29,15 +28,7 @@ function buildImage(
   image.id = "gallery--popup--image";
   image.src = data.src;
   image.alt = data.alt;
-  image.setAttribute("style", "max-width:100%; max-height:90vh;");
-
-  // Format the image description.
-  const description = document.createElement("p");
-  description.setAttribute(
-    "style",
-    "font-size:14px; line-height:14px; margin-top:16px; margin-bottom:0;"
-  );
-  description.innerHTML = data.description;
+  image.setAttribute("style", "max-width:60vw; max-height:90vh;");
 
   // Trigger the transition animation.
   wrapper.classList.add("slideUp");
@@ -45,17 +36,13 @@ function buildImage(
     wrapper.classList.remove("slideUp");
   }, 1000);
 
-  // Insert the target image and description into the image wrapper.
+  // Insert the target image into the image wrapper.
   wrapper.appendChild(image);
-  wrapper.appendChild(description);
   // Insert the image wrapper into the light box.
   parent.appendChild(wrapper);
 }
 
-function nextValidIndex(
-  arr: Array<{ src: string; alt: string; description: string }>,
-  nextIndex: number
-): number {
+function nextValidIndex(arr: Array<GalleryImage>, nextIndex: number): number {
   const length = arr.length;
 
   if (nextIndex >= length) {
@@ -70,14 +57,15 @@ function nextValidIndex(
 }
 
 function nextImage(
-  wrapper: HTMLElement,
-  image: HTMLImageElement,
-  description: Element,
-  nextSrc: string,
-  nextDescription: string,
-  nextAlt: string,
+  wrapper: HTMLElement | null,
+  image: HTMLImageElement | null,
+  next: GalleryImage,
   direction: string
 ): void {
+  if (!wrapper || !image) {
+    return;
+  }
+
   const inClass = `slideIn${direction === "left" ? "Right" : "Left"}`;
   const outClass = `slideOut${direction === "left" ? "Left" : "Right"}`;
 
@@ -85,9 +73,8 @@ function nextImage(
 
   setTimeout(() => {
     wrapper.classList.remove(outClass);
-    image.src = nextSrc;
-    image.alt = nextAlt;
-    description.innerHTML = nextDescription;
+    image.src = next.src;
+    image.alt = next.alt;
     wrapper.classList.add(inClass);
   }, 500);
 
@@ -115,14 +102,10 @@ function handlePopup(event: any): void {
   }
 
   if (value.includes("gallery--item")) {
-    const {
-      src,
-      alt,
-      dataset: { description },
-    } = target;
+    const { src, alt } = target;
 
     const lightbox = buildLightbox();
-    buildImage(lightbox, { src, alt, description });
+    buildImage(lightbox, { src, alt });
 
     document.body.appendChild(lightbox);
     document.body.style.overflow = "hidden";
@@ -155,48 +138,28 @@ function handleKeyDown(event: KeyboardEvent): void {
     const collection = Array.from(images).map((i) => ({
       src: i.src,
       alt: i.alt,
-      description: i.dataset.description,
     }));
 
-    // @ts-ignore
-    const image: HTMLImageElement = wrapper!.children[0];
-    const description: Element = wrapper!.children[1];
+    if (collection) {
+      const image = document.getElementById("gallery--popup--image") as HTMLImageElement;
 
-    const index = collection.indexOf(
-      // @ts-ignore
-      collection.find((i) => i.src === image.src)
-    );
+      if (image) {
+        const index = collection.indexOf(
+          // @ts-ignore
+          collection.find((i) => i.src === image.src)
+        );
 
-    if (key === "ArrowRight") {
-      nextImage(
-        // @ts-ignore
-        wrapper,
-        image,
-        description,
-        // @ts-ignore
-        collection[nextValidIndex(collection, index + 1)].src,
-        // @ts-ignore
-        collection[nextValidIndex(collection, index + 1)].description,
-        // @ts-ignore
-        collection[nextValidIndex(collection, index + 1)].alt,
-        "right"
-      );
-    }
+        const nextItem = collection[nextValidIndex(collection, index + 1)];
+        const prevItem = collection[nextValidIndex(collection, index - 1)];
 
-    if (key === "ArrowLeft") {
-      nextImage(
-        // @ts-ignore
-        wrapper,
-        image,
-        description,
-        // @ts-ignore
-        collection[nextValidIndex(collection, index - 1)].src,
-        // @ts-ignore
-        collection[nextValidIndex(collection, index - 1)].description,
-        // @ts-ignore
-        collection[nextValidIndex(collection, index + 1)].alt,
-        "left"
-      );
+        if (nextItem && key === "ArrowRight") {
+          nextImage(wrapper, image, nextItem, "right");
+        }
+
+        if (prevItem && key === "ArrowLeft") {
+          nextImage(wrapper, image, prevItem, "left");
+        }
+      }
     }
   }
 }

@@ -12,8 +12,8 @@ import buildFeed from "@app/feed";
 import build404 from "@app/routes/404";
 import getPosts from "@app/utils/get-posts";
 import getPages from "@app/utils/get-pages";
-import { Post as PostType } from "@src/types/post.types";
-import { Page as PageType } from "@src/types/page.types";
+import { Post as PostType } from "@src/types/post";
+import { Page as PageType } from "@src/types/page";
 
 const outdir: string = path.resolve(`${__dirname}/../build`);
 

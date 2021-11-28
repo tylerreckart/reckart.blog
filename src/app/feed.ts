@@ -2,7 +2,7 @@ import config from "@config";
 import fs from "fs";
 import xml from "xml";
 import colors from "colors";
-import { Post as PostType } from "@src/types/post.types";
+import { Post as PostType } from "@src/types/post";
 
 const { site, seo } = config;
 const { url } = site;

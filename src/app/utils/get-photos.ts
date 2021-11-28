@@ -1,10 +1,5 @@
 import fs from "fs";
-
-type ImageData = {
-  name: string;
-  alt: string;
-  description: string;
-};
+import { GalleryImage } from "@src/types/gallery";
 
 export default function getPhotos(dir: string) {
   const path = `${__dirname}/../../../photos/${dir}`;
@@ -20,14 +15,13 @@ export default function getPhotos(dir: string) {
         const file = fs.readFileSync(`${path}/${img}`);
         const buffer = Buffer.from(file).toString("base64");
 
-        const { alt, description, width } = map.find((i: ImageData) =>
-          i.name.includes(img.toString())
+        const { alt, width } = map.find((i: GalleryImage) =>
+          i.name!.includes(img.toString())
         );
 
         return {
           src: `data:image/jpeg;base64,${buffer}`,
           alt,
-          description,
           class: `fill-${width}`,
         };
       }

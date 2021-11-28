@@ -1,6 +1,6 @@
 import fs from "fs";
 import { convertPostContent } from "./convert-markdown";
-import { Post as PostType } from "@src/types/post.types";
+import { Post as PostType } from "@src/types/post";
 
 export default function getPosts(): Array<PostType> {
   // Retrieve markdown or text files in the `posts` directory and convert the

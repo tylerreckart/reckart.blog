@@ -2,8 +2,8 @@ import fs from "fs";
 import fm from "front-matter";
 import marked from "marked";
 import hljs from "highlight.js";
-import { Post as PostType } from "@src/types/post.types";
-import { Page as PageType } from "@src/types/page.types";
+import { Post as PostType } from "@src/types/post";
+import { Page as PageType } from "types/page";
 
 marked.setOptions({
   renderer: new marked.Renderer(),
