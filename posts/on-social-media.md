@@ -19,6 +19,6 @@ The combination of the damage these platforms do to our communities and the unhe
 1. As a general rule, unfollow everyone except those that you _truly_ want to see in your feeds. No more influencers. No more brands. For me this means restricting my follow list to just friends and family.
 2. Privatize everything. Lock down your privacy settings and only allow the content you share to be shared with those that you choose to be shared with.
 3. When you reach the end of a feed, close the app. No more listless scrolling.
-4. Find an outlet. The time you’ll gain back is valuable. Fill it with something that you truly enjoy. For me, this has been [photography](/gallery).  
+4. Find an outlet. The time you’ll gain back is valuable. Fill it with something that you truly enjoy. For me, this has been [photography](https://reckart.photo).  
 
 I’m not removing myself from social media. At this point in our society, I think that route isn’t sustainable in the long run. These platforms are here to stay. However, I believe that deliberate, conscious use can go a long way to a healthy relationship with the social internet.

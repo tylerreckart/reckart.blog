@@ -7,7 +7,6 @@ import buildPages from "@app/page";
 import buildPosts from "@app/post";
 import buildHome from "@app/routes/home";
 import buildBlog from "@app/routes/blog";
-import buildGallery from "@app/routes/gallery";
 import buildFeed from "@app/feed";
 import build404 from "@app/routes/404";
 import getPosts from "@app/utils/get-posts";
@@ -37,15 +36,10 @@ export function bundleAssets(): void {
     buildBlog(posts, outdir);
     buildPosts(posts, outdir);
     buildPages(pages, outdir);
-    buildGallery(outdir);
     // rss/json feeds
     buildFeed(posts, outdir);
     // 404 page
     build404(outdir);
-
-    setTimeout(() => {
-      console.log(colors.yellow("[bundle] finished"));
-    }, 50);
   } catch (error) {
     console.log(colors.red("[bundle] build failed"));
     console.error(error);

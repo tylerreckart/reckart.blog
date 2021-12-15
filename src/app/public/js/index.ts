@@ -1,5 +1,3 @@
-import handleGalleryEvents from "./routes/gallery";
-
 function main(): void {
   // Set the active state on the nav element for the current page.
   const {

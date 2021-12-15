@@ -8,19 +8,6 @@ import cleanCSS from "@node-minify/clean-css";
 import browserify from "browserify";
 import uglify from "uglify-js";
 
-async function bundleJS() {
-  browserify()
-    .add(`${__dirname}/public/js/index.ts`)
-    .plugin("tsify", { noImplicitAny: true })
-    .bundle((err): void => {
-      if (err) {
-        throw err;
-      }
-
-      console.log(colors.cyan("[asset] bundle.js built"));
-    });
-}
-
 export default async function buildAssets(outdir: string): Promise<void> {
   if (!fs.existsSync(`${outdir}/css`)) {
     fs.mkdirSync(`${outdir}/css`);
@@ -37,20 +24,6 @@ export default async function buildAssets(outdir: string): Promise<void> {
       }
 
       console.log(colors.cyan("[asset] style.css built"));
-    },
-  });
-
-  /* Gallery CSS */
-  minify({
-    compressor: cleanCSS,
-    input: `${__dirname}/public/css/gallery.css`,
-    output: `${outdir}/css/gallery.css`,
-    callback: (err: string) => {
-      if (err) {
-        throw err;
-      }
-
-      console.log(colors.cyan("[asset] gallery.css built"));
     },
   });
 
