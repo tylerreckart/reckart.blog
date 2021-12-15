@@ -1,9 +1,6 @@
-import randomizeSiteIcon from "./utils/icons";
 import handleGalleryEvents from "./routes/gallery";
 
 function main(): void {
-  // Populate the site icon
-  randomizeSiteIcon();
   // Set the active state on the nav element for the current page.
   const {
     location: { pathname },
@@ -24,11 +21,6 @@ function main(): void {
       [].includes.call(el.classList, path !== "/" ? path : "home")
   )[0];
   currentPage.classList.add("active");
-
-  // On /gallery, attach the light box event handlers.
-  if (path === "gallery") {
-    handleGalleryEvents();
-  }
 }
 
 document.addEventListener("DOMContentLoaded", main);

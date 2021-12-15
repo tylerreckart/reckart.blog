@@ -29,13 +29,13 @@ body {
 a {
   color: #fff;
   text-decoration: underline;
-  text-decoration-color: #6b1eb3;
+  text-decoration-color: #4F6BDC;
   text-decoration-thickness: 2px;
   font-weight: 400;
 }
 
 a:hover {
-  color: #6b1eb3;
+  color: #4F6BDC;
   text-decoration: underline;
 }
 
@@ -108,7 +108,7 @@ nav > a > h3 {
 .nav--link.active,
 .nav--link:hover {
   text-decoration: underline;
-  text-decoration-color: #6b1eb3;
+  text-decoration-color: #4F6BDC;
   text-decoration-thickness: 2px;
 }
 
@@ -165,7 +165,7 @@ blockquote {
 }
 
 .article--preview:hover {
-  background-color: #6b1eb3;
+  background-color: #4F6BDC;
   cursor: pointer;
   transform: scale(1.075) rotate(-1deg);
   transition: all 300ms ease;
