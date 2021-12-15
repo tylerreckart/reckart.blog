@@ -13,7 +13,6 @@ html(lang="en")
   body.home
     main.content
       include components/nav.pug
-      img.portrait(src="https://s3.amazonaws.com/reckart.blog-assets/6M6A7607-web.jpg", alt="A photo of Tyler with his son.", width="100%")
       include components/intro.pug
       p #[span(role='img' aria-label='memo') &#x1F4DD;] From the #[a(href='/blog') blog]
       each post in posts
