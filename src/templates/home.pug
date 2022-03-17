@@ -13,8 +13,6 @@ html(lang="en")
   body.home
     main.content
       include components/nav.pug
-      include components/intro.pug
-      p #[span(role='img' aria-label='memo') &#x1F4DD;] From the #[a(href='/blog') blog]
       each post in posts
         a.article--preview-wrapper(href="/blog/" + post.path)
           article.article--preview

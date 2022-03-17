@@ -62,9 +62,14 @@ header {
 }
 
 .site--head {
-  width: 32px;
-  height: 32px;
-  text-decoration: none;
+  text-decoration: underline;
+  text-decoration-color: #4F6BDC;
+  text-decoration-thickness: 2px;
+}
+
+.site--head:hover {
+  color: inherit;
+  text-decoration-color: #4F6BDC;
 }
 
 nav {

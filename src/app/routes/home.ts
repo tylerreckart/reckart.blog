@@ -22,11 +22,11 @@ export default function buildHome(
     posts: [
       {
         ...posts[0],
-        body: `<p>${posts[0].attributes.description}</p>`,
+        body: `<p>${posts[0].attributes.description.replace(/[\])}[{(]/g, '')}</p>`,
       },
       {
         ...posts[1],
-        body: `<p>${posts[1].attributes.description}</p>`,
+        body: `<p>${posts[1].attributes.description.replace(/[\])}[{(]/g, '')}</p>`,
       },
     ],
     ...config,
