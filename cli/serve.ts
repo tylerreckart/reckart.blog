@@ -2,9 +2,12 @@ import "module-alias/register";
 import path from "path";
 import fs from "fs";
 import express from "express";
-import open from "open";
+import livereload from 'livereload';
+import livereloadConenctor from 'connect-livereload';
 import colors from "colors";
 import { bundleAssets } from "../src";
+
+bundleAssets();
 
 const outdir: string = path.resolve(`${__dirname}/../build`);
 
@@ -14,10 +17,14 @@ if (!fs.existsSync(outdir)) {
   fs.mkdirSync(outdir);
 }
 
+const livereloadServer = livereload.createServer();
+livereloadServer.watch(outdir);
+
 const app = express();
 
-function startServer(): void {
+function main() {
   app.use(express.static("build"));
+  app.use(livereloadConenctor());
 
   app.listen(2056, (): void =>
     console.log(
@@ -25,17 +32,11 @@ function startServer(): void {
     )
   );
 
-  setTimeout(() => {
-    open("http://localhost:2056");
-  }, 1000);
-}
-
-function main(): void {
-  bundleAssets();
-
-  setTimeout((): void => {
-    startServer();
-  }, 250);
+  livereloadServer.server.once("connection", () => {
+    setTimeout(() => {
+      livereloadServer.refresh("/");
+    }, 100);
+  });
 }
 
 main();

@@ -5,7 +5,7 @@
   "main": "src/index.ts",
   "scripts": {
     "build": "npx ts-node ./cli/build",
-    "develop": "nodemon"
+    "develop": "nodemon && npx ts-node ./cli/serve"
   },
   "author": "Tyler Reckart",
   "license": "MIT",
@@ -31,7 +31,9 @@
   },
   "devDependencies": {
     "@types/browserify": "^12.0.37",
+    "@types/connect-livereload": "^0.6.0",
     "@types/express": "^4.17.13",
+    "@types/livereload": "^0.9.1",
     "@types/marked": "^3.0.1",
     "@types/node": "^16.11.1",
     "@types/pug": "^2.0.5",

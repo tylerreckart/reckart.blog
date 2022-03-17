@@ -133,6 +133,13 @@
     "@types/insert-module-globals" "*"
     "@types/node" "*"
 
+"@types/connect-livereload@^0.6.0":
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/@types/connect-livereload/-/connect-livereload-0.6.0.tgz#7c9ee985adf992f6f3e0943b7bebbc6a7706c52b"
+  integrity sha512-X/yH5WjuUWWAyevPxSyuEjrGAo3tXYte12BD7qWtHs6RPyUKg18seYlwT2/OPMV6/0QxjEkTTvEINcAXTqjjNg==
+  dependencies:
+    "@types/connect" "*"
+
 "@types/connect@*":
   version "3.4.35"
   resolved "https://registry.yarnpkg.com/@types/connect/-/connect-3.4.35.tgz#5fcf6ae445e4021d1fc2219a4873cc73a3bb2ad1"
@@ -165,6 +172,13 @@
   integrity sha512-b+XCUBUioZoveg4e8+D/wGVIvQcuV6TNHPy53aeY0YBydOOZhAtX2Sdr4x97uWKKy9Xrt0SUKsPxbT9e0u/x9Q==
   dependencies:
     "@types/node" "*"
+
+"@types/livereload@^0.9.1":
+  version "0.9.1"
+  resolved "https://registry.yarnpkg.com/@types/livereload/-/livereload-0.9.1.tgz#b1407ee4f1e5594eef288ec58d624e2e8869565e"
+  integrity sha512-gTF8taNuj59CDcSfw38t+t4bAj7Z5HO3WwUpiTerHusYtmaX6bj9NYtrubCq8VGyYze2SoIm+BcU37xuM26p1Q==
+  dependencies:
+    "@types/ws" "*"
 
 "@types/marked@^3.0.1":
   version "3.0.1"
@@ -210,6 +224,13 @@
   integrity sha512-O3MmRAk6ZuAKa9CHgg0Pr0+lUOqoMLpc9AS4R8ano2auvsg7IE8syF3Xh/NPr26TWklxYcqoEEFdzLLs1fV9PQ==
   dependencies:
     source-map "^0.6.1"
+
+"@types/ws@*":
+  version "8.5.3"
+  resolved "https://registry.yarnpkg.com/@types/ws/-/ws-8.5.3.tgz#7d25a1ffbecd3c4f2d35068d0b283c037003274d"
+  integrity sha512-6YOoWjruKj1uLf3INHH7D3qTXwFfEsg1kf3c0uDdSBJwfa/llkwIjrAGV7j7mVgGNbzTQ3HiHKKDXl6bJPD97w==
+  dependencies:
+    "@types/node" "*"
 
 "@types/xml@^1.0.6":
   version "1.0.6"

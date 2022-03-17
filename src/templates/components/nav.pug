@@ -1,8 +1,13 @@
 header
   nav#site--nav
     a.site--head(href="/") Tyler Reckart's Blog
-    div.nav--link-container(id="nav")
-      a(href="/", class="nav--link home") Home
-      a(href="/blog", class="nav--link blog") Blog
-      a(href="/about", class="nav--link about") About
-      a(href="https://reckart.photo", class="nav--link gallery") Gallery
+    div#menu--container
+      div.nav--link-container(id="nav")
+        a(href="/", class="nav--link home") Home
+        a(href="/blog", class="nav--link blog") Blog
+        a(href="/about", class="nav--link about") About
+        a(href="https://reckart.photo", class="nav--link gallery") Gallery
+      button#menu-open--trigger
+        i(class="fa-solid fa-ellipsis")
+      button#menu-close--trigger.hidden
+        i(class="fa-solid fa-xmark")
