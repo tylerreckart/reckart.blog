@@ -19,26 +19,6 @@ function main(): void {
       [].includes.call(el.classList, path !== "/" ? path : "home")
   )[0];
   currentPage.classList.add("active");
-
-  const openTrigger = document.getElementById('menu-open--trigger');
-  const closeTrigger = document.getElementById('menu-close--trigger');
-
-  openTrigger!.addEventListener('click', () => {
-    nav!.classList.add('active');
-    openTrigger!.classList.add('hidden');
-    closeTrigger!.classList.remove('hidden');
-  });
-
-  closeTrigger!.addEventListener('click', () => {
-    nav!.classList.add('dismiss');
-    closeTrigger!.classList.add('hidden');
-    openTrigger!.classList.remove('hidden');
-
-    setTimeout(() => {
-      nav!.classList.remove('active');
-      nav!.classList.remove('dismiss');
-    }, 450);
-  });
 }
 
 document.addEventListener("DOMContentLoaded", main);
