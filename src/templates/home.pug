@@ -1,3 +1,4 @@
+include mixins/time.pug
 doctype html
 html(lang="en")
   head
@@ -10,14 +11,15 @@ html(lang="en")
     else
       meta(name="description", content="")
     include components/head.pug
-  body.home
+  body
+    include components/nav.pug
     main.content
-      include components/nav.pug
       each post in posts
-        a.article--preview-wrapper(href="/blog/" + post.path)
-          article.article--preview
-            div.article--preview-header
-              h3=post.attributes.title
-            div.article--preview-content
-              | !{post.body}
+        article
+          div.article--header
+            a(href=post.path) #[h2=post.attributes.title]
+            +time(post.attributes.date)
+          div.article--content
+            | !{post.body}
       include components/footer.pug
+

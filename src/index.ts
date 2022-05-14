@@ -6,7 +6,6 @@ import buildAssets from "@app/assets";
 import buildPages from "@app/page";
 import buildPosts from "@app/post";
 import buildHome from "@app/routes/home";
-import buildBlog from "@app/routes/blog";
 import buildFeed from "@app/feed";
 import build404 from "@app/routes/404";
 import getPosts from "@app/utils/get-posts";
@@ -33,7 +32,6 @@ export function bundleAssets(): void {
     buildAssets(outdir);
     // build pages
     buildHome(posts, outdir);
-    buildBlog(posts, outdir);
     buildPosts(posts, outdir);
     buildPages(pages, outdir);
     // rss/json feeds

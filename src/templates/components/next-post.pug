@@ -2,7 +2,7 @@ include ../mixins/time.pug
 div.next-post--wrapper
   article.next-post--content
     div.next-post--header
-      a(href!="/blog/" + nextPost.path).next-post--title
+      a(href!="/" + nextPost.path).next-post--title
         h2=nextPost.attributes.title
       +time(nextPost.attributes.date)
     div.next-post--body

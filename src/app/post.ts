@@ -66,12 +66,12 @@ export default function buildPosts(
   });
 
   remappedPosts.forEach((post: PostType) => {
-    if (!fs.existsSync(`${outdir}/blog/${post.path}`)) {
-      fs.mkdirSync(`${outdir}/blog/${post.path}`);
+    if (!fs.existsSync(`${outdir}/${post.path}`)) {
+      fs.mkdirSync(`${outdir}/${post.path}`);
     }
 
     fs.writeFile(
-      `${outdir}/blog/${post.path}/index.html`,
+      `${outdir}/${post.path}/index.html`,
       renderPost(post),
       (error: any): void => {
         if (error) {
