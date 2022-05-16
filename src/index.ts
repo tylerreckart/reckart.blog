@@ -2,6 +2,7 @@ import "module-alias/register";
 import path from "path";
 import fs from "fs";
 import colors from "colors";
+import buildArchive from "@app/routes/archive";
 import buildAssets from "@app/assets";
 import buildPages from "@app/page";
 import buildPosts from "@app/post";
@@ -32,6 +33,7 @@ export function bundleAssets(): void {
     buildAssets(outdir);
     // build pages
     buildHome(posts, outdir);
+    buildArchive(posts, outdir);
     buildPosts(posts, outdir);
     buildPages(pages, outdir);
     // rss/json feeds

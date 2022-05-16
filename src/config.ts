@@ -7,7 +7,7 @@ export default {
     title: "Tyler Reckart's Blog",
     author: "Tyler Reckart",
     description:
-      "Tyler Reckart is a software developer and photographer. This is his blog. There may be many like it, but this one is his.",
+      "Tyler Reckart is a programmer, photographer, writer, and ameteur anthropologist based in Greenville, SC.",
   },
   social: {
     twitter: "@tylerreckart",

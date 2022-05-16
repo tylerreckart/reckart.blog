@@ -188,6 +188,28 @@ article:last-of-type {
   margin-bottom: 20px;
 }
 
+/* ---------- Archive ---------- */
+.archive--list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 640px;
+  margin-bottom: 20px;
+}
+
+.list--item {
+  display: flex;
+  flex-direction: row;
+}
+
+.list--item h2 {
+  font-size: 18px;
+}
+
+.list--item > time {
+  width: 100px;
+}
+
 /* ---------- Footer ---------- */
 
 footer {
