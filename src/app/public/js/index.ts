@@ -10,15 +10,32 @@ function main(): void {
     path = "/";
   }
 
-  const nav = document.getElementById("nav");
+  console.log(path);
 
-  const currentPage: HTMLElement = [].filter.call(
-    nav!.children,
-    (el: HTMLElement) =>
-      // @ts-ignore
-      [].includes.call(el.classList, path !== "/" ? path : "home")
-  )[0];
-  currentPage.classList.add("active");
+  const nav = document.getElementById("nav");
+  
+  const getClass = () => {
+    if (path === '/') {
+      return 'home';
+    }
+
+    if (path === 'archive') {
+      return 'posts';
+    }
+
+    if (path === 'photos') {
+      return 'gallery';
+    }
+
+    if (path === 'about') {
+      return 'about';
+    }
+
+    return 'posts';
+  }
+
+  const currentPage: HTMLElement | null = document.querySelector(`.nav--link.${getClass()}`);
+  currentPage?.classList.add("active");
 
   const open = document.getElementById('trigger-open');
   const close = document.getElementById('trigger-close');
@@ -110,6 +127,8 @@ function main(): void {
     const wasDarkModeActive = localStorage.getItem('darkmode') === '1';
 
     if (wasDarkModeActive) {
+      darkModeToggle?.classList.remove('off');
+      darkModeToggle?.classList.add('on');
       document.body.classList.add('dark');
     }
   }
