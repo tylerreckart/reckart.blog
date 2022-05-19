@@ -94,14 +94,18 @@ function main(): void {
   });
 
   if(!document.body.className.split(' ').some((c) => { return /theme--.*/.test(c); })) {
-    const selectedTheme = localStorage.getItem('theme');
+    let theme = localStorage.getItem('theme');
 
-    if (!selectedTheme) {
-      document.body.classList.add('theme--red');
-      localStorage.setItem('theme', 'theme--red');
-    } else {
-      document.body.classList.add(selectedTheme);
+    if (!theme) {
+      theme = 'gruvbox';
     }
+
+    const themeTarget = document.querySelector(`.theme--target.${theme.replace('theme--', '')}`);
+    if (themeTarget) {
+      themeTarget.classList.add('active');
+    }
+
+    document.body.classList.add(theme);
 
     const wasDarkModeActive = localStorage.getItem('darkmode') === '1';
 

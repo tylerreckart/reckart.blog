@@ -1,11 +1,13 @@
 :root {
-  --theme-ui-theme-red: #d4384d;
   --theme-ui-theme-orange: #f2af32;
   --theme-ui-theme-green: #53d57c;
   --theme-ui-theme-blue: #0095ff;
   --theme-ui-theme-purple: #c792eb;
 
   --theme-ui-colors-bulb: #FAD000;
+
+  --theme-ui-theme-gruvbox: #fb4834;
+  --theme-ui-theme-paper: #7eae81;
 };
 
 html,
@@ -16,7 +18,7 @@ body {
   margin: 0;
   padding: 0;
   color: var(--theme-ui-colors-text);
-  background-color: var(--theme-ui-colors-white);
+  background-color: var(--theme-ui-colors-background);
 }
 
 body {
@@ -241,23 +243,23 @@ nav .title {
   margin-right: 0;
 }
 
-.theme--selector .red {
-  background-color: var(--theme-ui-theme-red);
+.theme--selector .gruvbox {
+  background-color: var(--theme-ui-theme-gruvbox);
 }
 
 .theme--selector .orange {
   background-color: var(--theme-ui-theme-orange);
 }
 
-.theme--selector .green {
-  background-color: var(--theme-ui-theme-green);
+.theme--selector .paper {
+  background-color: var(--theme-ui-theme-paper);
 }
 
 .theme--selector .blue {
   background-color: var(--theme-ui-theme-blue);
 }
 
-.theme--selector .purple {
+.theme--selector .shades-of-purple {
   background-color: var(--theme-ui-theme-purple);
 }
 
@@ -579,44 +581,32 @@ body.dark .fa-lightbulb path {
 
 body.dark .article--header h1, 
 body.dark .article--header h2 {
-  color: var(--theme-ui-colors-text-dark);
+  color: var(--theme-ui-colors-title-dark);
 }
 
 body.dark nav .site--title h1 {
-  color: var(--theme-ui-colors-text-dark);
+  color: var(--theme-ui-colors-primary);
 }
 
-body.theme--red {
+body.dark .article--header span {
+  color: var(--theme-ui-colors-comment-dark);
+}
+
+body.theme--gruvbox {
   --theme-ui-colors-primary: #fb4834;
-  --theme-ui-colors-primary-dark: #d3859b;
   --theme-ui-colors-secondary: #83a598;
-  --theme-ui-colors-muted: #363b3f;
-  --theme-ui-colors-light: #fafafa;
-  --theme-ui-colors-light-border: rgb(218, 218, 218);
-  --theme-ui-colors-backdrop: rgb(2, 36, 63);
-  --theme-ui-colors-transparent: rgba(2,36,63,0);
-
-  --theme-ui-colors-text: #2c3035;
-  --theme-ui-colors-text-dark: #f0eadb;
-  --theme-ui-colors-code-text: #f3f8ff;
-
-  --theme-ui-colors-variable: #87aff3;
-  --theme-ui-colors-attribute: #c792eb;
-  --theme-ui-colors-definition: #87aff3;
-  --theme-ui-colors-keyword: #00bff8;
-  --theme-ui-colors-operator: #00bff8;
-  --theme-ui-colors-property: #7fdbca;
-  --theme-ui-colors-number: #8cec94;
-  --theme-ui-colors-string: #bdf0c0;
-  --theme-ui-colors-meta: #555;
-  --theme-ui-colors-tag: #bf3cca;
-  --theme-ui-colors-white: #fff;
 
   --theme-ui-colors-background: #fff;
   --theme-ui-colors-background-dark: #282828;
 
+  --theme-ui-colors-text: #2c3035;
+  --theme-ui-colors-text-dark: #f0eadb;
+
+  --theme-ui-colors-title: #000;
+  --theme-ui-colors-title-dark: #83a598;
+
   --theme-ui-colors-comment: #999;
-  --theme-ui-colors-comment-dark: #918474;
+  --theme-ui-colors-comment-dark: #8f8d8d;
 }
 
 body.theme--orange {
@@ -693,22 +683,36 @@ body.theme--blue {
   --theme-ui-colors-comment-dark: #bdc0c1;
 }
 
-body.theme--purple {
+body.theme--shades-of-purple {
   --theme-ui-colors-primary: #c792eb;
-  --theme-ui-colors-primary-dark: #8556a4;
   --theme-ui-colors-secondary: #FAD000;
-  --theme-ui-colors-muted: #363b3f;
-  --theme-ui-colors-light: #fafafa;
-  --theme-ui-colors-light-border: rgb(218, 218, 218);
-  --theme-ui-colors-backdrop: rgb(2, 36, 63);
-  --theme-ui-colors-transparent: rgba(2,36,63,0);
+
+  --theme-ui-colors-title: #2c3035;
+  --theme-ui-colors-title-dark: #FAD000;
 
   --theme-ui-colors-text: #2c3035;
   --theme-ui-colors-text-dark: #f3f8ff;
 
   --theme-ui-colors-background: #fff;
-  --theme-ui-colors-background-dark: #2D2B55;
+  --theme-ui-colors-background-dark: #372d4d;
 
   --theme-ui-colors-comment: #999;
   --theme-ui-colors-comment-dark: #b2aeb7;
+}
+
+body.theme--paper {
+  --theme-ui-colors-primary: #7eae81;
+  --theme-ui-colors-secondary: #ad9dcc;
+
+  --theme-ui-colors-background: #f2eede;
+  --theme-ui-colors-background-dark: #222222;
+
+  --theme-ui-colors-text: #000;
+  --theme-ui-colors-text-dark: #b9b9b9;
+
+  --theme-ui-colors-title: #000;
+  --theme-ui-colors-title-dark: #7eae81;
+
+  --theme-ui-colors-comment: #777;
+  --theme-ui-colors-comment-dark: #6e6e6e;
 }
