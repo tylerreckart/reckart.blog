@@ -23,9 +23,12 @@ function main(): void {
   const open = document.getElementById('trigger-open');
   const close = document.getElementById('trigger-close');
   const menu = document.getElementById('appearance-menu');
+  const darkModeToggle = document.getElementById('dark-mode--toggle');
 
   document.addEventListener('click', (event) => {
-    if (event.target === open) {
+    const { target } = event; 
+  
+    if (target === open) {
       menu?.classList.add('animate-in');
       menu?.classList.remove('hidden');
       open?.classList.add('hidden');
@@ -46,7 +49,68 @@ function main(): void {
         menu?.classList.add('hidden');
       }, 300);
     }
-  })
+
+    if (event.target === darkModeToggle) {
+      const wasDarkModeActive = localStorage.getItem('darkmode') === '1';
+      localStorage.setItem('darkmode', wasDarkModeActive ? '0' : '1');
+
+      if (!document.body.classList.contains('dark')) {
+        // Update toggle state.
+        darkModeToggle?.classList.add('on');
+        darkModeToggle?.classList.remove('off');
+        // Add body class.
+        document.body.classList.add('dark');
+      } else {
+        // Update toggle state.
+        darkModeToggle?.classList.remove('on');
+        darkModeToggle?.classList.add('off');
+        // Remove body class.
+        document.body.classList.remove('dark');
+      }
+    }
+
+    if ((target as HTMLElement)?.classList.contains('theme--target')) {
+      const currentThemeTarget = document.querySelector('.theme--target.active');
+
+      if (currentThemeTarget) {
+        // Remove the active state from the current theme.
+        currentThemeTarget.classList.remove('active');
+        // Retrieve the theme's key.
+        const theme = currentThemeTarget.classList[1];
+        // Remove the current theme class.
+        document.body.classList.remove(`theme--${theme}`);
+      }
+
+      const theme = (target as HTMLElement).classList[1];
+      const nextTheme = `theme--${theme}`;
+  
+      // Load the theme variables into the body context.
+      document.body.classList.add(nextTheme);
+      // Set the selected theme in localStorage for later.
+      localStorage.setItem('theme', nextTheme);
+      // Add the active class to the target theme.
+      (target as HTMLElement).classList.add('active');
+    }
+  });
+
+  if(!document.body.className.split(' ').some((c) => { return /theme--.*/.test(c); })) {
+    const selectedTheme = localStorage.getItem('theme');
+
+    if (!selectedTheme) {
+      document.body.classList.add('theme--red');
+      localStorage.setItem('theme', 'theme--red');
+    } else {
+      document.body.classList.add(selectedTheme);
+    }
+
+    const wasDarkModeActive = localStorage.getItem('darkmode') === '1';
+
+    if (wasDarkModeActive) {
+      document.body.classList.add('dark');
+    }
+  }
+
+  document.body.classList.remove('hidden');
 }
 
 document.addEventListener("DOMContentLoaded", main);
