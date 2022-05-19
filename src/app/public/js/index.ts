@@ -19,6 +19,34 @@ function main(): void {
       [].includes.call(el.classList, path !== "/" ? path : "home")
   )[0];
   currentPage.classList.add("active");
+
+  const open = document.getElementById('trigger-open');
+  const close = document.getElementById('trigger-close');
+  const menu = document.getElementById('appearance-menu');
+
+  document.addEventListener('click', (event) => {
+    if (event.target === open) {
+      menu?.classList.add('animate-in');
+      menu?.classList.remove('hidden');
+      open?.classList.add('hidden');
+      close?.classList.remove('hidden');
+
+      setTimeout(() => {
+        menu?.classList.remove('animate-in');
+      }, 300);
+    }
+
+    if (event.target === close) {
+      menu?.classList.add('animate-out');
+      open?.classList.remove('hidden');
+      close?.classList.add('hidden');
+      
+      setTimeout(() => {
+        menu?.classList.remove('animate-out');
+        menu?.classList.add('hidden');
+      }, 300);
+    }
+  })
 }
 
 document.addEventListener("DOMContentLoaded", main);

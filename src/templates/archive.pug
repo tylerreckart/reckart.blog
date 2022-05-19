@@ -22,6 +22,6 @@ html(lang="en")
             each post in posts
                 div.list--item
                     time(datetime!=toISODate(post.attributes.date), pubdate="pubdate")=toISODate(post.attributes.date)
-                    a(href=post.path) #[h2=post.attributes.title]
+                    a(href="/" + post.path) #[h2=post.attributes.title]
         include components/footer.pug
 

@@ -1,10 +1,31 @@
 header
   nav#site--nav
     div.site--head
-      a(href="/").title reckart.blog
+      a(href="/").site--title
+        h1 reckart.blog
       div.nav--link-container(id="nav")
         a(href="/", class="nav--link home") Home
         a(href="/archive", class="nav--link blog") Posts
         a(href="https://reckart.photo", class="nav--link gallery") Photos
         a(href="/about", class="nav--link about") About
-    p #[span(role='img' aria-label='waving hand') &#x1F44B; I&#39;m ]#[a(href="/about") Tyler Reckart]#[span : a ]#[a(href="https://github.com/tylerreckart", target="_blank", rel="noreferrer") programmer], #[a(href="https://reckart.photo", target="_blank", rel="noreferrer") photographer]#[span , ]#[a(href="/posts") writer]#[span , and ameteur anthropologist.]
+        button#trigger-open
+          i(class="fa-solid fa-palette")
+        button#trigger-close.hidden
+          i(class="fa-solid fa-xmark")
+    div(class="nav--appearance-menu hidden" id="appearance-menu")
+      i(class="fa-solid fa-lightbulb")
+      span Dark Mode
+      div.dark-mode--toggle
+      i(class="fa-solid fa-swatchbook")
+      span Color Theme
+      ul.theme--selector 
+        li
+          div.red
+        li
+          div.orange
+        li
+          div.green
+        li
+          div.blue.active
+        li
+          div.purple
