@@ -72,12 +72,14 @@ function main(): void {
       localStorage.setItem('darkmode', wasDarkModeActive ? '0' : '1');
 
       if (!document.body.classList.contains('dark')) {
+        console.log('no dark');
         // Update toggle state.
         darkModeToggle?.classList.add('on');
         darkModeToggle?.classList.remove('off');
         // Add body class.
         document.body.classList.add('dark');
       } else {
+        console.log('dark');
         // Update toggle state.
         darkModeToggle?.classList.remove('on');
         darkModeToggle?.classList.add('off');
