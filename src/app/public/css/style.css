@@ -32,6 +32,10 @@ body {
   height: 100%;
 }
 
+.content {
+  max-width: 640px;
+}
+
 /* ---------- Header ---------- */
 header {
   display: flex;
@@ -377,6 +381,26 @@ article:last-of-type {
 .article--content > p > img {
   margin: 0 -20px;
   width: calc(100% + 40px);
+}
+
+/* ---------- Photo Gallery ---------- */
+.photo-gallery--wrapper {
+  display: flex;
+  flex-direction: row;
+  width: 960px;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.photo-gallery--wrapper > img {
+  max-width: 300px;
+  max-height: 300px;
+  margin: 10px;
+  cursor: pointer;
 }
 
 /* ---------- Next Post ---------- */

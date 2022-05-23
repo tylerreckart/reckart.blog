@@ -1,0 +1,19 @@
+doctype html
+html(lang="en")
+  head
+    if seo.title
+      title=seo.title
+    else
+      title=""
+    if seo.description
+      meta(name="description", content=seo.description)
+    else
+      meta(name="description", content="")
+    include components/head.pug
+  body
+    main.content
+      include components/nav.pug
+      div.photo-gallery--wrapper
+        each photo in photos
+          img(src=photo.src)
+      include components/footer.pug

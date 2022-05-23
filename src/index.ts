@@ -9,8 +9,10 @@ import buildPosts from "@app/post";
 import buildHome from "@app/routes/home";
 import buildFeed from "@app/feed";
 import build404 from "@app/routes/404";
+import buildPhotoGallery from "@app/routes/photos";
 import getPosts from "@app/utils/get-posts";
 import getPages from "@app/utils/get-pages";
+import getPhotos from "@app/utils/get-photos";
 import { Post as PostType } from "@src/types/post";
 import { Page as PageType } from "@src/types/page";
 
@@ -24,6 +26,7 @@ if (!fs.existsSync(outdir)) {
 
 const posts: Array<PostType> = getPosts();
 const pages: Array<PageType> = getPages();
+const photos: Array<unknown> = getPhotos();
 
 export function bundleAssets(): void {
   try {
@@ -36,6 +39,7 @@ export function bundleAssets(): void {
     buildArchive(posts, outdir);
     buildPosts(posts, outdir);
     buildPages(pages, outdir);
+    buildPhotoGallery(photos, outdir);
     // rss/json feeds
     buildFeed(posts, outdir);
     // 404 page
