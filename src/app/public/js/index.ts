@@ -116,10 +116,12 @@ function main(): void {
     let theme = localStorage.getItem('theme');
 
     if (!theme) {
-      theme = 'gruvbox';
+      theme = 'theme--gruvbox';
+      localStorage.setItem('theme', theme);
     }
 
     const themeTarget = document.querySelector(`.theme--target.${theme.replace('theme--', '')}`);
+
     if (themeTarget) {
       themeTarget.classList.add('active');
     }
