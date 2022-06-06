@@ -2,6 +2,7 @@
 date: "June 8, 2021"
 title: "Server-side rendering in React 18"
 description: "Among the many improvements in React 18, one of the standouts in my opinion are the updates to server-side rendering (SSR) performance. For those that don't know, SSR lets your app generate HTML from React components directly on the server, which then gets served to your users. This allows your users to see the page's content before your app's JavaScript bundle is loaded and run. Most of the improvements are behind in the scenes, but bundled in are a few opt-in methods that are worth exploring."
+published: true
 ---
 
 Among the many improvements in React 18, one of the standouts in my opinion are the updates to server-side rendering (SSR) performance. For those that don't know, SSR lets your app generate HTML from React components directly on the server, which then gets served to your users. This allows your users to see the page's content before your app's JavaScript bundle is loaded and run. Most of the improvements are behind in the scenes, but bundled in are a few opt-in methods that are worth exploring.

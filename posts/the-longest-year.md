@@ -2,6 +2,7 @@
 date: "December 6, 2021"
 title: "The Longest Year"
 description: "A large part of my interests outside of programming, a healthy portion of the [stacks of books I get through each year, center around one subject: antiquity. I've had a strong interest in history since I was a kid. The story that follows is one that I've known for a few years, but I thought it was an interesting subject and wanted to share it in my own way."
+published: true
 ---
 
 ![Lionel Royer - Vercingetorix throws down his arms at the feet of Julius Caesar, 189](https://upload.wikimedia.org/wikipedia/commons/9/93/Siege-alesia-vercingetorix-jules-cesar.jpg)

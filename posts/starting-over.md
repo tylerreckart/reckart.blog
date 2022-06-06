@@ -2,6 +2,7 @@
 date: "October 1, 2020"
 title: "Starting Over"
 description: "In the decade that I've been building things for the web; first just noodling around as a teenager picking up freelance projects here and there, then professionally, my personal website has gone through an immeasurable amount of iteration. It was time for a fresh start."
+published: true
 ---
 
 In the decade that I've been building things for the web; first just noodling around as a teenager picking up freelance projects here and there, then professionally, my personal website has gone through an immeasurable amount of iteration. I actually can't count the number of times I've rebuilt or redesigned my website because most of the early iterations came and went long before I knew anything about version control.

@@ -2,6 +2,7 @@
 date: "November 30, 2021"
 title: "On Social Media"
 description: "I’ve been on social media for almost as long as I’ve been on the internet. I made my Facebook account in April of 2009. I was 13. That, however, wasn’t my introduction to the social internet. I signed up for my first YouTube account shortly after the service launched in 2006. As I’ve grown up with the internet, finding and forging my own communities as a teenager and then building my professional career on it as an adult, the social aspect of internet culture has always been at the heart of it."
+published: true
 ---
 
 I’ve been on social media for almost as long as I’ve been on the internet. I made my Facebook account in April of 2009. I was 13. That, however, wasn’t my introduction to the social internet. I signed up for my first YouTube account shortly after the service launched in 2006. As I’ve grown up with the internet, finding and forging my own communities as a teenager and then building my professional career on it as an adult, the social aspect of internet culture has always been at the heart of it. Experiencing much of my life through the lens of the internet has helped make me who I am today. Without an [invitation](https://web.archive.org/web/20111102212107/http://www.rzdesign.nl/2010/10/get-into-forrst/ ()) to an emerging social network for graphic designers called [Forrst](https://web.archive.org/web/20110808061508/http://forrst.com/) in 2010, I likely wouldn’t be where I am today.  

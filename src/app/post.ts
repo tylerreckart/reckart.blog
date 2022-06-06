@@ -54,16 +54,18 @@ export default function buildPosts(
   // Check to see if the blog directory has been built previously.
   if (!fs.existsSync(`${outdir}/blog`)) {
     // If the directory does not exist, build it.
-    fs.mkdirSync(`${outdir}/blog}`);
+    fs.mkdirSync(`${outdir}/blog`);
   }
 
-  const remappedPosts = posts.map((post: PostType, index: number) => {
-    return {
-      ...post,
-      ...config,
-      nextPost: generateNextPost(posts[index + 1]),
-    };
-  });
+  const remappedPosts = posts
+    .filter((post: PostType) => post.attributes.published)
+    .map((post: PostType, index: number) => {
+      return {
+        ...post,
+        ...config,
+        nextPost: generateNextPost(posts[index + 1]),
+      };
+    });
 
   remappedPosts.forEach((post: PostType) => {
     if (!fs.existsSync(`${outdir}/${post.path}`)) {

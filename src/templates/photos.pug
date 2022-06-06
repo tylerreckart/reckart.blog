@@ -15,5 +15,6 @@ html(lang="en")
       include components/nav.pug
       div.photo-gallery--wrapper
         each photo in photos
-          img(src=photo.src)
+          div.photo-gallery--image
+            img(src=photo.src)
       include components/footer.pug

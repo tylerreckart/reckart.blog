@@ -24,8 +24,10 @@ export default function buildArchive(
     fs.mkdirSync(`${outdir}/archive`);
   }
 
+  const filteredPosts = posts.filter((post: PostType) => post.attributes.published);
+
   const archive = render({
-    posts,
+    posts: filteredPosts,
     ...config,
   });
 

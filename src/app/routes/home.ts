@@ -18,8 +18,10 @@ export default function buildHome(
   posts: Array<PostType>,
   outdir: string
 ): void {
+  const filteredPosts = posts.filter((post: PostType) => post.attributes.published);
+
   const homepage = renderHomepage({
-    posts,
+    posts: filteredPosts,
     ...config,
   });
 

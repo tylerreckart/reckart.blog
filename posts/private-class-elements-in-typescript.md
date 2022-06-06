@@ -2,6 +2,7 @@
 date: "June 9, 2021"
 title: "Private Class Elements in TypeScript 4.3"
 description: "Among the many additions to TypeScript in its 4.3 release is the ability to define which elements in a class can be given private property names, making them truly private at run-time. Properties, methods and accessors can all be given private names."
+published: true
 ---
 
 Among the [many additions](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-4-3.html) to TypeScript in its 4.3 release is the ability to define which elements in a class can be given private property names, making them truly private at run-time. Properties, methods and accessors can all be given private names.

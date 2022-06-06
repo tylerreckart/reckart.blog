@@ -32,7 +32,7 @@ html(lang="en")
       article.article-page--wrapper
         div.article--header
           a(href="/" + path) #[h2=attributes.title]
-          +time(attributes.date)
+          span Posted on #[+time(attributes.date)]
         div.article--content
           | !{body}
       if !nextPost
