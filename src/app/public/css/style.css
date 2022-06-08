@@ -385,12 +385,51 @@ article:last-of-type {
 
 /* ---------- Photo Gallery ---------- */
 .photo-gallery--wrapper {
-  max-width: 620px;
-  margin: 0 auto;
+  width: 1200px;
+  column-count: 4;
+  column-gap: 0px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.photo-gallery--image {
+  margin: 0;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  break-inside: avoid;
+  max-width: 300px;
 }
 
 .photo-gallery--wrapper img {
+  grid-row: 1 / -1;
+  grid-column: 1;
   width: 100%;
+}
+
+@media screen and (max-width: 1200px) {
+  .photo-gallery--wrapper {
+    width: 900px;
+    column-count: 3;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .photo-gallery--wrapper {
+    width: 600px;
+    column-count: 2;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .photo-gallery--wrapper {
+    width: 100%;
+    column-count: 1;
+  }
+
+  .photo-gallery--image {
+    max-width: 100%;
+  }
 }
 
 /* ---------- Next Post ---------- */
