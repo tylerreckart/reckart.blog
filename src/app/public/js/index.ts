@@ -1,3 +1,5 @@
+import { handleGalleryEvents } from './gallery';
+
 function main(): void {
   // Set the active state on the nav element for the current page.
   const {
@@ -10,11 +12,7 @@ function main(): void {
     path = "/";
   }
 
-  console.log(path);
-
-  const nav = document.getElementById("nav");
-  
-  const getClass = () => {
+  const getClass = (): string => {
     if (path === '/') {
       return 'home';
     }
@@ -138,6 +136,8 @@ function main(): void {
   }
 
   document.body.classList.remove('hidden');
+  // Initialize gallery event listeners.
+  handleGalleryEvents();
 }
 
 document.addEventListener("DOMContentLoaded", main);

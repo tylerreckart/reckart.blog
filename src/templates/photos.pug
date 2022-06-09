@@ -13,8 +13,8 @@ html(lang="en")
   body
     main.content
       include components/nav.pug
-      div.photo-gallery--wrapper
+      div#photo-gallery--wrapper
         each photo in photos
           div.photo-gallery--image
-            img(src=photo.src)
+            img(src=photo.src, class="gallery--img")
       include components/footer.pug
