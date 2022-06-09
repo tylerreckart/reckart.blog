@@ -389,6 +389,7 @@ article:last-of-type {
   column-count: 4;
   column-gap: 0px;
   position: relative;
+  column-gap: 10px;
   left: 50%;
   transform: translateX(-50%);
 }
@@ -399,6 +400,7 @@ article:last-of-type {
   grid-template-rows: 1fr auto;
   break-inside: avoid;
   max-width: 300px;
+  margin-bottom: 10px;
 }
 
 .photo-gallery--wrapper img {
