@@ -140,4 +140,4 @@ function main(): void {
   handleGalleryEvents();
 }
 
-document.addEventListener("DOMContentLoaded", main);
+window.addEventListener("load", main);
