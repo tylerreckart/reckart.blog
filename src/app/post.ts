@@ -63,7 +63,7 @@ export default function buildPosts(
       return {
         ...post,
         ...config,
-        nextPost: generateNextPost(posts[index + 1]),
+        nextPost: generateNextPost(posts[index + 2]),
       };
     });
 

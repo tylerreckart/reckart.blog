@@ -655,7 +655,6 @@ article:last-of-type {
 .list--item {
   display: flex;
   flex-direction: row;
-  width: 100%;
   margin: 5px 20px;
 }
 
@@ -668,15 +667,18 @@ article:last-of-type {
 }
 
 .list--item > time {
+  display: block;
   margin-right: 10px;
-  width: 100px;
+  width: 100px !important;
   color: var(--theme-ui-colors-comment);
+  white-space: nowrap;
 }
 
 @media screen and (max-width: 640px) {
   .archive--list {
     width: 100%;
   }
+}
 
 /* ---------- Footer ---------- */
 
@@ -878,7 +880,7 @@ body.theme--gruvbox {
   --theme-ui-colors-bg-dark: #282828;
   --theme-ui-colors-overlay-bg: #fff;
   --theme-ui-colors-overlay-bg-dark: #3c3c3c;
-  --theme-ui-colors-next--post-bg: #f3efec;
+  --theme-ui-colors-next--post-bg: #f5f4f4;
   --theme-ui-colors-next--post-bg-dark: #504946;
 
   --theme-ui-colors-pre-text: #f0eadb;
