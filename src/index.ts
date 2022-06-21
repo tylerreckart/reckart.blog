@@ -39,7 +39,8 @@ export function bundleAssets(): void {
     buildArchive(posts, outdir);
     buildPosts(posts, outdir);
     buildPages(pages, outdir);
-    buildPhotoGallery(photos, outdir);
+    // buildPhotoGallery(photos, outdir);
+    buildPhotoGallery(outdir);
     // rss/json feeds
     buildFeed(posts, outdir);
     // 404 page

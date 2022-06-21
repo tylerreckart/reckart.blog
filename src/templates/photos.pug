@@ -13,8 +13,14 @@ html(lang="en")
   body
     main.content
       include components/nav.pug
-      div#photo-gallery--wrapper
-        each photo in photos
-          div.photo-gallery--image
-            img(src=photo.src, class="gallery--img")
+      each photo in photos
+        if photo.type === 'featured'
+          div.featured-photo--image
+            img(src=photo.src, class="featured--img" alt=photo.alt)
+            span=photo.alt
+        else
+          div#photo-gallery--wrapper
+            each image in photo.photos
+              div.photo-gallery--image
+                img(src=image.src, class="gallery--img")
       include components/footer.pug
