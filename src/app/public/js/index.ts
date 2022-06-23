@@ -102,7 +102,7 @@ function main(): void {
       const nextTheme = `theme--${theme}`;
   
       // Load the theme variables into the body context.
-      
+      document.body.classList.add(nextTheme);
       // Set the selected theme in localStorage for later.
       localStorage.setItem('theme', nextTheme);
       // Add the active class to the target theme.
