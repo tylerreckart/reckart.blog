@@ -10,13 +10,14 @@ const render = pug.compileFile(
 );
 
 const photos = [
-  { type: 'featured', src: 'https://s3.us-east-2.amazonaws.com/reckart.blog-images/20220617-hyacinth-velvia.jpg', alt: 'Chlorophyll, 2022 - Chamonix 45-N2, Fujifilm Velvia 50'},
+  { type: 'featured', src: 'https://s3.us-east-2.amazonaws.com/reckart.blog-images/hyacinth.jpg' },
   { type: 'gallery', photos: [
-    { src: 'https://s3.us-east-2.amazonaws.com/reckart.blog-images/ladder.jpg' },
-    { src: 'https://s3.us-east-2.amazonaws.com/reckart.blog-images/lyman.jpg' },
-    { src: 'https://s3.us-east-2.amazonaws.com/reckart.blog-images/moored.jpg' },
-    { src: 'https://s3.us-east-2.amazonaws.com/reckart.blog-images/parking.jpg' },
-  ]}
+    { src: 'https://s3.us-east-2.amazonaws.com/reckart.blog-images/smokies_river-untitled-1.jpg' },
+    { src: 'https://s3.us-east-2.amazonaws.com/reckart.blog-images/revival.jpg' },
+    { src: 'https://s3.us-east-2.amazonaws.com/reckart.blog-images/clingmans_dome-untitled-1.jpg' },
+    { src: 'https://s3.us-east-2.amazonaws.com/reckart.blog-images/balance.jpg' },
+  ]},
+  { type: 'featured', src: 'https://s3.us-east-2.amazonaws.com/reckart.blog-images/disillusion.jpg' },
 ]
 
 export default function buildPhotoGallery(

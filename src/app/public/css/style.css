@@ -8,7 +8,7 @@
   --theme-ui-box-shadow: 0 4px 14px 2px rgba(0, 0, 0, .1);
   --theme-ui-box-shadow-dark: 0 4px 14px 2px rgba(0, 0, 0, .3);
 
-  --theme-ui-theme-gruvbox: #fb4834;
+  --theme-ui-theme-gruvbox: #2c3035;
 };
 
 html,
@@ -286,7 +286,7 @@ nav .title {
 }
 
 .theme--selector .blue {
-  background-color: var(--theme-ui-theme-blue);
+  background-color: var(--theme-ui-theme-purple);
 }
 
 .theme--selector .shades-of-purple {
@@ -410,8 +410,8 @@ article:last-of-type {
 
 /* ---------- Photo Gallery ---------- */
 #photo-gallery--wrapper {
-  width: 1200px;
-  column-count: 4;
+  width: 900px;
+  column-count: 2;
   column-gap: 0px;
   position: relative;
   column-gap: 10px;
@@ -420,7 +420,7 @@ article:last-of-type {
 }
 
 .featured-photo--image {
-  width: 1200px;
+  width: 900px;
   position: relative;
   left: 50%;
   transform: translateX(-50%);
@@ -431,7 +431,7 @@ article:last-of-type {
   display: grid;
   grid-template-rows: 1fr auto;
   break-inside: avoid;
-  max-width: 300px;
+  max-width: 100%;
   margin-bottom: 10px;
   cursor: pointer;
 }
@@ -440,6 +440,7 @@ article:last-of-type {
   grid-row: 1 / -1;
   grid-column: 1;
   width: 100%;
+  height: 445px;
 }
 
 .featured-photo--image img {
@@ -453,7 +454,6 @@ article:last-of-type {
   width: 100%;
   display: block;
   text-align: right;
-  margin-bottom: 10px;
 }
 
 @media screen and (max-width: 1200px) {
@@ -473,8 +473,13 @@ article:last-of-type {
     column-count: 2;
   }
 
+  #photo-gallery--wrapper img {
+    height: 295px;
+  }
+
   .featured-photo--image {
     width: 600px;
+    height: auto;
   }
 }
 
@@ -482,6 +487,10 @@ article:last-of-type {
   #photo-gallery--wrapper {
     width: 100%;
     column-count: 1;
+  }
+
+  #photo-gallery--wrapper img {
+    height: auto;
   }
 
   .photo-gallery--image {
@@ -895,11 +904,11 @@ body.theme--gruvbox {
   --theme-colors-red: #fb4834;
   --theme-colors-green: #b8bb26;
   --theme-colors-yellow: #fadb2f;
-  --theme-colors-blue: #83a598;
+  --theme-colors-blue: #0e81a5;
   --theme-colors-purple: #d3869b;
   --theme-colors-aqua: #8ec07c;
 
-  --theme-ui-colors-primary: var(--theme-colors-red);
+  --theme-ui-colors-primary: var(--theme-ui-colors-text);
   --theme-ui-colors-secondary: var(--theme-colors-blue);
 
   --theme-ui-colors-text: #2c3035;
@@ -937,8 +946,8 @@ body.theme--blue {
   --theme-colors-purple: #c792eb;
   --theme-colors-aqua: #8dc8a5;
 
-  --theme-ui-colors-primary: var(--theme-colors-blue);
-  --theme-ui-colors-secondary: var(--theme-colors-purple);
+  --theme-ui-colors-primary: var(--theme-colors-purple);
+  --theme-ui-colors-secondary: var(--theme-colors-blue);
 
   --theme-ui-colors-text: #2c3035;
   --theme-ui-colors-text-dark: #f1f4f7;
