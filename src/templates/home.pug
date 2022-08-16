@@ -12,8 +12,8 @@ html(lang="en")
       meta(name="description", content="")
     include components/head.pug
   body.hidden
-    main.content
-      include components/nav.pug
+    include components/nav.pug
+    main.content.home
       each post in posts
         article
           div.article--header

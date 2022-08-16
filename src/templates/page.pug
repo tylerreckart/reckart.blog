@@ -9,8 +9,8 @@ html(lang="en")
     include components/head.pug
     script(type="text/javascript" src="../js/bundle.js")
   body
+    include components/nav.pug
     main.content
-      include components/nav.pug
       article.page--wrapper
         div.page--header
           h1=attributes.title

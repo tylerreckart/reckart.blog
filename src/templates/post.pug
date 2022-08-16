@@ -27,8 +27,8 @@ html(lang="en")
     meta(name="twitter:title", content=attributes.title)
     include components/head.pug
   body
+    include components/nav.pug
     main.content
-      include components/nav.pug
       article.article-page--wrapper
         div.article--header
           a(href="/" + path) #[h2=attributes.title]

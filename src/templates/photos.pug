@@ -11,8 +11,10 @@ html(lang="en")
       meta(name="description", content="")
     include components/head.pug
   body
-    main.content
-      include components/nav.pug
+    include components/nav.pug
+    main.content.gallery--container
+      div.page--header
+          h1 Photos
       each photo in photos
         if photo.type === 'featured'
           div.featured-photo--image
