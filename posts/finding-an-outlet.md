@@ -26,4 +26,4 @@ Large format forces you to slow down. Each movement of the camera subtly affects
 
 ![A landscape scene shot in Great Smoky Mountains National Park with a large format view camera](https://s3.us-east-2.amazonaws.com/reckart.blog-images/lorien-blog-2.jpg)
 
-Finding photography, and large format film photography has brought that creative energy back to the background. It is something that I have grown incredibly passionate about over the few years since I fell into the hobby. I think we all need an outlet, and I feel very grateful to have found mine.
+Finding photography, and large format film photography has brought that creative energy back from the background. It is something that I have grown incredibly passionate about over the few years since I fell into the hobby. I think we all need an outlet, and I feel very grateful to have found mine.
