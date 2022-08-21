@@ -11,7 +11,9 @@
   --theme-colors-aqua: #8dc8a5;
 
   --theme-ui-colors-primary: var(--theme-colors-slate);
-  --theme-ui-colors-secondary: var(--theme-colors-blue);
+  --theme-ui-colors-secondary: var(--theme-ui-colors-header);
+
+  --theme-ui-colors-header: #004475;
 
   --theme-ui-colors-text: #2c3035;
   --theme-ui-colors-title: #181c24;
@@ -79,7 +81,8 @@ header {
   width: 100%;
   justify-content: center;
   z-index: 1;
-  background-color: var(--theme-ui-colors-next--post-bg);
+  background-color: var(--theme-ui-colors-header);
+  color: white;
   width: 100%;
   margin-bottom: 20px;
   border-bottom: 1px solid var(--theme-ui-colors-next--post-separator);
@@ -108,9 +111,12 @@ nav {
 }
 
 .site--title > h1 {
-  color: var(--theme-ui-colors-bg-dark);
+  color: white;
   font-size: 16px;
   line-height: 16px;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-decoration-color: var(--theme-colors-blue);
 }
 
 .nav--link-container {
@@ -129,11 +135,11 @@ nav {
 .nav--link-container .active {
   text-decoration: underline;
   text-decoration-thickness: 2px;
-  text-decoration-color: var(--theme-ui-colors-secondary);
+  text-decoration-color: var(--theme-colors-blue);
 }
 
 .nav--link {
-  color: var(--theme-ui-colors-bg-dark);
+  color: white;
   font-weight: bold;
   font-size: 14px;
   line-height: 14px;
@@ -148,7 +154,7 @@ h1,h2,h3,h4,h5,h6 {
 
 a {
   text-decoration: none;
-  color: var(--theme-ui-colors-secondary);
+  color: var(--theme-colors-blue);
 }
 
 a:hover {
