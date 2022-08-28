@@ -582,6 +582,12 @@ pre > code {
   border-radius: 6px;
 }
 
+@media screen and (max-width: 640px) {
+  pre > code {
+    border-radius: 0;
+  }
+}
+
 code {
   color: var(--theme-ui-colors-comment);
 }
