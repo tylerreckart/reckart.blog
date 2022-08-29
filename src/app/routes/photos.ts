@@ -12,12 +12,13 @@ const render = pug.compileFile(
 const photos = [
   { type: 'featured', src: 'https://s3.us-east-2.amazonaws.com/reckart.blog-images/hyacinth.jpg' },
   { type: 'gallery', photos: [
+    { src: 'https://s3.us-east-2.amazonaws.com/reckart.blog-images/lorien-blog-2.jpg' },
     { src: 'https://s3.us-east-2.amazonaws.com/reckart.blog-images/smokies_river-untitled-1.jpg' },
+    { src: 'https://s3.us-east-2.amazonaws.com/reckart.blog-images/disillusion.jpg' },
     { src: 'https://s3.us-east-2.amazonaws.com/reckart.blog-images/revival.jpg' },
     { src: 'https://s3.us-east-2.amazonaws.com/reckart.blog-images/clingmans_dome-untitled-1.jpg' },
     { src: 'https://s3.us-east-2.amazonaws.com/reckart.blog-images/balance.jpg' },
   ]},
-  { type: 'featured', src: 'https://s3.us-east-2.amazonaws.com/reckart.blog-images/disillusion.jpg' },
 ]
 
 export default function buildPhotoGallery(
