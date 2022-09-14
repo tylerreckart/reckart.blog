@@ -1,6 +1,6 @@
 import fs from "fs";
 import fm from "front-matter";
-import marked from "marked";
+import { marked } from "marked";
 import hljs from "highlight.js";
 import { Post as PostType } from "@src/types/post";
 import { Page as PageType } from "types/page";
