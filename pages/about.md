@@ -6,6 +6,6 @@ I'm a [programmer](https://github.com/tylerreckart), [photographer](/photos), an
 
 My full CV is available on [LinkedIn](https://linkedin.com/in/tylerreckart).
 
-Outside of work I run a small one-man software development studio: [Haptic Software](https://haptic.software). Haptic's first app, [Ansel](https://apps.apple.com/us/app/ansel-photographers-notebook/id1643250194), is now available on the app store for free. [Read more about it](/introducing-ansel) on my blog.
+Outside of work I run a small one-man software development studio: [Haptic Software](https://haptic.software). Haptic's first app, [Aspen](https://apps.apple.com/us/app/aspen-photographers-notebook/id1643250194), is now available on the app store for free. [Read more about it](/introducing-aspen) on my blog.
 
 The source code for this website is available on [Github](https://github.com/tylerreckart/reckart.blog). When I launched this version of my website, I [wrote](/starting-over) about the build system I developed that handles rendering all of the content, markup, and styling. The configuration has changed a little since then, but the core idea behind the markdown-based templating system is still at the foundation of this website's architecture.

@@ -1,10 +1,10 @@
 ---
 date: "August 28, 2022"
 title: "Drag-and-Drop with SwiftUI"
-description: "One of the requirements I decided on early on in the development of Ansel was a completely customizable dashboard. This blog post is an overview of that implementation in SwiftUI."
+description: "One of the requirements I decided on early on in the development of Aspen was a completely customizable dashboard. This blog post is an overview of that implementation in SwiftUI."
 published: true
 ---
-One of the requirements I decided on early on in the development of Ansel was a completely customizable dashboard. Ansel ships bundled with several different tools for calculating exposure, however not all photographers use every one of these tools. It was important to me that the app allowed users to add and remove tiles as well as reorder their position on the dashboard.  
+One of the requirements I decided on early on in the development of Aspen was a completely customizable dashboard. Aspen ships bundled with several different tools for calculating exposure, however not all photographers use every one of these tools. It was important to me that the app allowed users to add and remove tiles as well as reorder their position on the dashboard.  
 
 There are several ways to accomplish this behavior. My initial implementation was to use native Gesture recognition. However, the amount of overhead required to allow the additional tiles to recognize the current gesture was more than I wanted to try and implement as part of the app's MVP. With that in mind, I turned to `.onDrag` and `.onDrop` handlers. While the handlers themselves didn't have what I needed out of the box, defining a custom `DropDelegate` was an easy enough solution.
 
