@@ -101,7 +101,7 @@ function handlePopup(event: any): void {
     }, 350);
   }
 
-  if (value.includes("gallery--img")) {
+  if (value.includes("gallery--img") || value.includes("featured--img")) {
     const { src, alt } = target;
 
     const lightbox = buildLightbox();
@@ -149,16 +149,16 @@ function handleKeyDown(event: KeyboardEvent): void {
           collection.find((i) => i.src === image.src)
         );
 
-        const nextItem = collection[nextValidIndex(collection, index + 1)];
-        const prevItem = collection[nextValidIndex(collection, index - 1)];
+        // const nextItem = collection[nextValidIndex(collection, index + 1)];
+        // const prevItem = collection[nextValidIndex(collection, index - 1)];
 
-        if (nextItem && key === "ArrowRight") {
-          nextImage(wrapper, image, nextItem, "right");
-        }
+        // if (nextItem && key === "ArrowRight") {
+        //   nextImage(wrapper, image, nextItem, "right");
+        // }
 
-        if (prevItem && key === "ArrowLeft") {
-          nextImage(wrapper, image, prevItem, "left");
-        }
+        // if (prevItem && key === "ArrowLeft") {
+        //   nextImage(wrapper, image, prevItem, "left");
+        // }
       }
     }
   }
