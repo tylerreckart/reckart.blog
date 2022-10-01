@@ -5,7 +5,8 @@
   "main": "src/index.ts",
   "scripts": {
     "build": "npx ts-node ./cli/build",
-    "develop": "nodemon && npx ts-node ./cli/serve"
+    "start:server": "npx ts-node ./cli/serve",
+    "watch": "nodemon --ignore build"
   },
   "author": "Tyler Reckart",
   "license": "MIT",

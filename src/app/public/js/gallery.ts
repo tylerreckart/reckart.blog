@@ -101,7 +101,7 @@ function handlePopup(event: any): void {
     }, 350);
   }
 
-  if (value.includes("gallery--img") || value.includes("featured--img")) {
+  if (value.includes("gallery-page--image")) {
     const { src, alt } = target;
 
     const lightbox = buildLightbox();

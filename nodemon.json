@@ -1,5 +1,5 @@
 {
   "watch": ["src", "pages", "posts", "photos"],
   "ext": "ts,js,json,css,pug,md",
-  "exec": "npx ts-node ./cli/serve"
+  "exec": "npx ts-node ./cli/build"
 }

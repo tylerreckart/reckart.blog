@@ -5,11 +5,8 @@ import express from "express";
 import livereload from 'livereload';
 import livereloadConenctor from 'connect-livereload';
 import colors from "colors";
-import { bundleAssets } from "../src";
 
-bundleAssets();
-
-const outdir: string = path.resolve(`${__dirname}/../build`);
+const outdir: string = path.join(__dirname, '../build');
 
 // Check to see if the `build` directory exists.
 if (!fs.existsSync(outdir)) {
@@ -18,25 +15,21 @@ if (!fs.existsSync(outdir)) {
 }
 
 const livereloadServer = livereload.createServer();
-livereloadServer.watch(outdir);
+livereloadServer.watch(path.join(__dirname, '../build'));
 
 const app = express();
 
-function main() {
-  app.use(express.static("build"));
-  app.use(livereloadConenctor());
+app.use(livereloadConenctor());
+app.use(express.static("build"));
 
-  app.listen(2056, (): void =>
-    console.log(
-      colors.green("[express] development server running on port 2056")
-    )
-  );
+app.listen(2056, (): void =>
+  console.log(
+    colors.green("[express] development server running on port 2056")
+  )
+);
 
-  livereloadServer.server.once("connection", () => {
-    setTimeout(() => {
-      livereloadServer.refresh("/");
-    }, 100);
-  });
-}
-
-main();
+livereloadServer.server.once("connection", () => {
+  setTimeout(() => {
+    livereloadServer.refresh("/");
+  }, 250);
+});
