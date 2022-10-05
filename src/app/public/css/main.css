@@ -82,6 +82,11 @@ blockquote {
   display: none;
 }
 
+.page-404 {
+  width: 100%;
+  height: 400px;
+}
+
 .content {
   max-width: 640px;
 }
