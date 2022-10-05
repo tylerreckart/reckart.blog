@@ -10,7 +10,7 @@ The culprit is the [inverse square law](https://en.wikipedia.org/wiki/Inverse-sq
 
 The calculation to compensate for bellows extension is simple, but it's a pain to do in the field or working with extreme extensions for macro photography. I've had the formula in a small notebook that I keep with my large format gear to reference when out in the field, but I thought there could be a better way. So I decided to build one.
 
-![](https://s3.us-east-2.amazonaws.com/reckart.blog-images/Aspen_recording-1.gif)
+![](https://s3.us-east-2.amazonaws.com/reckart.blog-images/ansel_recording-1.gif)
 
 This little photography app, which I've taken to calling Aspen, solves that problem. In its current state, you can adjust for bellows extension, film reciprocity, as well as filter factors. It also includes a handy notebook for referencing exposures in the future.
 

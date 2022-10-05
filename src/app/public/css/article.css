@@ -1,0 +1,125 @@
+article {
+  display: flex;
+  flex-direction: column;
+  max-width: 640px;
+  margin-bottom: 32px;
+}
+
+article p {
+  margin: 0 0 16px 0;
+  padding: 0;
+}
+
+.article--header,
+.page--header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.article--header h1, 
+.article--header h2,
+.page--header h1, 
+.page--header h2 {
+  font-size: 22px;
+  line-height: 22px;
+  margin-bottom: 10px;
+}
+
+.page--header,
+.article--header {
+  padding: 0 20px;
+  margin: 15px 0;
+}
+
+.article--header time {
+  color: var(--theme-ui-colors-comment);
+}
+
+.article--header span {
+  font-size: 14px;
+  line-height: 14px;
+  color: var(--theme-ui-colors-comment);
+}
+
+.article--header a {
+  color: var(--theme-ui-colors-text);
+}
+
+.page--content,
+.article--content {
+  padding: 0 20px;
+}
+
+.article--content > p {
+  max-width: 640px;
+}
+
+.article--content > p:last-of-type {
+  margin-bottom: 0;
+}
+
+.article--content > p > img {
+  margin: 0 -100px;
+  width: calc(100% + 200px);
+}
+
+@media screen and (max-width: 850px) {
+  .article--content > p > img {
+    margin: 0;
+    width: 100%;
+  }
+}
+
+.inline--image-wrap {
+  max-width: 265px;
+  float: left;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+@media screen and (max-width: 500px) {
+  .inline--image-wrap {
+    max-width: 100%;
+    float: none;
+    margin-left: 0;
+  }
+}
+
+/* ---------- Next Post ---------- */
+
+.next-post--wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 24px 0;
+  background-color: var(--theme-ui-colors-next--post-bg);
+  width: 100%;
+  border-top: 1px solid var(--theme-ui-colors-next--post-separator);
+}
+
+.next-post--content {
+  max-width: 620px;
+  margin: 0 20px;
+}
+
+.next-post--header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 10px;
+}
+
+.next-post--header h1, 
+.next-post--header h2 {
+  font-size: 22px;
+  color: var(--theme-colors-bg-dark);
+}
+
+.next-post--header time {
+  color: var(--theme-ui-colors-comment);
+}
+
+.next-post--body {
+  margin-bottom: 20px;
+}

@@ -1,0 +1,93 @@
+:root {
+  --theme-colors-bg-dark: #282828;
+  --theme-colors-bg-light: #fff;
+
+  --theme-colors-red: #fb4834;
+  --theme-colors-green: #aecc25;
+  --theme-colors-yellow: #fadb2f;
+  --theme-colors-blue: #0095ff;
+  --theme-colors-slate: #a4bfd4;
+  --theme-colors-purple: #c792eb;
+  --theme-colors-aqua: #8dc8a5;
+
+  --theme-ui-colors-primary: var(--theme-colors-slate);
+  --theme-ui-colors-secondary: var(--theme-ui-colors-header);
+
+  --theme-ui-colors-header: #004475;
+
+  --theme-ui-colors-text: #2c3035;
+  --theme-ui-colors-title: #181c24;
+  --theme-ui-colors-comment: #999;
+
+  --theme-ui-colors-bg: #fff;
+  --theme-ui-colors-bg-dark: #181c24;
+  --theme-ui-colors-overlay-bg: #fff;
+  --theme-ui-colors-overlay-bg-dark: #3c3c3c;
+  --theme-ui-colors-next--post-bg: #f3f2f6;
+  --theme-ui-colors-next--post-separator: #e5eaeb;
+
+  --theme-ui-colors-pre-text: #ffffff;
+  --theme-ui-colors-pre-bg: #282b2e;
+  --theme-ui-colors-pre-tag: var(--theme-colors-purple);
+  --theme-ui-colors-pre-number: var(--theme-colors-blue);
+  --theme-ui-colors-pre-class: var(--theme-ui-colors-yellow);
+  --theme-ui-colors-pre-string: var(--theme-ui-colors-green);
+  --theme-ui-colors-pre-css: var(--theme-ui-colors-red);
+  --theme-ui-colors-pre-function: var(--theme-ui-colors-aqua);
+};
+
+html,
+body {
+  box-sizing: border-box;
+  font-family: "Rubik", -apple-system, BlinkMacSystemFont, "Helvetica Neue",
+    "Lucida Grande", sans-serif;
+  margin: 0;
+  padding: 0;
+  color: var(--theme-ui-colors-text);
+  background-color: var(--theme-ui-colors-bg);
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-weight: normal;
+  line-height: 1.7em;
+  height: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: var(--theme-colors-blue);
+}
+
+a:hover {
+  text-decoration-color: var(--theme-ui-colors-blue) !important;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  margin: 0;
+  padding: 0;
+}
+
+blockquote {
+  opacity: .8;
+  font-style: italic;
+}
+
+.hidden {
+  display: none;
+}
+
+.content {
+  max-width: 640px;
+}
+
+@media screen and (max-width: 640px) {
+  .content {
+    width: 100%;
+  }
+}

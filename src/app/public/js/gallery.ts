@@ -132,7 +132,7 @@ function handleKeyDown(event: KeyboardEvent): void {
 
     // @ts-ignore
     const images = document
-      .getElementById("photo-gallery--wrapper")
+      .getElementById("gallery--image-wrapper")
       .getElementsByTagName("img");
 
     const collection = Array.from(images).map((i) => ({
@@ -149,16 +149,16 @@ function handleKeyDown(event: KeyboardEvent): void {
           collection.find((i) => i.src === image.src)
         );
 
-        // const nextItem = collection[nextValidIndex(collection, index + 1)];
-        // const prevItem = collection[nextValidIndex(collection, index - 1)];
+        const nextItem = collection[nextValidIndex(collection, index + 1)];
+        const prevItem = collection[nextValidIndex(collection, index - 1)];
 
-        // if (nextItem && key === "ArrowRight") {
-        //   nextImage(wrapper, image, nextItem, "right");
-        // }
+        if (nextItem && key === "ArrowRight") {
+          nextImage(wrapper, image, nextItem, "right");
+        }
 
-        // if (prevItem && key === "ArrowLeft") {
-        //   nextImage(wrapper, image, prevItem, "left");
-        // }
+        if (prevItem && key === "ArrowLeft") {
+          nextImage(wrapper, image, prevItem, "left");
+        }
       }
     }
   }
