@@ -26,7 +26,7 @@ export default function buildGalleries(
     fs.writeFile(
       `${outdir}/photos/${gallery.path}/index.html`,
       renderGallery({ gallery, ...config }),
-      (error: any): void => {
+      (error: unknown): void => {
         if (error) {
           throw error;
         }

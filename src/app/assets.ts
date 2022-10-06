@@ -43,7 +43,7 @@ export default function buildAssets(outdir: string): void {
       if (err) {
         throw err;
       }
-      var code = uglify.minify(buf.toString()).code;
+      const code = uglify.minify(buf.toString()).code;
       fs.writeFileSync(`${outdir}/js/bundle.js`, code, {
         encoding: "utf8",
       });

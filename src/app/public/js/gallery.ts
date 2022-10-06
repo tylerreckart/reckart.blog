@@ -1,3 +1,5 @@
+// deno-lint-ignore ban-ts-comment
+// @ts-ignore
 import { GalleryImage } from '@src/types/gallery';
 
 function buildLightbox(): HTMLElement {
@@ -83,32 +85,38 @@ function nextImage(
   }, 1000);
 }
 
-function handlePopup(event: any): void {
+function handlePopup(event: Event): void {
   const { target } = event;
   const {
+    // deno-lint-ignore ban-ts-comment
+    // @ts-ignore
     classList: { value },
   } = target;
 
-  if (event.target.id === "lightbox--overlay") {
-    target.classList.add("fadeOut");
+  const { id, classList } = target as HTMLElement;
+  
+  if (target) {
+    if (id === "lightbox--overlay") {
+      classList.add("fadeOut");
 
-    const image = document.getElementById("lightbox--image-wrapper");
-    image!.classList.add("slideDown");
+      const image = document.getElementById("lightbox--image-wrapper");
+      image!.classList.add("slideDown");
 
-    setTimeout(() => {
-      document.body.removeChild(target);
-      document.body.style.overflow = "auto";
-    }, 350);
-  }
+      setTimeout(() => {
+        document.body.removeChild(target as HTMLElement);
+        document.body.style.overflow = "auto";
+      }, 350);
+    }
 
-  if (value.includes("gallery-page--image")) {
-    const { src, alt } = target;
+    if (value.includes("gallery-page--image")) {
+      const { src, alt } = target as HTMLImageElement;
 
-    const lightbox = buildLightbox();
-    buildImage(lightbox, { src, alt });
+      const lightbox = buildLightbox();
+      buildImage(lightbox, { src, alt });
 
-    document.body.appendChild(lightbox);
-    document.body.style.overflow = "hidden";
+      document.body.appendChild(lightbox);
+      document.body.style.overflow = "hidden";
+    }
   }
 }
 
@@ -130,6 +138,7 @@ function handleKeyDown(event: KeyboardEvent): void {
       }, 500);
     }
 
+    // deno-lint-ignore ban-ts-comment
     // @ts-ignore
     const images = document
       .getElementById("gallery--image-wrapper")
@@ -145,6 +154,7 @@ function handleKeyDown(event: KeyboardEvent): void {
 
       if (image) {
         const index = collection.indexOf(
+          // deno-lint-ignore ban-ts-comment
           // @ts-ignore
           collection.find((i) => i.src === image.src)
         );
@@ -164,8 +174,10 @@ function handleKeyDown(event: KeyboardEvent): void {
   }
 }
 
-function handleViewportConstraints(event: any): void {
+function handleViewportConstraints(event: Event): void {
   const {
+    // deno-lint-ignore ban-ts-comment
+    // @ts-ignore
     target: { body },
   } = event;
 
@@ -178,12 +190,15 @@ function handleViewportConstraints(event: any): void {
   }
 }
 
-function handleResize(event: any): void {
+function handleResize(event: Event): void {
   const {
     target: {
+      // deno-lint-ignore ban-ts-comment
+      // @ts-ignore
       document: { body },
     },
   } = event;
+
 
   if (body) {
     const { offsetWidth } = body;
@@ -198,6 +213,7 @@ function handleResize(event: any): void {
 
 export function handleGalleryEvents(): void {
   // Attach window events.
+  // deno-lint-ignore no-window-prefix
   window.addEventListener("resize", handleResize);
   // Attach document events.
   document.addEventListener("click", handlePopup);

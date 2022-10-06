@@ -10,9 +10,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(express.static("build"));
 
-app.post('/add-contact', async (req, res) => {
-    const body = req.body;
-    const { email } = body;
+app.get('/add-contact', async (req, res) => {
+    const query = req.query;
+    const { contact: email } = query;
 
     const uri = process.env.AC_API_URI || '';
     const key = process.env.AC_API_KEY || '';
@@ -30,7 +30,6 @@ app.post('/add-contact', async (req, res) => {
             }
         })
     });
-
 
     const response = await request;
 

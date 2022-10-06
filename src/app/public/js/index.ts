@@ -40,4 +40,5 @@ function main(): void {
   handleGalleryEvents();
 }
 
+// deno-lint-ignore no-window-prefix
 window.addEventListener("load", main);

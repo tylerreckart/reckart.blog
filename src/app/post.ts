@@ -10,7 +10,7 @@ const renderPost = pug.compileFile(
 );
 
 type Markdown = {
-  attributes: object;
+  attributes: Record<string, unknown>;
   path: string;
   body: string;
 };
@@ -75,7 +75,7 @@ export default function buildPosts(
     fs.writeFile(
       `${outdir}/${post.path}/index.html`,
       renderPost(post),
-      (error: any): void => {
+      (error: unknown): void => {
         if (error) {
           throw error;
         }
