@@ -4,7 +4,7 @@ export const galleryConfig: PhotoGallery[] = [
     {
       title: 'Small Scenes',
       path: 'small-scenes',
-      colophon: '<p>Much of my photography focuses on smaller, intimate scenes. These images represent subjects that may not be off the beaten path, but focus on scenes that may often be overlooked in favor of grand views and vistas.</p>',
+      colophon: '',
       featuredImage: 'https://s3.us-east-2.amazonaws.com/reckart.blog-images/small-scenes/thumbnail-min.jpg',
       images: [
         { title: 'Hyacinth Leaves at Dawn', location: 'Conestee Nature Preserve', year: 2022, src: 'https://s3.us-east-2.amazonaws.com/reckart.blog-images/small-scenes/hyacinth_leaves_at_dawn-min.jpg', alt: '' },
@@ -15,7 +15,7 @@ export const galleryConfig: PhotoGallery[] = [
     {
       title: 'Brick & Stone',
       path: 'brick-and-stone',
-      colophon: '<p>One of the subject matters that has motivated much of my urban photography concerns the structures and objects that we have left behind. Whether the objects have outlived their purpose, or the structures have succumbed to the deterioration of disuse over time, they still reflect the marks that we have made on the world.</p>',
+      colophon: '',
       featuredImage: 'https://s3.us-east-2.amazonaws.com/reckart.blog-images/brick-and-stone/thumnail-min.jpg',
       images: [
         { title: 'Fixture', location: 'Lyman, South Carolina', year: 2022, src: 'https://s3.us-east-2.amazonaws.com/reckart.blog-images/brick-and-stone/fowler_bros-min.jpg', alt: '' },
@@ -29,7 +29,7 @@ export const galleryConfig: PhotoGallery[] = [
     {
       title: 'Land & Sea',
       path: 'land-and-sea',
-      colophon: '<p>Much of my photography focuses on smaller, intimate scenes. These images represent subjects that may not be off the beaten path, but focus on scenes that may often be overlooked in favor of grand views and vistas.</p>',
+      colophon: '',
       featuredImage: 'https://s3.us-east-2.amazonaws.com/reckart.blog-images/land-and-sea/thumbnail-min.jpg',
       images: [
         { title: 'Sunrise Over Sol Legare', location: 'Charleston, South Carolina', year: 2022, src: 'https://s3.us-east-2.amazonaws.com/reckart.blog-images/land-and-sea/sunrise_over_sol_legare-min.jpg', alt: '' },
