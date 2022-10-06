@@ -74,7 +74,11 @@ nav {
   text-decoration-thickness: 2px;
 }
 
-@media screen and (max-width: 540px) {
+@media screen and (max-width: 660px) {
+  .nav--link-container {
+    flex: 1.4;
+  }
+
   .site--title > h1 {
     font-size: 13px;
     line-height: 14px;

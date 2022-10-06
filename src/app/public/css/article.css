@@ -94,7 +94,6 @@ article p {
   padding: 24px 0;
   background-color: var(--theme-ui-colors-next--post-bg);
   width: 100%;
-  border-top: 1px solid var(--theme-ui-colors-next--post-separator);
 }
 
 .next-post--content {
@@ -122,4 +121,10 @@ article p {
 
 .next-post--body {
   margin-bottom: 20px;
+}
+
+@media screen and (max-width: 660px) {
+  .next-post--wrapper {
+    margin-top: 32px;
+  }
 }
