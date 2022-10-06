@@ -12,14 +12,14 @@ html(lang="en")
     include components/head.pug
   body
     include components/nav.pug
-    main.content.gallery--container
+    main.content
       div.page--header
-        h1 Photo Collections
-      div#photo-gallery--section-wrapper
-        each section in gallery
-          div.photo-gallery--image
-            a(href=section.path)
-              img(src=section.featuredImage, class="gallery--img")
-            span=section.title
-      include components/newsletter-form.pug
+        h1=gallery.title
+        div.colophon
+          |  !{gallery.colophon}
+      div.inner--gallery-wrapper
+        div#gallery--image-wrapper
+          each photo in gallery.images
+            div.gallery--content-wrapper
+              img(src=photo.src, class="gallery-page--image")
       include components/footer.pug

@@ -9,22 +9,22 @@ const render = pug.compileFile(
   path.join(`${__dirname}/../../templates/photos.pug`)
 );
 
-const photos = [
-  { type: 'featured', src: 'https://s3.us-east-2.amazonaws.com/reckart.blog-images/hyacinth.jpg' },
-  { type: 'gallery', photos: [
-    { src: 'https://s3.us-east-2.amazonaws.com/reckart.blog-images/lorien-blog-2.jpg' },
-    { src: 'https://s3.us-east-2.amazonaws.com/reckart.blog-images/disillusion.jpg' },
-  ]},
-  { type: 'featured', src: 'https://s3.us-east-2.amazonaws.com/reckart.blog-images/L1003180-min.jpg' },
-  { type: 'featured', src: 'https://s3.us-east-2.amazonaws.com/reckart.blog-images/leaf_scene_2-Edit-2-min.jpg' },
-  { type: 'gallery', photos: [
-    { src: 'https://s3.us-east-2.amazonaws.com/reckart.blog-images/000474390003-2-min.jpg' },
-    { src: 'https://s3.us-east-2.amazonaws.com/reckart.blog-images/000474390012-Edit-min.jpg' },
-  ]},
-]
+// const photos = [
+//   { type: 'featured', src: 'https://s3.us-east-2.amazonaws.com/reckart.blog-images/hyacinth.jpg' },
+//   { type: 'gallery', photos: [
+//     { src: 'https://s3.us-east-2.amazonaws.com/reckart.blog-images/lorien-blog-2.jpg' },
+//     { src: 'https://s3.us-east-2.amazonaws.com/reckart.blog-images/disillusion.jpg' },
+//   ]},
+//   { type: 'featured', src: 'https://s3.us-east-2.amazonaws.com/reckart.blog-images/L1003180-min.jpg' },
+//   { type: 'featured', src: 'https://s3.us-east-2.amazonaws.com/reckart.blog-images/leaf_scene_2-Edit-2-min.jpg' },
+//   { type: 'gallery', photos: [
+//     { src: 'https://s3.us-east-2.amazonaws.com/reckart.blog-images/000474390003-2-min.jpg' },
+//     { src: 'https://s3.us-east-2.amazonaws.com/reckart.blog-images/000474390012-Edit-min.jpg' },
+//   ]},
+// ]
 
 export default function buildPhotoGallery(
-  // photos: Array<PostType>,
+  gallery: any,
   outdir: string
 ): void {
   // Check to see if the current post directory has been built previously.
@@ -34,11 +34,11 @@ export default function buildPhotoGallery(
   }
 
   const archive = render({
-    photos,
+    gallery,
     ...config,
   });
 
-  fs.writeFile(`${outdir}/photos/index.html`, archive, (error: any): void => {
+  fs.writeFile(`${outdir}/photos/index.html`, archive, (error: Error | null): void => {
     if (error) {
       throw error;
     }

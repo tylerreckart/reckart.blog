@@ -1,0 +1,8 @@
+div.newsletter--container#form-wrapper
+  h3 Subscribe To My Newsletter
+  p Please sign up with your email address to receive news and updates.
+  form(action="/add-contact", id="newsletter-form" method="POST" target="empty--frame" onsubmit="window.location.reload()") 
+    input(type="email" name="email" placeholder="Email Address" required)
+    input(type="submit" value="Sign Up")
+  iframe(name="empty--frame" id="empty--frame" style="display: none;")
+  

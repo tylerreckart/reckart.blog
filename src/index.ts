@@ -10,8 +10,10 @@ import buildHome from "@app/routes/home";
 import buildFeed from "@app/feed";
 import build404 from "@app/routes/404";
 import buildPhotoGallery from "@app/routes/photos";
+import buildGalleries from "@app/gallery";
 import getPosts from "@app/utils/get-posts";
 import getPages from "@app/utils/get-pages";
+import { galleryConfig } from "@src/gallery-config";
 import { Post as PostType } from "@src/types/post";
 import { Page as PageType } from "@src/types/page";
 
@@ -37,8 +39,8 @@ export function bundleAssets(): void {
     buildArchive(posts, outdir);
     buildPosts(posts, outdir);
     buildPages(pages, outdir);
-    // buildPhotoGallery(photos, outdir);
-    buildPhotoGallery(outdir);
+    buildPhotoGallery(galleryConfig, outdir);
+    buildGalleries(galleryConfig, outdir);
     // rss/json feeds
     buildFeed(posts, outdir);
     // 404 page

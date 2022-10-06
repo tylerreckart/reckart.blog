@@ -14,12 +14,14 @@ html(lang="en")
   body.hidden
     include components/nav.pug
     main.content.home
-      each post in posts
+      each post, index in posts
         article
           div.article--header
             a(href=post.path) #[h2=post.attributes.title]
             span Posted on #[+time(post.attributes.date)]
           div.article--content
             | !{post.body}
+        if index == 0
+          include components/newsletter-form.pug
       include components/footer.pug
 

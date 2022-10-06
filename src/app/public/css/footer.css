@@ -1,0 +1,19 @@
+footer {
+  padding: 20px;
+  text-align: left;
+  color: var(--theme-ui-colors-comment);
+}
+
+.next-post--content footer {
+  padding: 20px 0;
+}
+
+footer > p {
+  margin: 0;
+}
+
+@media screen and (max-width: 660px) {
+  footer {
+    margin-top: 32px;
+  }
+}

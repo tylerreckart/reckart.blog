@@ -8,19 +8,23 @@ import cleanCSS from "@node-minify/clean-css";
 import browserify from "browserify";
 import uglify from "uglify-js";
 
-export default async function buildAssets(outdir: string): Promise<void> {
+export default function buildAssets(outdir: string): void {
   if (!fs.existsSync(`${outdir}/css`)) {
     fs.mkdirSync(`${outdir}/css`);
   }
 
   /* Site CSS */
+  let cssString = '';
+
   minify({
     compressor: cleanCSS,
-    input: `${__dirname}/public/css/style.css`,
+    input: `${__dirname}/public/css/**/*.css`,
     output: `${outdir}/css/styles.css`,
-    callback: (err: string) => {
+    callback: (err: string, min: string) => {
       if (err) {
         throw err;
+      } else {
+        cssString += min
       }
 
       console.log(colors.cyan("[asset] style.css built"));

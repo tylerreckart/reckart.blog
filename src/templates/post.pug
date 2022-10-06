@@ -35,6 +35,7 @@ html(lang="en")
           span Posted on #[+time(attributes.date)]
         div.article--content
           | !{body}
+      include components/newsletter-form.pug
       if !nextPost
         include components/footer.pug
     if nextPost
