@@ -14,7 +14,7 @@ const render404page = pug.compileFile(
 export default function build404(outdir: string): void {
   const page404 = render404page({ ...config });
 
-  fs.writeFile(`${outdir}/404.html`, page404, (error: any): void => {
+  fs.writeFile(`${outdir}/404.html`, page404, (error: unknown): void => {
     if (error) {
       throw error;
     }

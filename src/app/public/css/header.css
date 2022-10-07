@@ -27,18 +27,8 @@ nav {
 }
 
 .site--title {
-  text-decoration: underline;
-  text-decoration-thickness: 2px;
   flex: 1;
-}
-
-.site--title > h1 {
-  color: var(--theme-ui-colors-text);
-  font-size: 16px;
-  line-height: 16px;
-  text-decoration: underline;
-  text-decoration-thickness: 2px;
-  text-decoration-color: var(--theme-colors-blue);
+  height: 36px;
 }
 
 .nav--link-container {
@@ -54,29 +44,48 @@ nav {
   margin-left: 0;
 }
 
-.nav--link-container .active {
-  text-decoration: underline;
-  text-decoration-thickness: 2px;
-  text-decoration-color: var(--theme-colors-blue);
-}
-
 .nav--link {
   color: var(--theme-ui-colors-text);
   font-weight: bold;
-  font-size: 14px;
-  line-height: 14px;
+  font-size: 12px;
+  line-height: 12px;
   transition: margin 150ms linear;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.nav--link.active::after {
+  content: '';
+  display: block;
+  position: relative;
+  margin-top: 2px;
+  height: 2px;
+  width: 60%;
+  background-color: var(--theme-colors-primary);
+}
+
+.nav--link:not(.active)::after {
+  content: '';
+  display: block;
+  position: relative;
+  margin-top: 2px;
+  height: 2px;
+  width: 0%;
+  background-color: var(--theme-colors-primary);
+  transition: all 200ms ease;
 }
 
 .nav--link-container a:hover {
-  text-decoration-color: var(--theme-colors-blue) !important;
-  text-decoration: underline;
-  text-decoration-thickness: 2px;
+  text-decoration: none;
+}
+
+.nav--link-container a:hover::after {
+  width: 60%;
 }
 
 @media screen and (max-width: 660px) {
   .nav--link-container {
-    flex: 1.4;
+    flex: 2.5;
   }
 
   .site--title > h1 {

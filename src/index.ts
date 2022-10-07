@@ -13,6 +13,7 @@ import buildPhotoGallery from "@app/routes/photos";
 import buildGalleries from "@app/gallery";
 import getPosts from "@app/utils/get-posts";
 import getPages from "@app/utils/get-pages";
+import getImages from "@app/utils/get-images";
 import { galleryConfig } from "@src/gallery-config";
 import { Post as PostType } from "@src/types/post";
 import { Page as PageType } from "@src/types/page";
@@ -27,6 +28,8 @@ if (!fs.existsSync(outdir)) {
 
 const posts: Array<PostType> = getPosts();
 const pages: Array<PageType> = getPages();
+const images = getImages();
+console.log(images);
 
 export function bundleAssets(): void {
   try {
