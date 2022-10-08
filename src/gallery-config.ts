@@ -4,12 +4,12 @@ export const galleryConfig: PhotoGallery[] = [
     {
       title: 'Small Scenes',
       path: 'small-scenes',
-      colophon: '',
+      colophon: `<p>A large part of my photography focuses on highlighting smaller, more intimate subjects. The scenes in these photographs may not be off the beaten path, but may often be overlooked by those focused on grand vistas and the trail ahead.</p><p>If you're interested in purchasing bespoke and tailored prints of any of the images below, <a href="mailto:prints@reckart.blog" target="_blank" rel="noreferrer">get in touch with me</a> for a quote.</p>`,
       featuredImage: 'https://s3.us-east-2.amazonaws.com/reckart.blog-images/small-scenes/thumbnail-min.jpg',
       images: [
-        { title: 'Hyacinth Leaves at Dawn', location: 'Conestee Nature Preserve', year: 2022, src: 'https://s3.us-east-2.amazonaws.com/reckart.blog-images/small-scenes/hyacinth_leaves_at_dawn-min.jpg', alt: '' },
+        { title: 'Untitled', location: 'Conestee Nature Preserve', year: 2022, src: 'https://s3.us-east-2.amazonaws.com/reckart.blog-images/home/fern-min.jpg', alt: '' },
         { title: 'In The Shadow of Giants', location: 'Conestee Nature Preserve', year: 2022, src: 'https://s3.us-east-2.amazonaws.com/reckart.blog-images/small-scenes/maple_leaves_in_shadow-min.jpg', alt: '' },
-        { title: 'Maple Leaves in Transition', location: 'Conestee Nature Preserve', year: 2022, src: 'https://s3.us-east-2.amazonaws.com/reckart.blog-images/small-scenes/maple_leaves_in_transition-min.jpg', alt: '' },
+        { title: 'Hyacinth Leaves at Dawn', location: 'Conestee Nature Preserve', year: 2022, src: 'https://s3.us-east-2.amazonaws.com/reckart.blog-images/small-scenes/hyacinth_leaves_at_dawn-min.jpg', alt: '' },
       ],
     },
     {

@@ -19,9 +19,9 @@ export default function buildArchive(
   outdir: string
 ): void {
   // Check to see if the current post directory has been built previously.
-  if (!fs.existsSync(`${outdir}/archive`)) {
+  if (!fs.existsSync(`${outdir}/posts`)) {
     // If the directory does not exist, build it.
-    fs.mkdirSync(`${outdir}/archive`);
+    fs.mkdirSync(`${outdir}/posts`);
   }
 
   const filteredPosts = posts.filter((post: PostType) => post.attributes.published);
@@ -31,7 +31,7 @@ export default function buildArchive(
     ...config,
   });
 
-  fs.writeFile(`${outdir}/archive/index.html`, archive, (error: any): void => {
+  fs.writeFile(`${outdir}/posts/index.html`, archive, (error: unknown): void => {
     if (error) {
       throw error;
     }

@@ -52,9 +52,9 @@ export default function buildPosts(
   outdir: string
 ): void {
   // Check to see if the blog directory has been built previously.
-  if (!fs.existsSync(`${outdir}/blog`)) {
+  if (!fs.existsSync(`${outdir}/posts`)) {
     // If the directory does not exist, build it.
-    fs.mkdirSync(`${outdir}/blog`);
+    fs.mkdirSync(`${outdir}/posts`);
   }
 
   const remappedPosts = posts
@@ -68,12 +68,12 @@ export default function buildPosts(
     });
 
   remappedPosts.forEach((post: PostType) => {
-    if (!fs.existsSync(`${outdir}/${post.path}`)) {
-      fs.mkdirSync(`${outdir}/${post.path}`);
+    if (!fs.existsSync(`${outdir}/posts/${post.path}`)) {
+      fs.mkdirSync(`${outdir}/posts/${post.path}`);
     }
 
     fs.writeFile(
-      `${outdir}/${post.path}/index.html`,
+      `${outdir}/posts/${post.path}/index.html`,
       renderPost(post),
       (error: unknown): void => {
         if (error) {

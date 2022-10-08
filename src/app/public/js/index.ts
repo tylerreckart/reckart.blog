@@ -17,7 +17,7 @@ function main(): void {
       return 'home';
     }
 
-    if (path === 'archive') {
+    if (path === 'posts') {
       return 'posts';
     }
 

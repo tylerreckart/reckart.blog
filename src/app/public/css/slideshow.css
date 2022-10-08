@@ -1,0 +1,16 @@
+#slideshow--wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slide img {
+    max-height: 640px;
+}
+
+@media screen and (max-width: 840px) {
+    .slide img {
+        width: 100%;
+        max-height: auto;
+    }
+}

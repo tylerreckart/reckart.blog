@@ -8,4 +8,4 @@ Outside of work I run a small one-man software development studio: [Haptic Softw
 
 My full CV is available on [LinkedIn](https://linkedin.com/in/tylerreckart).
 
-The source code for this website is available on [Github](https://github.com/tylerreckart/reckart.blog). When I launched this version of my website, I [wrote](/starting-over) about the build system I developed that handles rendering all of the content, markup, and styling. The configuration has changed a little since then, but the core idea behind the markdown-based templating system is still at the foundation of this website's architecture.
+The source code for this website is available on [Github](https://github.com/tylerreckart/reckart.blog). When I launched this version of my website, I [wrote](/posts/starting-over) about the build system I developed that handles rendering all of the content, markup, and styling. The configuration has changed a little since then, but the core idea behind the markdown-based templating system is still at the foundation of this website's architecture.
