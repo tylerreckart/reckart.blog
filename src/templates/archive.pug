@@ -1,4 +1,8 @@
-include mixins/time.pug
+-
+  function toISODate(date) {
+    return (new Date(Date.parse(date))).toLocaleString('en-US', { month: 'short', day: '2-digit', year: 'numeric' });
+  }
+
 doctype html
 html(lang="en")
   head
@@ -11,17 +15,15 @@ html(lang="en")
     else
       meta(name="description", content="")
     include components/head.pug
-  body.hidden
+  body
     include components/nav.pug
-    main.content.home
-      each post, index in posts
-        article
-          div.article--header
-            a(href=post.path) #[h2=post.attributes.title]
-            span Posted on #[+time(post.attributes.date)]
-          div.article--content
-            | !{post.body}
-        if index == 0
-          include components/newsletter-form.pug
-      include components/footer.pug
+    main.content
+        div.page--header
+          h1 Post Archive
+        div.archive--list
+            each post in posts
+                div.list--item
+                    time(datetime!=toISODate(post.attributes.date), pubdate="pubdate")=toISODate(post.attributes.date)
+                    a(href="/" + post.path) #[h2=post.attributes.title]
+        include components/footer.pug
 

@@ -14,7 +14,7 @@ function main(): void {
 
   const getClass = (): string => {
     if (path === '/') {
-      return 'home';
+      return 'posts';
     }
 
     if (path === 'posts') {
@@ -27,6 +27,10 @@ function main(): void {
 
     if (path === 'about') {
       return 'about';
+    }
+
+    if (path === 'projects') {
+      return 'projects';
     }
 
     return 'posts';

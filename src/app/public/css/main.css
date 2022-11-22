@@ -4,13 +4,13 @@
 
   --theme-colors-red: #fb4834;
   --theme-colors-green: #2cb441;
-  --theme-colors-yellow: #fadb2f;
+  --theme-colors-yellow: #f6d244;
   --theme-colors-blue: #0095ff;
   --theme-colors-slate: #a4bfd4;
   --theme-colors-purple: #c792eb;
   --theme-colors-aqua: #8dc8a5;
 
-  --theme-colors-primary: var(--theme-colors-green);
+  --theme-colors-primary: var(--theme-colors-blue);
 
   --theme-ui-colors-primary: var(--theme-colors-slate);
   --theme-ui-colors-secondary: var(--theme-ui-colors-header);
@@ -91,6 +91,7 @@ blockquote {
 
 .content {
   max-width: 640px;
+  margin-top: 20px;
 }
 
 @media screen and (max-width: 640px) {

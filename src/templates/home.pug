@@ -14,8 +14,12 @@ html(lang="en")
   body.hidden
     include components/nav.pug
     main.content.home
-      #slideshow--wrapper 
-        div.slide
-          img(src="https://s3.us-east-2.amazonaws.com/reckart.blog-images/home/fern-min.jpg" alt="A fern growing out of a moss covered rockface")
+      each post, index in posts
+        article
+          div.article--header
+            a(href="/posts/" + post.path) #[h2=post.attributes.title]
+            span Posted on #[+time(post.attributes.date)]
+          div.article--content
+            | !{post.body}
       include components/footer.pug
 

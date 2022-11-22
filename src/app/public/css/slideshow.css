@@ -2,10 +2,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 640px;
 }
 
 .slide img {
     max-height: 640px;
+    max-width: 90vw;
 }
 
 @media screen and (max-width: 840px) {
