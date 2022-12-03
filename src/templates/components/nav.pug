@@ -1,11 +1,19 @@
 header
-  nav#site--nav
+  nav#site--nav--home
     div.site--head
       a(href="/").site--title
-        h1 Tyler Reckart
-      div.nav-menu-trigger(id="mobile-nav-trigger")
+        h1
+          span(style="color:var(--theme-colors-blue);") Tyler
+          span(style="color:var(--theme-colors-light-green);margin-left:6px;") Reckart
       div.nav--link-container(id="nav")
-        a(href="/posts", class="nav--link posts") Posts
-        a(href="/photos", class="nav--link gallery") Photos
-        a(href="/projects", class="nav--link projects") Projects
-        a(href="/about", class="nav--link about") About
+        div.nav--links
+          a(href="/posts", class="nav--link posts") Posts
+          a(href="/photos", class="nav--link gallery") Photos
+          a(href="/projects", class="nav--link projects") Projects
+          a(href="/about", class="nav--link about") About
+        div.mastodon--head
+          i.fa-brands.fa-mastodon
+        div.instagram--bobble
+          i.fa-brands.fa-instagram
+      div.nav-menu-trigger(id="mobile-nav-trigger")
+        div.nav-menu-trigger--inner

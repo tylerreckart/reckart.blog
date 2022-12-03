@@ -16,15 +16,18 @@
 }
 
 .list--item h2 {
-  font-size: 18px;
+  font-size: 20px;
+  font-weight: 900;
 }
 
 .list--item > time {
   display: block;
   margin-right: 10px;
   width: 100px !important;
-  color: var(--theme-ui-colors-comment);
   white-space: nowrap;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--theme-colors-blue);
 }
 
 @media screen and (max-width: 640px) {

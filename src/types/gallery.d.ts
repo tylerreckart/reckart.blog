@@ -6,10 +6,4 @@ export type GalleryImage = {
   alt: string;
 }
 
-export type PhotoGallery = {
-  title: string;
-  path: string;
-  colophon: string;
-  featuredImage: string;
-  images: GalleryImage[];
-}
+export type PhotoGallery = GalleryImage[];

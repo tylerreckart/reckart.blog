@@ -1,7 +1,7 @@
 ---
 date: "Nov 22, 2022"
 title: "Writing a UIKit Camera View Wrapper for use in SwiftUI"
-description: ""
+description: "Like all other modern digital cameras, the iPhone also has an excellent light meter built in. You can get fantastic images from an iPhone. Consistent metering is one of the most crucial aspect for getting those results. So, I decided to change my ethos and focus on using the tools at hand to acheive more consistent results. That starts with interacting directly with the iPhone's camera. In order to do so, we'll need to start by building out the view model that the camera session will run in and apply any user inputs to the camera's session."
 published: true
 ---
 At the time of writing, one of the iOS APIs that hasn't been made fully interoperable with SwiftUI is [`AVFoundation`](https://developer.apple.com/documentation/avfoundation), and more specifically the [`AVCaptureDevice`](https://developer.apple.com/documentation/avfoundation/avcapturedevice) API for creating a preview of the current camera view. One of my long term goals for [Aspen](https://apps.apple.com/us/app/aspen-photographers-notebook/id1643250194) has been to build in a spot metering function that will let me leave my [Sekonic L-508](https://www.ebay.com/sch/i.html?_from=R40&_trksid=p2334524.m570.l1313&_nkw=sekonic+l-508&_sacat=0&LH_TitleDesc=0&_osacat=0&_odkw=sekonic+l-508&LH_PrefLoc=2) light meter at home. 
@@ -12,9 +12,9 @@ Alex uses a [mirco four thirds](https://en.wikipedia.org/wiki/Micro_Four_Thirds_
 
 What's more interesting though, is that he uses his digital camera's built-in light meter to calculate the base exposure and then compensates for aperture or conditions from there. This makes sense. Modern digital cameras have excellent light meters. I have long struggled with my dedicated meter. I have gotten fantastic results, but I have also miscalculated and ended up with drastically underexposed images even when the calculations seemed right in the moment.
 
-Like all other modern digital cameras, the iPhone also has an excellent light meter built in. You can get fantastic images from an iPhone. Consistent metering is one of the most crucial aspect for getting those results. So, I decided to change my ethos and focus on using the tools at hand to acheive more consistent results.
+Like all other modern digital cameras, the iPhone also has an excellent light meter built in. You can get fantastic images from an iPhone. Consistent metering is one of the most crucial aspect for getting those results. So, I decided to change my ethos and focus on using the tools at hand to acheive more consistent results. That starts with interacting directly with the iPhone's camera.
 
-That starts with interacting directly with the iPhone's camera. In order to do so, we'll need to start by building out the view model that the camera session will run in and apply any user inputs to the camera's session.
+In order to do so, we'll need to start by building out the view model that the camera session will run in and apply any user inputs to the camera's session.
 
 ```swift
 import SwiftUI

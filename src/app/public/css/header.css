@@ -4,17 +4,28 @@ header {
   justify-content: center;
   z-index: 1;
   width: 100%;
-  background-color: #f4f6f7;
-  border-bottom: 2px solid #e3e8eb;
+  background-color: #fff;
 }
 
-nav {
+nav#site--nav, #site--nav--home {
   display: flex;
   flex-direction: column;
   align-items: center;
   height: 100%;
   margin: 32px 20px;
   width: 100%;
+  color: var(--theme-ui-colors-text);
+}
+
+nav#site--nav--home {
+  color: #000;
+  margin: 0;
+  justify-content: center;
+  align-items: center;
+}
+
+nav a {
+  color: #fff;
 }
 
 .site--head {
@@ -22,57 +33,164 @@ nav {
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
-  max-width: 600px;
 }
 
 .nav--link-container {
   flex-direction: row;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding: 0 16px 34px 16px;
   width: 100%;
-  flex: 1;
+  background-color: #203e31;
+  height: 96px;
 }
 
 .site--title {
-  flex: 1;
+  flex: 0.25;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  margin: 0 40px 40px 40px;
+}
+
+.nav--link {
+  margin: 0 24px 0px 24px;
+  font-family: "Obviously", sans-serif;
+  padding-bottom: 12px;
+  border-bottom: 4px solid rgba(255,255,255,0);
+}
+
+.nav--link.active {
+  border-bottom: 4px solid rgba(255,255,255,.4);
+}
+
+.nav--link:hover {
+  border-bottom: 4px solid rgba(255,255,255,.4);
+  text-decoration: none;
 }
 
 .nav--link,
 .site--title > h1 {
-  color: var(--theme-ui-colors-text);
-  font-weight: bold;
-  font-size: 14px;
-  line-height: 14px;
-  letter-spacing: 0em;
+  font-size: 24px;
+  text-transform: uppercase;
+  font-family: "Obviously", sans-serif;
+  text-transform: uppercase;
+  font-weight: 800;
 }
 
-.nav--link:hover,
-.nav--link.active,
+.site--title:hover {
+  text-decoration: none;
+}
 .site--title {
-  text-decoration-color: var(--theme-colors-primary) !important;
-  text-decoration: underline;
-  text-decoration-thickness: 2px;
+  text-decoration: none;
 }
 
-@media screen and (max-width: 660px) {
-  .nav--link-container {
-    flex: 2.5;
+#mobile-nav-trigger {
+  display: none;
+  height: 40px;
+  width: 40px;
+  background-color: var(--theme-colors-light-green);
+}
+
+#mobile-nav-trigger::before {
+  content: '';
+  position: relative;
+  width: 28px;
+  height: 4px;
+  background-color: white;
+  display: block;
+  z-index: 1;
+  top: 8px;
+  left: 6px;
+}
+
+#mobile-nav-trigger::after {
+  content: '';
+  position: relative;
+  width: 28px;
+  height: 4px;
+  background-color: white;
+  display: block;
+  z-index: 1;
+  top: 20px;
+  left: 6px;
+}
+
+.nav-menu-trigger--inner {
+  content: '';
+  position: relative;
+  width: 28px;
+  height: 4px;
+  background-color: white;
+  display: block;
+  z-index: 2;
+  top: 14px;
+  left: 6px;
+}
+
+@media screen and (max-width: 960px) {
+  nav {
+    border-top: 8px solid var(--theme-colors-dark-green);
+  }
+
+  .site--title {
+    margin: 0;
+    margin-top: 40px;
+    flex: 1;
+  }
+  #nav {
+    display: none;
+  }
+
+  #mobile-nav-trigger {
+    display: block;
+    position: absolute;
+    top: 45px;
+    right: 40px;
+  }
+
+  .mastodon--head,
+  .instagram--bobble {
+    height: 32px;
+    margin-right: 20px;
+  }
+
+  .mastodon--head svg,
+  .instagram--bobble svg {
+    height: 32px;
+  }
+
+  .mastodon--head path,
+  .instagram--bobble path {
+    fill: var(--theme-colors-blue);
+    opacity: 0.5;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  #mobile-nav-trigger {
+    position: relative;
+    top: auto;
+    right: auto;
+  }
+
+  nav#site--nav--home {
+    padding: 0 20px;
   }
 
   .site--head {
-    flex-direction: column;
-    max-width: 240px;
-    align-self: flex-start;
+    align-items: center;
+    margin-top: 20px;
+  }
+  .site--title {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
   }
 
-  .site--title > h1 {
-    font-size: 13px;
-    line-height: 14px;
-    margin-bottom: 16px;
-  }
-
-  .nav--link {
-    font-size: 13px;
+  .site--title h1 {
+    height: 33px;
   }
 }

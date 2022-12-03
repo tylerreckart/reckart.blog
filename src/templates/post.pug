@@ -31,7 +31,7 @@ html(lang="en")
     main.content
       article.article-page--wrapper
         div.article--header
-          a(href="/" + path) #[h2=attributes.title]
+          a(href="/posts/" + path) #[h2=attributes.title]
           span Posted on #[+time(attributes.date)]
         div.article--content
           | !{body}

@@ -12,13 +12,8 @@ html(lang="en")
     include components/head.pug
   body
     include components/nav.pug
-    main.content.gallery--container
-      div.page--header
-        h1 Photo Collections
+    main.gallery--container
       div#photo-gallery--section-wrapper
-        each section in gallery
-          div.photo-gallery--image
-            a(href=section.path)
-              img(src=section.featuredImage, class="gallery--img")
-            span=section.title
-      include components/footer.pug
+        each image in gallery
+          img(src=image.src, class="gallery-page--image")
+    include components/footer.pug

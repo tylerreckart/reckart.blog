@@ -2,10 +2,12 @@ include ../mixins/time.pug
 div.next-post--wrapper
   article.next-post--content
     div.next-post--header
-      a(href!="/" + nextPost.path).next-post--title
+      a(href!="/posts/" + nextPost.path).next-post--title
         h2=nextPost.attributes.title
-      +time(nextPost.attributes.date)
+      span
+        span Posted on 
+        +time(nextPost.attributes.date)
     div.next-post--body
       | !{nextPost.body}
-      a(href!="/blog/" + nextPost.path) Continue Reading
-    include footer.pug
+    a(class="next-post--button" href!="/posts/" + nextPost.path) Continue Reading
+include footer.pug

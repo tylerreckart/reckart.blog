@@ -13,9 +13,9 @@ function main(): void {
   }
 
   const getClass = (): string => {
-    if (path === '/') {
-      return 'posts';
-    }
+    // if (path === '/') {
+    //   return 'posts';
+    // }
 
     if (path === 'posts') {
       return 'posts';
@@ -33,7 +33,7 @@ function main(): void {
       return 'projects';
     }
 
-    return 'posts';
+    return '';
   }
 
   const currentPage: HTMLElement | null = document.querySelector(`.nav--link.${getClass()}`);
