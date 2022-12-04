@@ -42,6 +42,30 @@ function main(): void {
   document.body.classList.remove('hidden');
   // Initialize gallery event listeners.
   handleGalleryEvents();
+
+  const mobileMenu: HTMLElement | null = document.getElementById('mobile-nav-trigger');
+  const mobileNav: HTMLElement | null = document.getElementById('mobile-nav');
+
+  document.addEventListener('click', (event) => {
+    const { target } = event;
+
+    const isActive = mobileMenu?.classList.contains('active');
+    
+    if (target === mobileMenu && !isActive) {
+      document.body.classList.add('fixed');
+      mobileNav?.classList.add('open');
+      mobileMenu?.classList.add('active');
+    } else {
+      document.body.classList.remove('fixed');
+      mobileNav?.classList.remove('open');
+      mobileMenu?.classList.remove('active');
+      mobileMenu?.classList.add('reverse');
+
+      setTimeout(() => {
+        mobileMenu?.classList.remove('reverse');
+      }, 350);
+    }
+  });
 }
 
 // deno-lint-ignore no-window-prefix
