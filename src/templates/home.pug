@@ -12,19 +12,8 @@ html(lang="en")
       meta(name="description", content="")
     include components/head.pug
   body
-    header
-      nav#site--nav--home
-        div.site--head
-          a(href="/").site--title
-            h1
-              span(style="color:#cac8d4;") Tyler
-              span(style="color:#566032;margin-left:4px;") Reckart
-          div.nav-menu-trigger(id="mobile-nav-trigger")
-          div.nav--link-container(id="nav")
-            a(href="/posts", class="nav--link posts") Posts
-            a(href="/photos", class="nav--link gallery") Photos
-            a(href="/projects", class="nav--link projects") Projects
-            a(href="/about", class="nav--link about") About
-    main
+    include components/nav.pug
+    include components/post-body.pug
+    include components/footer.pug
 
 

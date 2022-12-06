@@ -23,7 +23,7 @@ type Markdown = {
  *
  * @returns {object} The formatted post.
  */
-function generateNextPost(post: Markdown): PostType | null {
+export function generateNextPost(post: Markdown): PostType | null {
   if (!post) {
     return null;
   }
@@ -63,7 +63,7 @@ export default function buildPosts(
       return {
         ...post,
         ...config,
-        nextPost: generateNextPost(posts[index + 2]),
+        nextPost: generateNextPost(posts[index + 1]),
       };
     });
 

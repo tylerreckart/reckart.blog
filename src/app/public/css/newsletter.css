@@ -61,7 +61,7 @@
 }
 
 .error-message {
-  color: var(--theme-colors-red);
+  color: var(--red);
   font-size: 12px !important;
   margin: 18px 0 0 0 !important;
   padding: 0;

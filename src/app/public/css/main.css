@@ -1,44 +1,22 @@
 :root {
-  --theme-colors-bg-dark: #282828;
-  --theme-colors-bg-light: #fff;
-
-  --theme-colors-red: #c6535f;
-  --theme-colors-green: #2cb441;
-  --theme-colors-yellow: #f6d244;
-  --theme-colors-blue: #a2b4bd;
-  --theme-colors-dark-blue: #00406e;
-  --theme-colors-slate: #a4bfd4;
-  --theme-colors-purple: #c792eb;
-  --theme-colors-light-green: #5c756a;
-  --theme-colors-mid-green: #66776a;
-  --theme-colors-dark-green: #203e31;
-
-  --theme-colors-primary: var(--theme-colors-red);
-
-  --theme-ui-colors-primary: var(--theme-colors-slate);
-  --theme-ui-colors-secondary: var(--theme-ui-colors-header);
-
-  --theme-ui-colors-header: #004475;
-
-  --theme-ui-colors-text: #1d2023;
-  --theme-ui-colors-title: #181c24;
-  --theme-ui-colors-comment: #999;
-
-  --theme-ui-colors-bg: #fff;
-  --theme-ui-colors-bg-dark: #181c24;
-  --theme-ui-colors-overlay-bg: #fff;
-  --theme-ui-colors-overlay-bg-dark: #3c3c3c;
-  --theme-ui-colors-next--post-bg: #f3f2f6;
-  --theme-ui-colors-next--post-separator: #e5eaeb;
+  --orange: #e35e34;
+  --purple: #4b61ce;
+  --gray: #a2b4bd;
+  --pink: #ff375f;
+  --red: #ff453a;
+  --green: #31d158;
+  --yellow: #fed709;
+  --blue: #087fff;
+  --aqua: #64d1ff;
 
   --theme-ui-colors-pre-text: #ffffff;
   --theme-ui-colors-pre-bg: #282b2e;
-  --theme-ui-colors-pre-tag: var(--theme-colors-red);
-  --theme-ui-colors-pre-number: var(--theme-colors-blue);
-  --theme-ui-colors-pre-class: var(--theme-ui-colors-yellow);
-  --theme-ui-colors-pre-string: var(--theme-ui-colors-green);
-  --theme-ui-colors-pre-css: var(--theme-ui-colors-red);
-  --theme-ui-colors-pre-function: var(--theme-ui-colors-aqua);
+  --theme-ui-colors-pre-tag: var(--red);
+  --theme-ui-colors-pre-number: var(--yellow);
+  --theme-ui-colors-pre-class: var(--yellow);
+  --theme-ui-colors-pre-string: var(--aqua);
+  --theme-ui-colors-pre-css: var(--red);
+  --theme-ui-colors-pre-function: var(--aqua);
 };
 
 html,
@@ -76,17 +54,11 @@ body.fixed::after {
   left: 0;
   right: 0;
   bottom: 0;
-  animation: animateInBackgroundOverlay 175ms linear;
-}
-
-@keyframes animateInBackgroundOverlay {
-  0% { background-color: rgba(0,0,0,0); }
-  100% { background-color: rgba(0,0,0,.8); }
 }
 
 a {
   text-decoration: none;
-  color: var(--theme-colors-primary);
+  color: var(--purple);
 }
 
 h1,h2,h3,h4,h5,h6 {

@@ -27,8 +27,6 @@ if (!fs.existsSync(outdir)) {
 
 const posts: Array<PostType> = getPosts();
 const pages: Array<PageType> = getPages();
-const images = getImages();
-console.log(images);
 
 export function bundleAssets(): void {
   try {

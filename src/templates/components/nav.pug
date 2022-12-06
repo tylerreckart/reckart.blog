@@ -1,34 +1,12 @@
 header
-  nav#site--nav--home
-    div.site--head
-      a(href="/").site--title
-        h1
-          span(style="color:var(--theme-colors-blue);") Tyler
-          span(style="color:var(--theme-colors-light-green);margin-left:6px;") Reckart
-      div.mobile-nav-menu(id="mobile-nav")
-        a(href="/posts", class="nav--link posts") Posts
-        a(href="/photos", class="nav--link gallery") Photos
-        a(href="/projects", class="nav--link projects") Projects
-        a(href="/about", class="nav--link about") About
-        div.social-links--container
-          a(href="https://instagram.com/tylerreckart", rel="noreferrer", target="_blank")
-            div.instagram--bobble
-              i.fa-brands.fa-instagram
-          a(href="https://github.com/tylerreckart", rel="noreferrer", target="_blank")
-            div.octocat
-              i.fa-brands.fa-github
-          a(href="https://mastodon.social/@tyler", rel="me", target="_blank")
-            div.mastodon--head
-              i.fa-brands.fa-mastodon
-      div.nav--link-container(id="nav")
-        div.nav--links
-          a(href="/posts", class="nav--link posts") Posts
-          a(href="/photos", class="nav--link gallery") Photos
-          a(href="/projects", class="nav--link projects") Projects
-          a(href="/about", class="nav--link about") About
-        div.instagram--bobble
-          i.fa-brands.fa-instagram
-        div.mastodon--head
-          i.fa-brands.fa-mastodon
-      div.nav-menu-trigger(id="mobile-nav-trigger")
-        div.nav-menu-trigger--inner
+  nav#site--nav
+    a(href="/").site--title
+      h1
+        span(style="color:var(--gray);") Tyler
+        span(style="color:#000;margin-left:4px;") Reckart
+    div.mobile-nav-menu(id="mobile-nav")
+      include nav-menu.pug
+    div.nav--link-container(id="nav")
+      include nav-menu.pug
+    div.nav-menu-trigger(id="mobile-nav-trigger")
+      div.nav-menu-trigger--inner

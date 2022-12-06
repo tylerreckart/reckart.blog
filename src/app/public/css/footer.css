@@ -19,15 +19,8 @@ footer a {
   padding-bottom: 2px;
   border-bottom: 4px solid rgb(149 166 174 / 25%);
   font-weight: 600;
-  color: var(--theme-colors-blue);
-}
-
-footer a:hover {
-  border-bottom: 4px solid rgb(149 166 174 / 100%);
-}
-
-.next-post--content footer {
-  padding: 20px 0;
+  color: var(--purple);
+  border-bottom: 4px solid var(--purple);
 }
 
 footer > p {

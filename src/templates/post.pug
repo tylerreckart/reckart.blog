@@ -28,14 +28,5 @@ html(lang="en")
     include components/head.pug
   body
     include components/nav.pug
-    main.content
-      article.article-page--wrapper
-        div.article--header
-          a(href="/posts/" + path) #[h2=attributes.title]
-          span Posted on #[+time(attributes.date)]
-        div.article--content
-          | !{body}
-      if !nextPost
-        include components/footer.pug
-    if nextPost
-      include components/next-post.pug
+    include components/post-body.pug
+    include components/footer.pug

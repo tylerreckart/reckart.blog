@@ -13,9 +13,9 @@ function main(): void {
   }
 
   const getClass = (): string => {
-    // if (path === '/') {
-    //   return 'posts';
-    // }
+    if (path === '/') {
+      return 'posts';
+    }
 
     if (path === 'posts') {
       return 'posts';
@@ -36,7 +36,8 @@ function main(): void {
     return '';
   }
 
-  const currentPage: HTMLElement | null = document.querySelector(`.nav--link.${getClass()}`);
+  const currentPage: HTMLElement | null = document.querySelector(`#nav>.nav--link.${getClass()}`);
+  console.log(currentPage);
   currentPage?.classList.add("active");
 
   document.body.classList.remove('hidden');
@@ -55,7 +56,7 @@ function main(): void {
       document.body.classList.add('fixed');
       mobileNav?.classList.add('open');
       mobileMenu?.classList.add('active');
-    } else {
+    } else if (target === mobileMenu && isActive) {
       document.body.classList.remove('fixed');
       mobileNav?.classList.remove('open');
       mobileMenu?.classList.remove('active');

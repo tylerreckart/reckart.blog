@@ -49,6 +49,10 @@
 }
 
 @media screen and (max-width: 660px) {
+  .gallery--container {
+    margin-top: 20px;
+  }
+
   #photo-gallery--section-wrapper {
     width: 100%;
     margin-top: 0;

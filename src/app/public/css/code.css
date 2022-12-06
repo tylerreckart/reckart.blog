@@ -38,7 +38,8 @@ code {
 }
 
 a > code {
-  color: var(--theme-colors-primary);
+  text-decoration: none;
+  color: var(--purple);
 }
 
 pre .comment,
