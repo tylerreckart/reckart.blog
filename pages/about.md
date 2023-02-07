@@ -2,7 +2,7 @@
 title: "Hi, I'm Tyler"
 description: "Tyler Reckart is a programmer, photographer, and writer based in Greenville, SC."
 ---
-<img class="inline--image-wrap" src="https://s3.us-east-2.amazonaws.com/reckart.blog-images/20220619-L1003067-min.JPG"> I'm a [programmer](https://github.com/tylerreckart) and [photographer](/photos) based in Greenville, SC. Currently I am a Principal Software Engineer at [DriveWealth](https://drivewealth.com), where I help lead the engineering efforts our End-to-End Solutions Group in creating value for our partners across the trading stack. In my previous role I lead the front-end performance engineering team at [ActiveCampaign](https://activecampaign.com).
+<img class="inline--image-wrap" src="https://s3.us-east-2.amazonaws.com/reckart.blog-images/20220619-L1003067-min.JPG"> I'm a [programmer](https://github.com/tylerreckart) and [photographer](/photos) based in Greenville, SC. Currently I am a Principal Software Engineer at [DriveWealth](https://drivewealth.com), where I help lead the engineering efforts our End-to-End Solutions Group in creating value for our partners across the trading stack. In my previous role I led the front-end performance engineering team at [ActiveCampaign](https://activecampaign.com).
 
 My full CV is available on [LinkedIn](https://linkedin.com/in/tylerreckart).
 

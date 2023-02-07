@@ -194,3 +194,13 @@ article p {
     margin-right: 0;
   }
 }
+
+.page--content > p > img {
+  max-width: 620px;
+}
+
+@media screen and (max-width: 640px) {
+  .page--content > p > img {
+    max-width: 100%;
+  }
+}
