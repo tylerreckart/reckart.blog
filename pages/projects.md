@@ -15,7 +15,7 @@ Spindown is a tabletop companion app for [Magic: The Gathering](https://magic.wi
 #### FCalc (2022)
 FCalc is an anolog photography toolkit for your pocket. It provides easy to use calculators for adjusting film exposure time based on factors such as reciprocity failure, filter use, and bellows extension for large format photographers
 
-[FCalc is available iOS App Store](https://apps.apple.com/us/app/fcalc-reciprocity-calculator/id1643250194)
+[FCalc is available on the iOS App Store](https://apps.apple.com/us/app/fcalc-reciprocity-calculator/id1643250194)
 
 <br>
 
