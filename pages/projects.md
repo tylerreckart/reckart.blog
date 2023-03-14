@@ -6,16 +6,18 @@ description: "Tyler Reckart is a programmer, photographer, and writer based in G
 ![An image representing the Spindown UI on iPad and iPhone](https://s3.us-east-2.amazonaws.com/reckart.blog-images/spindown.png)
 
 #### Spindown (2023)
-Spindown is a tabletop companion app for [Magic: The Gathering](https://magic.wizards.com/en/intro) players. Coming soon to both iPhone and iPad, Spindown let's players track board state, active counters, and more. For play groups, Spindown includes features for saving players and tracking game results week over week.
+Spindown is a tabletop companion app for [Magic: The Gathering](https://magic.wizards.com/en/intro) players. The app allows players to set up games quickly for up to six players. For play groups, players can be saved and customized for later use. Track life totals, counters, and more. Spindown also comes bundled with an up-to-date and fully searchable copy of the official Magic rulebook, allowing players to spend less time on rules checks and more time playing the game that they love.
+
+[Spindown is available on the iOS, iPadOS, and Mac App Stores](https://apps.apple.com/us/app/spindown/id1671844369)
 
 <br>
 
-![An image representing the FCalc UI on iPhone](https://s3.us-east-2.amazonaws.com/reckart.blog-images/fcalc.png)
+![An image representing the Factor UI on iPhone](https://s3.us-east-2.amazonaws.com/reckart.blog-images/fcalc.png)
 
-#### FCalc (2022)
-FCalc is an anolog photography toolkit for your pocket. It provides easy to use calculators for adjusting film exposure time based on factors such as reciprocity failure, filter use, and bellows extension for large format photographers
+#### Factor (2022)
+Factor is an anolog photography toolkit for your pocket. It provides easy to use calculators for adjusting film exposure time based on factors such as reciprocity failure, filter use, and bellows extension for large format photographers
 
-[FCalc is available on the iOS App Store](https://apps.apple.com/us/app/fcalc-reciprocity-calculator/id1643250194)
+[Factor is available on the iOS App Store](https://apps.apple.com/us/app/factor/id1643250194)
 
 <br>
 
