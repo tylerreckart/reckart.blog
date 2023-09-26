@@ -1,4 +1,4 @@
-include mixins/time.pug
+include time.pug
 doctype html
 html(lang="en")
   head
@@ -10,10 +10,10 @@ html(lang="en")
       meta(name="description", content=seo.description)
     else
       meta(name="description", content="")
-    include components/head.pug
+    include head.pug
   body
-    include components/nav.pug
-    include components/post-body.pug
-    include components/footer.pug
+    include nav.pug
+    include post-body.pug
+    include footer.pug
 
 

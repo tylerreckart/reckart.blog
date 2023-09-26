@@ -9,11 +9,8 @@ import buildPosts from "@app/post";
 import buildHome from "@app/routes/home";
 import buildFeed from "@app/feed";
 import build404 from "@app/routes/404";
-import buildPhotoGallery from "@app/routes/photos";
 import getPosts from "@app/utils/get-posts";
 import getPages from "@app/utils/get-pages";
-import getImages from "@app/utils/get-images";
-import { galleryConfig } from "@src/gallery-config";
 import { Post as PostType } from "@src/types/post";
 import { Page as PageType } from "@src/types/page";
 
@@ -23,6 +20,18 @@ const outdir: string = path.resolve(`${__dirname}/../build`);
 if (!fs.existsSync(outdir)) {
   // If the directory does not exist, create it.
   fs.mkdirSync(outdir);
+}
+
+const images = fs.readdirSync(`${__dirname}/../images`);
+
+if (images) {
+  if (!fs.existsSync(`${outdir}/images`)) {
+    fs.mkdirSync(`${outdir}/images`);
+  }
+
+  images.forEach(image => {
+    fs.copyFileSync(`${__dirname}/../images/${image}`, `${__dirname}/../build/images/${image}`)
+  });
 }
 
 const posts: Array<PostType> = getPosts();
@@ -39,7 +48,6 @@ export function bundleAssets(): void {
     buildArchive(posts, outdir);
     buildPosts(posts, outdir);
     buildPages(pages, outdir);
-    buildPhotoGallery(galleryConfig, outdir);
     // rss/json feeds
     buildFeed(posts, outdir);
     // 404 page

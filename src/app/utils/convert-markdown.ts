@@ -53,5 +53,6 @@ export function convertPostContent(target: string): PostType {
  * Convert markdown files in the `pages` directory to HTML templates.
  */
 export function convertPageContent(target: string): PageType {
+  console.log(target);
   return convertMarkdownToHTML("pages", target.split(".")[0]);
 }

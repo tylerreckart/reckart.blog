@@ -9,10 +9,10 @@ html(lang="en")
       meta(name="description", content=seo.description)
     else
       meta(name="description", content="")
-    include components/head.pug
+    include head.pug
   body
-    include components/nav.pug
+    include nav.pug
     main.content
       iframe(class="page-404", src="https://www.youtube.com/embed/jRxSRyrTANY?controls=0&fs=0&modestbranding=1", frameborder="0")
       p The page you're looking for doesn't exist. You can #[a(href="/") go back] to safety, or deeper into #[a(href="https://hamsterdance.neocities.org/") the void]. It's your decision.
-    include components/footer.pug
+    include footer.pug

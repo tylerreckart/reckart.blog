@@ -31,7 +31,7 @@ So, how does it work. As mentioned briefly above, it's a straightforward adaptat
 I chose Pug as the templating engine for the HTML markup because of its performance and specific bend towards Node apps. The syntax, heavily influenced by [Haml](https://haml.info/), is simple and only takes a few minutes to pick up. Inline JavaScript is a breeze and variable scope is automatically passed into included components, meaning that you don't have to worry about prop inheritance or explicitly passing what you need into the component.
 
 ```pug
-include mixins/time.pug
+include time.pug
 doctype html
 html(lang="en")
   head

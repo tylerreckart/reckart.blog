@@ -14,9 +14,9 @@ html(lang="en")
       meta(name="description", content=seo.description)
     else
       meta(name="description", content="")
-    include components/head.pug
+    include head.pug
   body
-    include components/nav.pug
+    include nav.pug
     main.content
       div.page--header
         h1 Post Archive
@@ -25,5 +25,5 @@ html(lang="en")
               div.list--item
                   time(datetime!=toISODate(post.attributes.date), pubdate="pubdate")=toISODate(post.attributes.date)
                   a(href="/posts/" + post.path) #[h2=post.attributes.title]
-    include components/footer.pug
+    include footer.pug
 
