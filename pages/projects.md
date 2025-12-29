@@ -5,11 +5,11 @@ description: "A selection of projects Tyler Reckart has built, from iOS apps to 
 A selection of things I've built. Some are products, some are tools, some are experiments that stuck around longer than expected.
 
 <div class="project-entry">
-<div class="project-image-placeholder"></div>
+<div class="project-image" style="background-color: #000422;"><img src="/images/albums-icon.svg" alt="Albums app icon" /></div>
 <div class="project-content">
 
 ## [Albums](https://albums.fm)
-The music app. For people who refuse to let streaming companies own their taste. Catalog your physical collection, integrate with streaming services, play local files—treat your library like the curated archive it is, not a rented playlist.
+An app for people who refuse to let streaming companies own their taste. Catalog your physical collection, integrate with streaming services, play local files—treat your library like the curated archive it is.
 
 </div>
 </div>

@@ -4,7 +4,7 @@ header {
   justify-content: center;
   z-index: 1;
   width: 100%;
-  background-color: #fff;
+  background-color: var(--white);
 }
 
 header a {
@@ -19,7 +19,7 @@ nav#site--nav {
   width: 100%;
   color: var(--theme-ui-colors-text);
   align-items: center;
-  border-bottom: 2px solid #000;
+  border-bottom: 2px solid var(--black);
 }
 
 .logo {
@@ -27,8 +27,16 @@ nav#site--nav {
   height: auto;
 }
 
+.logo-bg {
+  fill: var(--black);
+}
+
+.logo-fg {
+  fill: var(--white);
+}
+
 nav a {
-  color: #fff;
+  color: var(--white);
 }
 
 .site--head {
@@ -44,8 +52,9 @@ nav a {
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  background-color: #000;
+  background-color: var(--black);
   height: 128px;
+  padding: 0 48px;
 }
 
 .site--title {
@@ -58,18 +67,17 @@ nav a {
 }
 
 .nav--link {
-  margin: 0 24px 0px 24px;
   font-family: "Obviously", sans-serif;
   padding-bottom: 8px;
-  border-bottom: 4px solid rgba(255, 255, 255, 0);
+  border-bottom: 6px solid rgba(255, 255, 255, 0);
 }
 
 .nav--link.active {
-  border-bottom: 4px solid var(--purple);
+  border-bottom: 6px solid var(--purple);
 }
 
 .nav--link:hover {
-  border-bottom: 4px solid var(--purple);
+  border-bottom: 6px solid var(--purple);
   text-decoration: none;
 }
 
@@ -96,7 +104,7 @@ nav a {
   position: relative;
   width: 28px;
   height: 4px;
-  background-color: white;
+  background-color: var(--white);
   display: block;
   z-index: 1;
   top: 8px;
@@ -108,7 +116,7 @@ nav a {
   position: relative;
   width: 28px;
   height: 4px;
-  background-color: white;
+  background-color: var(--white);
   display: block;
   z-index: 1;
   top: 20px;
@@ -120,7 +128,7 @@ nav a {
   position: relative;
   width: 28px;
   height: 4px;
-  background-color: white;
+  background-color: var(--white);
   display: block;
   z-index: 2;
   top: 14px;
@@ -129,106 +137,25 @@ nav a {
 
 #mobile-nav-trigger.active .nav-menu-trigger--inner {
   display: none;
-  animation: dissapearWithDelay 350ms linear;
 }
 
 #mobile-nav-trigger.active::before {
   top: 18px;
   transform: rotate(45deg);
-  animation: mobileNavSlideDownAndRotate 350ms linear;
 }
 
 #mobile-nav-trigger.active::after {
   top: 14px;
   transform: rotate(-45deg);
-  animation: mobileNavSlideUpAndRotate 350ms linear;
-}
-
-@keyframes mobileNavSlideDownAndRotate {
-  0% {
-    top: 8px;
-    transform: rotate(0deg);
-  }
-
-  50% {
-    top: 18px;
-  }
-
-  75% {
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(45deg);
-  }
-}
-
-@keyframes mobileNavSlideUpAndRotate {
-  0% {
-    top: 20px;
-    transform: rotate(0deg);
-  }
-
-  50% {
-    top: 14px;
-  }
-
-  75% {
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(-45deg);
-  }
-}
-
-#mobile-nav-trigger.reverse::before {
-  animation: mobileNavSlideUpAndRotateOut 350ms linear;
-}
-
-#mobile-nav-trigger.reverse::after {
-  animation: mobileNavSlideDownAndRotateOut 350ms linear;
-}
-
-@keyframes mobileNavSlideUpAndRotateOut {
-  0% {
-    top: 18px;
-    transform: rotate(45deg);
-  }
-
-  50% {
-    top: 18px;
-    transform: rotate(0deg);
-  }
-
-  100% {
-    top: 8px;
-  }
-}
-
-@keyframes mobileNavSlideDownAndRotateOut {
-  0% {
-    top: 14px;
-    transform: rotate(-45deg);
-  }
-
-  50% {
-    top: 14px;
-    transform: rotate(0deg);
-  }
-
-  100% {
-    top: 20px;
-  }
 }
 
 @media screen and (max-width: 960px) {
   nav {
-    border-top: 8px solid #000;
+    border-top: 8px solid var(--black);
   }
 
   .nav--link:hover {
-    border-bottom: 4px solid transparent;
+    border-bottom: 6px solid transparent;
   }
 
   .site--title {
@@ -242,7 +169,7 @@ nav a {
 
   nav#site--nav {
     margin: 0;
-    padding: 20px 40px 0 40px;
+    padding: 24px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -254,24 +181,37 @@ nav a {
   }
 }
 
-.mastodon--head,
-.instagram--bobble,
 .octocat {
   height: 32px;
-  margin-right: 20px;
 }
 
-.mastodon--head svg,
-.instagram--bobble svg,
 .octocat svg {
   height: 32px;
 }
 
-.mastodon--head path,
-.instagram--bobble path,
 .octocat path {
   fill: var(--purple);
-  /* opacity: 0.5; */
+}
+
+.theme-randomizer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.theme-randomizer-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.theme-randomizer-icon path {
+  fill: var(--purple);
 }
 
 #mobile-nav {
@@ -281,7 +221,7 @@ nav a {
   left: 0;
   padding: 40px;
   flex-direction: column;
-  background-color: #000;
+  background-color: var(--black);
   width: 100%;
   z-index: 2;
 }
@@ -299,10 +239,9 @@ nav a {
 }
 
 .social-links--container {
-  flex: 1;
+  flex: 0.75;
   justify-content: flex-end;
   display: flex;
-  margin-bottom: 10px;
 }
 
 #mobile-nav .social-links--container {
@@ -316,7 +255,7 @@ nav a {
     display: flex;
     margin: 0;
     flex-direction: row;
-    padding: 20px 20px 0 20px;
+    padding: 24px 24px 20px 24px;
     justify-content: space-between;
   }
 

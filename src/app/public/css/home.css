@@ -4,16 +4,14 @@
 
 .home--about-section {
   width: 100%;
-  max-width: 720px;
-  padding: 0 20px;
+  max-width: 724px;
   margin-bottom: 64px;
 }
 
 .home--latest-section {
   width: 100%;
-  max-width: 720px;
+  max-width: 724px;
   margin: 0 auto 64px auto;
-  padding: 0 20px;
 }
 
 /* ========================================
@@ -21,13 +19,13 @@
    ======================================== */
 
 .about--card {
-  background-color: #fff;
-  color: #000;
+  background-color: var(--white);
+  color: var(--black);
   padding: 48px;
   position: relative;
   margin-bottom: 64px;
-  border: 2px solid #000;
-  box-shadow: 4px 4px black;
+  border: 2px solid var(--black);
+  box-shadow: 4px 4px var(--black);
 }
 
 .about--title {
@@ -54,7 +52,7 @@
   font-size: 16px;
   font-weight: 600;
   text-decoration: underline;
-  text-decoration-thickness: 3px;
+  text-decoration-thickness: 4px;
   text-underline-offset: 4px;
   color: inherit;
   text-decoration-color: var(--purple);
@@ -66,7 +64,7 @@
 
 .section--header {
   margin-bottom: 32px;
-  border-bottom: 4px solid #000;
+  border-bottom: 4px solid var(--black);
   padding-bottom: 16px;
 }
 
@@ -78,7 +76,7 @@
   text-transform: uppercase;
   letter-spacing: 1px;
   margin: 0;
-  color: #000;
+  color: var(--black);
 }
 
 /* ========================================
@@ -87,10 +85,10 @@
 
 .latest--post {
   margin-bottom: 0;
-  background-color: #fff;
-  padding: 32px 24px 48px 24px;
-  box-shadow: 4px 4px 0 rgba(0, 0, 0, 1);
-  border: 2px solid #000;
+  background-color: var(--white);
+  padding: 48px;
+  box-shadow: 4px 4px 0 var(--black);
+  border: 2px solid var(--black);
 }
 
 .latest--post .article--header {
@@ -108,7 +106,7 @@
   text-transform: uppercase;
   letter-spacing: 1px;
   margin: 0;
-  color: black;
+  color: var(--purple);
 }
 
 .latest--post .article--header a {
@@ -117,7 +115,7 @@
 }
 
 .latest--post .article--header a:hover h2 {
-  color: #000;
+  color: var(--black);
 }
 
 .post--meta {
@@ -133,7 +131,7 @@
 .latest--post .article--content {
   font-size: 18px;
   line-height: 32px;
-  color: #000;
+  color: var(--black);
   max-width: 720px;
 }
 
@@ -161,17 +159,8 @@
   .home--about-section,
   .home--latest-section {
     padding: 0;
-    margin-bottom: 48px;
-  }
-
-  .next--post-separator {
-    padding: 0 20px;
-    margin: 48px auto;
-  }
-
-  .separator--title {
-    font-size: 20px;
-    line-height: 28px;
+    margin-bottom: 0;
+    margin-top: 24px;
   }
 
   .about--card {
@@ -210,7 +199,8 @@
   }
 
   .latest--post {
-    padding: 0 20px;
+    padding: 24px;
+    margin: 24px;
   }
 
   .latest--post .article--header {

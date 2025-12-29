@@ -22,3 +22,62 @@ if integrations.gaTrackingId
     })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
     ga('create', !{"'" + integrations.gaTrackingId + "'"}, 'auto');
     ga('send', 'pageview');
+
+script.
+  (function() {
+    var colorVars = ['black', 'white', 'bg', 'purple', 'gray', 'orange', 'pink', 'red', 'green', 'yellow', 'blue', 'aqua'];
+    function randomHSL(minS, maxS, minL, maxL) {
+      var h = Math.floor(Math.random() * 360);
+      var s = minS + Math.floor(Math.random() * (maxS - minS));
+      var l = minL + Math.floor(Math.random() * (maxL - minL));
+      return 'hsl(' + h + ', ' + s + '%, ' + l + '%)';
+    }
+    function randomizeTheme() {
+      var root = document.documentElement;
+      var baseHue = Math.floor(Math.random() * 360);
+      var newBlack = 'hsl(' + baseHue + ', ' + (30 + Math.floor(Math.random() * 40)) + '%, ' + (5 + Math.floor(Math.random() * 12)) + '%)';
+      var newWhite = 'hsl(' + ((baseHue + 180) % 360) + ', ' + (10 + Math.floor(Math.random() * 30)) + '%, ' + (92 + Math.floor(Math.random() * 6)) + '%)';
+      var newBg = 'hsl(' + ((baseHue + 90) % 360) + ', ' + (20 + Math.floor(Math.random() * 50)) + '%, ' + (50 + Math.floor(Math.random() * 25)) + '%)';
+      var newPurple = randomHSL(70, 100, 40, 65);
+      var newGray = randomHSL(20, 60, 50, 80);
+      var newOrange = randomHSL(70, 100, 45, 65);
+      var newPink = randomHSL(80, 100, 45, 70);
+      var newRed = randomHSL(80, 100, 45, 60);
+      var newGreen = randomHSL(70, 100, 35, 55);
+      var newYellow = randomHSL(90, 100, 50, 65);
+      var newBlue = randomHSL(80, 100, 40, 60);
+      var newAqua = randomHSL(70, 100, 50, 75);
+      root.style.setProperty('--black', newBlack);
+      root.style.setProperty('--white', newWhite);
+      root.style.setProperty('--bg', newBg);
+      root.style.setProperty('--purple', newPurple);
+      root.style.setProperty('--gray', newGray);
+      root.style.setProperty('--orange', newOrange);
+      root.style.setProperty('--pink', newPink);
+      root.style.setProperty('--red', newRed);
+      root.style.setProperty('--green', newGreen);
+      root.style.setProperty('--yellow', newYellow);
+      root.style.setProperty('--blue', newBlue);
+      root.style.setProperty('--aqua', newAqua);
+      colorVars.forEach(function(c) {
+        localStorage.setItem('theme-' + c, root.style.getPropertyValue('--' + c));
+      });
+    }
+    function restoreTheme() {
+      var root = document.documentElement;
+      colorVars.forEach(function(c) {
+        var val = localStorage.getItem('theme-' + c);
+        if (val) {
+          root.style.setProperty('--' + c, val);
+        }
+      });
+    }
+    restoreTheme();
+    document.addEventListener('DOMContentLoaded', function() {
+      restoreTheme();
+      var btns = document.querySelectorAll('.theme-randomizer');
+      btns.forEach(function(btn) {
+        btn.addEventListener('click', randomizeTheme);
+      });
+    });
+  })();

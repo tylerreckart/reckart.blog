@@ -1,5 +1,5 @@
 ---
-title: "Hi, I'm Tyler"
+title: "About Me"
 description: "Software engineer and builder with a decade of experience solving complex problems across fintech, SaaS, and creative technology. Tyler writes about engineering, systems thinking, and the creative process."
 ---
 I'm a software engineer who's spent the last ten years building systems that work—both technically and for the people using them.

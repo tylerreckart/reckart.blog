@@ -5,7 +5,6 @@ div.next-post--wrapper
       a(href!="/posts/" + nextPost.path).next-post--title
         h2=nextPost.attributes.title
       span
-        span Posted on 
         +time(nextPost.attributes.date)
     div.next-post--body
       | !{nextPost.body}

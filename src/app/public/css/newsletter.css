@@ -31,8 +31,8 @@
   appearance: none;
   border: none;
   outline: none;
-  background-color: #181c24;
-  color: #fff;
+  background-color: var(--black);
+  color: var(--white);
   padding: 12px 18px;
   margin-left: 8px;
   cursor: pointer;

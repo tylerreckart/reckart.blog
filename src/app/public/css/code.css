@@ -10,7 +10,6 @@ pre {
   margin: 32px 0;
   border-radius: 8px;
   background: var(--code-bg);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 pre>code {
@@ -62,7 +61,6 @@ code {
   font-family: 'SF Mono', 'Monaco', 'Inconsolata', monospace;
   font-size: 14px;
   letter-spacing: 0.01em;
-  border: 1px solid rgba(0, 0, 0, 0.06);
 }
 
 a>code {
@@ -108,7 +106,7 @@ a:hover>code {
 .code-copy-button:hover {
   background: rgba(75, 97, 206, 0.8);
   border-color: var(--purple);
-  color: white;
+  color: var(--white);
   transform: translateY(-1px);
 }
 
@@ -119,7 +117,7 @@ a:hover>code {
 .code-copy-button.copied {
   background: rgba(49, 209, 88, 0.8);
   border-color: var(--green);
-  color: white;
+  color: var(--white);
 }
 
 /* ========================================

@@ -1,6 +1,6 @@
 footer {
-  background-color: black;
-  color: #fff;
+  background-color: var(--black);
+  color: var(--white);
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -18,7 +18,7 @@ footer a {
   padding-bottom: 2px;
   border-bottom: 4px solid rgb(149 166 174 / 25%);
   font-weight: 600;
-  color: #fff;
+  color: var(--white);
   border-bottom: 4px solid var(--purple);
 }
 
