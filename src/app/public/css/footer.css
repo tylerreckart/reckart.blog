@@ -7,7 +7,6 @@ footer {
   padding: 64px 0;
   font-family: 'obviously';
   font-weight: 300;
-  margin-top: 48px;
   font-size: 18px;
 }
 
@@ -23,7 +22,7 @@ footer a {
   border-bottom: 4px solid var(--purple);
 }
 
-footer > p {
+footer>p {
   margin: 0;
 }
 
@@ -33,7 +32,7 @@ footer > p {
     flex-direction: column;
   }
 
-  footer > p:first-of-type {
+  footer>p:first-of-type {
     margin-bottom: 24px;
   }
 }

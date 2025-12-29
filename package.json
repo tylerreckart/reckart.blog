@@ -7,6 +7,7 @@
     "build:watch": "nodemon --ignore build",
     "start:dev-server": "npx ts-node ./cli/develop",
     "start:prod-server": "npx ts-node ./cli/server",
+    "dev": "concurrently \"npm run build:watch\" \"npm run start:dev-server\" --names \"build,server\" --prefix-colors \"cyan,green\"",
     "rollup": "yarn build:static && yarn start:prod-server"
   },
   "author": "Tyler Reckart",
@@ -43,6 +44,7 @@
     "@types/pug": "^2.0.5",
     "@types/uglify-js": "^3.13.1",
     "@types/xml": "^1.0.6",
+    "concurrently": "^9.2.1",
     "dotenv": "^16.0.3",
     "nodemon": "^2.0.15",
     "ts-node": "^10.3.0"

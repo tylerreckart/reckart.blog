@@ -19,6 +19,12 @@ nav#site--nav {
   width: 100%;
   color: var(--theme-ui-colors-text);
   align-items: center;
+  border-bottom: 2px solid #000;
+}
+
+.logo {
+  width: var(--logo-width);
+  height: auto;
 }
 
 nav a {
@@ -35,28 +41,27 @@ nav a {
 .nav--link-container {
   flex-direction: row;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: space-between;
-  padding: 0 16px 34px 16px;
   width: 100%;
   background-color: #000;
-  height: 96px;
+  height: 128px;
 }
 
 .site--title {
   flex: 0.25;
+  align-self: center;
   display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  margin: 0 40px;
+  margin-left: 40px;
+  margin-right: 40px;
   max-width: 225px;
 }
 
 .nav--link {
   margin: 0 24px 0px 24px;
   font-family: "Obviously", sans-serif;
-  padding-bottom: 12px;
-  border-bottom: 4px solid rgba(255,255,255,0);
+  padding-bottom: 8px;
+  border-bottom: 4px solid rgba(255, 255, 255, 0);
 }
 
 .nav--link.active {
@@ -69,7 +74,7 @@ nav a {
 }
 
 .nav--link,
-.site--title > h1 {
+.site--title>h1 {
   font-size: 24px;
   text-transform: uppercase;
   font-family: "Obviously", sans-serif;

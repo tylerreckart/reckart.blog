@@ -11,6 +11,32 @@ const renderHomepage = pug.compileFile(
 );
 
 /**
+ * Create a preview excerpt from post body
+ */
+function createPreview(body: string): string {
+  // Get first 2-3 paragraphs or ~1200 characters
+  const paragraphs = body.match(/<p>.*?<\/p>/gs);
+
+  if (paragraphs && paragraphs.length >= 2) {
+    // Return first 2-3 paragraphs
+    const preview = paragraphs.slice(0, 3).join('\n');
+    if (preview.length < 1500) {
+      return preview;
+    }
+  }
+
+  // Fallback: truncate at ~1200 chars at paragraph boundary
+  const truncated = body.substring(0, 1200);
+  const lastParagraphEnd = truncated.lastIndexOf('</p>');
+
+  if (lastParagraphEnd > 0) {
+    return truncated.substring(0, lastParagraphEnd + 4);
+  }
+
+  return body.substring(0, 1000) + '...';
+}
+
+/**
  * Render the homepage.
  *
  * @param {object} post - The most recent post to be rendered.
@@ -19,7 +45,12 @@ export default function buildHome(
   posts: Array<PostType>,
   outdir: string
 ): void {
-  const homepage = renderHomepage({ ...posts[0], ...config, nextPost: generateNextPost(posts[1]) });
+  const latestPost = {
+    ...posts[0],
+    preview: createPreview(posts[0].body)
+  };
+
+  const homepage = renderHomepage({ ...latestPost, ...config, nextPost: generateNextPost(posts[1]) });
 
   fs.writeFile(`${outdir}/index.html`, homepage, (error: any): void => {
     if (error) {

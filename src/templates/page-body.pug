@@ -1,6 +1,7 @@
 main.content
-  article.page--wrapper
-    div.page--header
-      h1=attributes.title
-    div.page--content
-      | !{body}
+  div.page--inner
+    article.page--wrapper
+      div.page--header
+        h1=attributes.title
+      div.page--content
+        | !{body}

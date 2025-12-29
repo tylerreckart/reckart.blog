@@ -18,12 +18,13 @@ html(lang="en")
   body
     include nav.pug
     main.content
-      div.page--header
-        h1 Post Archive
-      div.archive--list
+      div.page--inner
+        div.page--header
+          h1 Post Archive
+        div.archive--list
           each post in posts
-              div.list--item
-                  time(datetime!=toISODate(post.attributes.date), pubdate="pubdate")=toISODate(post.attributes.date)
-                  a(href="/posts/" + post.path) #[h2=post.attributes.title]
+            div.list--item
+              time(datetime!=toISODate(post.attributes.date), pubdate="pubdate")=toISODate(post.attributes.date)
+              a(href="/posts/" + post.path) #[h2=post.attributes.title]
     include footer.pug
 

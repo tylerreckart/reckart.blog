@@ -1,9 +1,10 @@
 main.content
-  article.article-page--wrapper
-    div.article--header
+  div.page--inner
+    article.article-page--wrapper
+      div.article--header
         a(href="/posts/" + path) #[h2=attributes.title]
         span Posted on #[+time(attributes.date)]
-    div.article--content
+      div.article--content
         | !{body}
 if nextPost
   include next-post.pug

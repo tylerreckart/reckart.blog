@@ -14,7 +14,10 @@ if (!fs.existsSync(outdir)) {
   fs.mkdirSync(outdir);
 }
 
-const livereloadServer = livereload.createServer();
+const livereloadServer = livereload.createServer({
+  delay: 1000, // Wait 1 second after file change before reloading
+  exts: ['html', 'css', 'js', 'json'], // Only watch specific extensions
+});
 livereloadServer.watch(path.join(__dirname, '../build'));
 
 const app = express();
