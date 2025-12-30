@@ -73,11 +73,11 @@ nav a {
 }
 
 .nav--link.active {
-  border-bottom: 6px solid var(--purple);
+  border-bottom: 6px solid var(--gray);
 }
 
 .nav--link:hover {
-  border-bottom: 6px solid var(--purple);
+  border-bottom: 6px solid var(--gray);
   text-decoration: none;
 }
 
@@ -95,7 +95,7 @@ nav a {
   display: none;
   height: 40px;
   width: 40px;
-  background-color: var(--purple);
+  background-color: var(--gray);
   z-index: 3;
 }
 
@@ -160,7 +160,7 @@ nav a {
 
   .site--title {
     margin: 0;
-    flex: 1;
+    flex: unset;
   }
 
   #nav {
@@ -181,24 +181,10 @@ nav a {
   }
 }
 
-.octocat {
-  height: 32px;
-}
-
-.octocat svg {
-  height: 32px;
-}
-
-.octocat path {
-  fill: var(--purple);
-}
-
 .theme-randomizer {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 32px;
-  height: 32px;
   background: transparent;
   border: none;
   cursor: pointer;
@@ -206,12 +192,17 @@ nav a {
 }
 
 .theme-randomizer-icon {
-  width: 24px;
-  height: 24px;
+  width: 36px;
+  height: 36px;
 }
 
 .theme-randomizer-icon path {
-  fill: var(--purple);
+  fill: var(--white);
+  transition: fill 0.2s ease;
+}
+
+.theme-randomizer:hover .theme-randomizer-icon path {
+  fill: var(--gray);
 }
 
 #mobile-nav {
@@ -219,10 +210,10 @@ nav a {
   position: fixed;
   top: 0;
   left: 0;
+  right: 0;
   padding: 40px;
   flex-direction: column;
   background-color: var(--black);
-  width: 100%;
   z-index: 2;
 }
 
@@ -232,6 +223,7 @@ nav a {
 
 #mobile-nav .nav--link {
   margin: 0;
+  text-align: left;
 }
 
 #mobile-nav .nav--link.active {

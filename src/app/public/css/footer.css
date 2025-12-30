@@ -16,10 +16,8 @@ footer p {
 
 footer a {
   padding-bottom: 2px;
-  border-bottom: 4px solid rgb(149 166 174 / 25%);
   font-weight: 600;
   color: var(--white);
-  border-bottom: 4px solid var(--purple);
 }
 
 footer>p {

@@ -9,7 +9,7 @@
   flex-direction: row;
   align-items: baseline;
   padding: 16px 0;
-  border-top: 4px solid var(--gray);
+  border-top: 4px solid color-mix(in srgb, var(--gray), transparent 80%);
   width: 100%;
 }
 
@@ -21,12 +21,14 @@
   text-transform: uppercase;
   letter-spacing: 0.3px;
   margin: 0;
+  text-align: left;
+  color: var(--black);
 }
 
 .list--item a {
   flex: 1;
   text-decoration: none;
-  color: var(--black);
+  color: var(--gray);
 }
 
 .list--item:hover h2 {

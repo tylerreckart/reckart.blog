@@ -55,7 +55,7 @@
   text-decoration-thickness: 4px;
   text-underline-offset: 4px;
   color: inherit;
-  text-decoration-color: var(--purple);
+  text-decoration-color: var(--gray);
 }
 
 /* ========================================
@@ -106,7 +106,7 @@
   text-transform: uppercase;
   letter-spacing: 1px;
   margin: 0;
-  color: var(--purple);
+  color: var(--black);
 }
 
 .latest--post .article--header a {
