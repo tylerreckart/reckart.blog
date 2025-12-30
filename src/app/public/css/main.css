@@ -161,6 +161,7 @@ blockquote {
   }
 
   .content {
+    max-width: 100%;
     margin-top: 0;
   }
 
