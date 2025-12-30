@@ -1,13 +1,13 @@
 export default {
   site: {
-    url: "https://reckart.blog",
-    name: "reckart.blog",
+    url: "https://rkrt.net",
+    name: "rkrt.net",
   },
   seo: {
-    title: "Tyler Reckart's Blog",
+    title: "Tyler Reckart",
     author: "Tyler Reckart",
     description:
-      "Tyler Reckart is a programmer, photographer, and writer based in Greenville, SC.",
+      "Tyler Reckart is a programmer and designer based in Philadelphia, PA.",
   },
   social: {
     twitter: "@tylerreckart",
