@@ -24,10 +24,11 @@ footer>p {
   margin: 0;
 }
 
-@media screen and (max-width: 660px) {
+@media screen and (max-width: 960px) {
   footer {
     margin-top: 0;
     flex-direction: column;
+    font-size: 14px;
   }
 
   footer>p:first-of-type {

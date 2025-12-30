@@ -150,6 +150,14 @@ nav a {
 }
 
 @media screen and (max-width: 960px) {
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 20;
+  }
+
   nav {
     border-top: 8px solid var(--black);
   }
