@@ -145,6 +145,14 @@ blockquote {
 }
 
 @media screen and (max-width: 720px) {
+  body {
+    line-height: 1.6em;
+  }
+
+  a {
+    font-size: 14px;
+  }
+
   .content {
     width: 100%;
     margin-top: 0;
@@ -152,6 +160,10 @@ blockquote {
 
   .page--inner {
     margin: 24px;
+  }
+
+  .page--inner h1 {
+    font-size: 24px;
   }
 
   .page--wrapper {

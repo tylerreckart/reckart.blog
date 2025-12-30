@@ -93,9 +93,18 @@ article a {
   }
 
   .article--header h2 {
-    font-size: 42px;
-    line-height: 56px;
-    color: var(--purple);
+    font-size: 32px;
+    line-height: 40px;
+  }
+
+  article {
+    font-size: 16px;
+    line-height: 28px;
+  }
+
+  .next-post--body {
+    font-size: 16px;
+    line-height: 28px;
   }
 }
 
@@ -448,26 +457,46 @@ article a {
 }
 
 @media screen and (max-width: 720px) {
+
+  .article--header h1,
+  .article--header h2,
+  .page--header h1,
+  .page--header h2 {
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  .article--header h2 {
+    font-size: 28px;
+    line-height: 36px;
+  }
+
+  .article--header span {
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  .page--content>p,
   .page--content>p:first-of-type {
-    font-size: 18px;
-    line-height: 32px;
-    margin-bottom: 32px;
+    font-size: 16px;
+    line-height: 28px;
+    margin-bottom: 16px;
   }
 
   .page--content h2 {
-    font-size: 20px;
-    line-height: 28px;
-    margin: 32px 0 16px 0;
+    font-size: 18px;
+    line-height: 24px;
+    margin: 24px 0 12px 0;
   }
 
   .page--content h3 {
-    font-size: 18px;
-    line-height: 24px;
-    margin: 24px 0 8px 0;
+    font-size: 16px;
+    line-height: 22px;
+    margin: 20px 0 8px 0;
   }
 
   .page--content hr {
-    margin: 32px 0;
+    margin: 24px 0;
   }
 
   .project-entry {
